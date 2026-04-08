@@ -3,7 +3,7 @@
 // ============================================================
 
 export const FILE_TREE = {
-  name: 'COREY-BIRNIE-PORTFOLIO',
+  name: 'TOM-CORLEY-PORTFOLIO',
   type: 'root',
   open: true,
   children: [
@@ -19,7 +19,7 @@ export const FILE_TREE = {
             { name: 'about.tsx', type: 'file', fileType: 'tsx', page: 'about' },
             { name: 'work-experience.ts', type: 'file', fileType: 'ts', page: 'experience' },
             { name: 'projects.ts', type: 'file', fileType: 'ts', page: 'projects' },
-            { name: 'blogs.ts', type: 'file', fileType: 'ts', page: 'blogs' },
+            { name: 'certifications.ts', type: 'file', fileType: 'ts', page: 'certifications' },
             { name: 'education.ts', type: 'file', fileType: 'ts', page: 'education' },
           ]
         },
@@ -55,7 +55,7 @@ export const FILE_PATHS = {
   'about': 'src / pages / about.tsx',
   'experience': 'src / pages / work-experience.ts',
   'projects': 'src / pages / projects.ts',
-  'blogs': 'src / pages / blogs.ts',
+  'certifications': 'src / pages / certifications.ts',
   'education': 'src / pages / education.ts',
   'layout': 'src / app / layout.tsx',
   'header-component': 'src / components / Header.tsx',
@@ -84,11 +84,11 @@ export const FILE_LANGUAGES = {
 export const CHAT_MESSAGES = [
   {
     role: 'user',
-    text: 'Tell me about Corey Birnie',
+    text: 'Tell me about Tom Corley',
   },
   {
     role: 'ai',
-    text: `Corey is an Advanced Software Engineer at Worldover in London. He holds a 1st class MEng in Computer Science from Durham University.\n\nHe specializes in full-stack TypeScript/React development and AI-first product architecture. Fun fact: he went from writing embedded C/C++ for missile systems at MBDA to building AI platforms that generate entire web apps!`,
+    text: `Tom is a Software Engineer at Worldover in London. He holds a First Class MMath from the University of Warwick, with an Erasmus year at LMU München.\n\nHe's shipped 110+ pull requests since joining, owning work end-to-end across full-stack TypeScript, AWS infrastructure, and graph databases. Fun fact: he set the programme-record score of 199/200 at the La Fosse software engineering academy!`,
   },
   {
     role: 'user',
@@ -97,7 +97,7 @@ export const CHAT_MESSAGES = [
   {
     role: 'ai',
     text: 'His core stack:',
-    codeBlock: `Languages:    TypeScript, Python, SQL, Java, C++, Haskell\nTechnologies: React, Next.js, tRPC, Tailwind, React Query\nAWS:          Neptune, Amplify, S3, EC2, Lambda\nAI/ML:        PyTorch, Computer Vision, NLP, GANs`,
+    codeBlock: `Languages:    TypeScript, Python, C#/.NET, SQL, Gremlin, C\nTechnologies: React, tRPC, Zod, Node.js, Express, Docker\nAWS:          Neptune, Lambda, S3, CloudWatch, Amplify, SES\nTesting:      Jest, Cypress, Playwright, NUnit`,
   },
   {
     role: 'user',
@@ -105,6 +105,6 @@ export const CHAT_MESSAGES = [
   },
   {
     role: 'ai',
-    text: `At Worldover, he led the architectural transformation of an entire platform into an "AI-first" appfactory. He also directed the QuickReview feature launch which improved customer efficiency by over 100x.\n\nHis Master's dissertation is equally impressive — he built an ML pipeline combining computer vision, NLP, and financial modeling to predict stock prices from CEO video interviews.`,
+    text: `At Worldover, he delivered major product improvements including a new version history system and a substantial overhaul of the documents platform. He also holds four professional certifications — AWS Developer Associate, AWS AI Practitioner, AWS Cloud Practitioner, and PCAP.\n\nHis Master's thesis is equally impressive — a 70-page mathematical research paper on Hamiltonian Cycles in Cayley Graphs.`,
   },
 ];

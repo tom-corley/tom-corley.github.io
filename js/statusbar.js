@@ -24,7 +24,7 @@ export function updateStatusBar(filename, fileType, lineCount, breadcrumbPath) {
   }
 
   if (els.title) {
-    els.title.textContent = `${filename} — Corey Birnie — Portfolio`;
+    els.title.textContent = `${filename} — Tom Corley — Portfolio`;
   }
 
   if (els.breadcrumbFile) {

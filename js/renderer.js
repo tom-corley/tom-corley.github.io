@@ -34,8 +34,8 @@ const esc = (t) =>
 
 export function renderAbout() {
   return [
-    `${cm("// about.tsx — Corey Birnie's Portfolio")}`,
-    `${cm("// Advanced Software Engineer | London, UK")}`,
+    `${cm("// about.tsx — Tom Corley's Portfolio")}`,
+    `${cm("// Software Engineer | London, UK")}`,
     ``,
     `${kw("import")} ${type("React")} ${kw("from")} ${str("'react'")}${op(
       ";"
@@ -63,10 +63,10 @@ export function renderAbout() {
       "=>"
     )} ${b1("{")}`,
     `${ind(1)}${kw("const")} ${prop("name")} ${op("=")} ${str(
-      '"Corey Birnie"'
+      '"Tom Corley"'
     )}${op(";")}`,
     `${ind(1)}${kw("const")} ${prop("title")} ${op("=")} ${str(
-      '"Advanced Software Engineer"'
+      '"Software Engineer"'
     )}${op(";")}`,
     `${ind(1)}${kw("const")} ${prop("location")} ${op("=")} ${str(
       '"London, UK"'
@@ -74,21 +74,21 @@ export function renderAbout() {
     ``,
     `${ind(1)}${kw("const")} ${prop("bio")} ${op("=")} ${str(BT)}`,
     `${ind(2)}${str(
-      "I'm an Advanced Software Engineer at Worldover, where I lead"
+      "I'm a Software Engineer at Worldover, where I've shipped 110+"
     )}`,
     `${ind(2)}${str(
-      "the architectural transformation of a legacy platform into an"
+      "pull requests across feature delivery, bug fixing, and technical"
     )}`,
     `${ind(2)}${str(
-      '"AI-first" appfactory — enabling automated generation of bespoke'
+      "improvements. I hold a First Class MMath from the University of"
     )}`,
     `${ind(2)}${str(
-      "client web apps. I hold a 1st class MEng in Computer Science"
+      "Warwick with an Erasmus year at LMU München. My experience spans"
     )}`,
     `${ind(2)}${str(
-      "from Durham University and have experience spanning full-stack"
+      "full-stack TypeScript/React, AWS infrastructure, graph databases,"
     )}`,
-    `${ind(2)}${str("web development, AI/ML, embedded systems, and fintech.")}`,
+    `${ind(2)}${str("and C#/.NET backend development.")}`,
     `${ind(1)}${str(BT)}${op(";")}`,
     ``,
     `${ind(1)}${kw("const")} ${prop("skills")}${op(":")} ${type("Record")}${op(
@@ -99,30 +99,35 @@ export function renderAbout() {
     `${ind(2)}${prop("Languages")}${op(":")} ${b2("[")}`,
     `${ind(3)}${str('"TypeScript/JavaScript"')}${op(",")} ${str(
       '"Python"'
-    )}${op(",")} ${str('"Gremlin"')}${op(",")}`,
-    `${ind(3)}${str('"SQL"')}${op(",")} ${str('"Java"')}${op(",")} ${str(
-      '"C++"'
-    )}${op(",")} ${str('"Motoko"')}${op(",")} ${str('"Haskell"')}`,
+    )}${op(",")} ${str('"C#/.NET"')}${op(",")}`,
+    `${ind(3)}${str('"SQL"')}${op(",")} ${str('"Gremlin"')}${op(",")} ${str(
+      '"C"'
+    )}`,
     `${ind(2)}${b2("]")}${op(",")}`,
     `${ind(2)}${prop("Technologies")}${op(":")} ${b2("[")}`,
-    `${ind(3)}${str('"React"')}${op(",")} ${str('"Next.js"')}${op(",")} ${str(
-      '"tRPC"'
-    )}${op(",")} ${str('"Zod"')}${op(",")}`,
-    `${ind(3)}${str('"Tailwind CSS"')}${op(",")} ${str('"React Query"')}${op(
-      ","
-    )} ${str('"Git"')}${op(",")}`,
-    `${ind(3)}${str('"Linux"')}${op(",")} ${str('"Machine Learning"')}${op(
-      ","
-    )} ${str('"PyTorch"')}${op(",")}`,
-    `${ind(3)}${str('"ThreeJS"')}${op(",")} ${str('"MCP"')}`,
+    `${ind(3)}${str('"React"')}${op(",")} ${str('"tRPC"')}${op(",")} ${str(
+      '"Zod"'
+    )}${op(",")} ${str('"Node.js"')}${op(",")}`,
+    `${ind(3)}${str('"Express"')}${op(",")} ${str('"ASP.NET"')}${op(",")} ${str(
+      '"EF Core"'
+    )}${op(",")}`,
+    `${ind(3)}${str('"Docker"')}${op(",")} ${str('"GitHub Actions"')}${op(",")} ${str('"Git"')}`,
     `${ind(2)}${b2("]")}${op(",")}`,
     `${ind(2)}${prop("AWS")}${op(":")} ${b2("[")}`,
-    `${ind(3)}${str('"Neptune"')}${op(",")} ${str('"Amplify"')}${op(",")} ${str(
+    `${ind(3)}${str('"Neptune"')}${op(",")} ${str('"Lambda"')}${op(",")} ${str(
       '"S3"'
     )}${op(",")}`,
-    `${ind(3)}${str('"EC2"')}${op(",")} ${str('"OpenSearch"')}${op(",")} ${str(
-      '"Lambda"'
+    `${ind(3)}${str('"CloudWatch"')}${op(",")} ${str('"SES"')}${op(",")} ${str(
+      '"EventBridge"'
+    )}${op(",")}`,
+    `${ind(3)}${str('"AppConfig"')}${op(",")} ${str('"Amplify"')}${op(",")} ${str(
+      '"OpenSearch"'
     )}`,
+    `${ind(2)}${b2("]")}${op(",")}`,
+    `${ind(2)}${prop("Testing")}${op(":")} ${b2("[")}`,
+    `${ind(3)}${str('"Jest"')}${op(",")} ${str('"Cypress"')}${op(",")} ${str(
+      '"Playwright"'
+    )}${op(",")} ${str('"NUnit"')}`,
     `${ind(2)}${b2("]")}${op(",")}`,
     `${ind(1)}${b1("}")}${op(";")}`,
     ``,
@@ -132,7 +137,7 @@ export function renderAbout() {
     )}${tag("&gt;")}`,
     `${ind(3)}${tag("&lt;ProfileImage")} ${attr("src")}${op("=")}${str(
       '"/profile.jpg"'
-    )} ${attr("alt")}${op("=")}${str('"Corey Birnie"')} ${tag("/&gt;")}`,
+    )} ${attr("alt")}${op("=")}${str('"Tom Corley"')} ${tag("/&gt;")}`,
     `${ind(3)}${tag("&lt;h1&gt;")}${op("{")}${prop("name")}${op("}")}${tag(
       "&lt;/h1&gt;"
     )}`,
@@ -188,7 +193,7 @@ export function renderAbout() {
 export function renderExperience() {
   return [
     `${cm("// work-experience.ts — Professional Experience")}`,
-    `${cm("// Corey Birnie's career history")}`,
+    `${cm("// Tom Corley's career history")}`,
     ``,
     `${kw("interface")} ${type("WorkExperience")} ${b1("{")}`,
     `${ind(1)}${prop("company")}${op(":")} ${type("string")}${op(";")}`,
@@ -210,129 +215,90 @@ export function renderExperience() {
     `${ind(1)}${b2("{")}`,
     `${ind(2)}${prop("company")}${op(":")} ${str('"Worldover"')}${op(",")}`,
     `${ind(2)}${prop("title")}${op(":")} ${str(
-      '"Advanced Software Engineer"'
+      '"Software Engineer"'
     )}${op(",")}`,
     `${ind(2)}${prop("period")}${op(":")} ${str(
-      '"January 2026 — Present"'
+      '"October 2025 — Present"'
     )}${op(",")}`,
     `${ind(2)}${prop("location")}${op(":")} ${str('"London, UK"')}${op(",")}`,
     `${ind(2)}${prop("highlights")}${op(":")} ${b3("[")}`,
     `${ind(3)}${str(
-      '"Headed a team through the architectural transformation of a legacy"'
+      '"Shipped 110+ pull requests across feature delivery, bug fixing,"'
     )}${op(",")}`,
     `${ind(3)}${str(
-      "\"platform into an 'AI-first' appfactory, enabling automated\""
+      '"and technical improvements — owning work end-to-end through"'
     )}${op(",")}`,
-    `${ind(3)}${str('"generation of bespoke client web apps"')}${op(",")}`,
+    `${ind(3)}${str('"implementation, testing, and deployment"')}${op(",")}`,
     `${ind(3)}${str(
-      "\"Directed team to architect and launch 'QuickReview', a flagship\""
-    )}${op(",")}`,
-    `${ind(3)}${str(
-      '"greenfield AI feature — 100x customer efficiency improvement"'
-    )}${op(",")}`,
-    `${ind(2)}${b3("]")}${op(",")}`,
-    `${ind(1)}${b2("}")}${op(",")}`,
-    ``,
-    `${ind(1)}${b2("{")}`,
-    `${ind(2)}${prop("company")}${op(":")} ${str('"Worldover"')}${op(",")}`,
-    `${ind(2)}${prop("title")}${op(":")} ${str(
-      '"Full-Stack Software Engineer"'
-    )}${op(",")}`,
-    `${ind(2)}${prop("period")}${op(":")} ${str(
-      '"August 2024 — January 2026"'
-    )}${op(",")}`,
-    `${ind(2)}${prop("highlights")}${op(":")} ${b3("[")}`,
-    `${ind(3)}${str(
-      '"Built an AI-powered formulation system integrating an ensemble"'
+      '"Delivered major product improvements: new version history system"'
     )}${op(",")}`,
     `${ind(3)}${str(
-      '"of AI models, enabling users to generate cosmetic formulations"'
+      '"(major/minor versioning), substantial documents platform overhaul"'
     )}${op(",")}`,
-    `${ind(3)}${str('"from simple prompts"')}${op(",")}`,
-    // `${ind(3)}${str('"Implemented an MCP server on the platform API during personal"')}${op(',')}`,
-    // `${ind(3)}${str('"time — foundation for AI agent-based features across the platform"')}${op(',')}`,
+    `${ind(3)}${str('"with revamped file-explorer UI and data-model changes"')}${op(",")}`,
     `${ind(3)}${str(
-      '"Mentored new engineers, managing their task progression"'
+      '"Strengthened AWS infrastructure and observability; developed"'
     )}${op(",")}`,
+    `${ind(3)}${str('"internal AI tooling including agent skills and prompt templates"')}${op(",")}`,
     `${ind(3)}${str(
-      '"Engineered core platform architecture as an early-stage hire,"'
+      '"Regularly contributed to ticket writing, PR reviews, and"'
     )}${op(",")}`,
-    `${ind(3)}${str(
-      '"driving evolution from foundational stages to production"'
-    )}${op(",")}`,
+    `${ind(3)}${str('"technical planning; expanded automated test coverage"')}${op(",")}`,
     `${ind(2)}${b3("]")}${op(",")}`,
     `${ind(1)}${b2("}")}${op(",")}`,
     ``,
     `${ind(1)}${cm(
-      "// ─── Citigroup ──────────────────────────────────────────"
+      "// ─── La Fosse ────────────────────────────────────────────"
     )}`,
     `${ind(1)}${b2("{")}`,
-    `${ind(2)}${prop("company")}${op(":")} ${str('"Citigroup"')}${op(",")}`,
+    `${ind(2)}${prop("company")}${op(":")} ${str('"La Fosse"')}${op(",")}`,
     `${ind(2)}${prop("title")}${op(":")} ${str(
-      '"Software Engineer Intern"'
+      '"Software Engineering Trainee"'
     )}${op(",")}`,
     `${ind(2)}${prop("period")}${op(":")} ${str(
-      '"June 2023 — August 2023"'
+      '"July 2025 — September 2025"'
     )}${op(",")}`,
+    `${ind(2)}${prop("location")}${op(":")} ${str('"London, UK"')}${op(",")}`,
     `${ind(2)}${prop("highlights")}${op(":")} ${b3("[")}`,
     `${ind(3)}${str(
-      '"Analysed feature bias in predictive ML models for loan"'
+      '"Achieved programme-record score of 199/200; consistently ranked"'
     )}${op(",")}`,
-    `${ind(3)}${str('"acceptance using Python and Tableau"')}${op(",")}`,
+    `${ind(3)}${str('"top across 10+ timed assessments"')}${op(",")}`,
     `${ind(3)}${str(
-      '"Developed PL/SQL scripts for compliance features and Java"'
+      '"Built a layered C#/.NET API backed by PostgreSQL/PostGIS for a"'
     )}${op(",")}`,
-    `${ind(3)}${str('"automation on updated systems"')}${op(",")}`,
+    `${ind(3)}${str('"map-based phone theft reporting platform"')}${op(",")}`,
     `${ind(3)}${str(
-      '"Received mentorship in quantitative analysis and algorithms"'
+      '"Implemented JWT authentication, spatial data persistence with"'
     )}${op(",")}`,
+    `${ind(3)}${str('"EF Core, and automated tests"')}${op(",")}`,
     `${ind(2)}${b3("]")}${op(",")}`,
     `${ind(1)}${b2("}")}${op(",")}`,
     ``,
     `${ind(1)}${cm(
-      "// ─── Durham University ──────────────────────────────────"
+      "// ─── Private Tutoring ────────────────────────────────────"
     )}`,
     `${ind(1)}${b2("{")}`,
-    `${ind(2)}${prop("company")}${op(":")} ${str('"Durham University"')}${op(
+    `${ind(2)}${prop("company")}${op(":")} ${str('"Self Employed"')}${op(
       ","
     )}`,
     `${ind(2)}${prop("title")}${op(":")} ${str(
-      '"Demonstrator / Teaching Assistant"'
+      '"Private Tutor — Maths, English & Science"'
     )}${op(",")}`,
     `${ind(2)}${prop("period")}${op(":")} ${str(
-      '"September 2022 — June 2024"'
+      '"September 2018 — Present"'
     )}${op(",")}`,
     `${ind(2)}${prop("highlights")}${op(":")} ${b3("[")}`,
     `${ind(3)}${str(
-      '"Led and taught groups of 30 first and second-year students"'
+      '"Delivered results-focused tutoring with bespoke lesson planning"'
     )}${op(",")}`,
-    `${ind(3)}${str('"in practical programming and AI modules"')}${op(",")}`,
     `${ind(3)}${str(
-      '"Developed skills in communicating complex concepts clearly"'
+      '"Facilitated significantly higher-than-expected GCSE grades"'
     )}${op(",")}`,
-    `${ind(2)}${b3("]")}${op(",")}`,
-    `${ind(1)}${b2("}")}${op(",")}`,
-    ``,
-    `${ind(1)}${cm(
-      "// ─── MBDA ───────────────────────────────────────────────"
-    )}`,
-    `${ind(1)}${b2("{")}`,
-    `${ind(2)}${prop("company")}${op(":")} ${str('"MBDA"')}${op(",")}`,
-    `${ind(2)}${prop("title")}${op(":")} ${str(
-      '"Software Engineer Intern"'
-    )}${op(",")}`,
-    `${ind(2)}${prop("period")}${op(":")} ${str(
-      '"June 2021 — August 2021"'
-    )}${op(",")}`,
-    `${ind(2)}${prop("highlights")}${op(":")} ${b3("[")}`,
     `${ind(3)}${str(
-      '"Developed embedded real-time systems using C/C++ with high"'
+      '"Enabled a long-term student to secure a sixth-form place at"'
     )}${op(",")}`,
-    `${ind(3)}${str('"security and reliability standards"')}${op(",")}`,
-    `${ind(3)}${str(
-      '"Implemented static analysis tooling, configured build systems,"'
-    )}${op(",")}`,
-    `${ind(3)}${str('"wrote unit tests in C++ and Python"')}${op(",")}`,
+    `${ind(3)}${str('"a top grammar school"')}${op(",")}`,
     `${ind(2)}${b3("]")}${op(",")}`,
     `${ind(1)}${b2("}")}${op(",")}`,
     ``,
@@ -359,195 +325,181 @@ export function renderProjects() {
     )}${op("[]")} ${op("=")} ${b1("[")}`,
     ``,
     `${ind(1)}${cm(
-      "// ─── Master's Dissertation ──────────────────────────────"
+      "// ─── Galactic Dynamics Parallelisation ────────────────────"
     )}`,
     `${ind(1)}${b2("{")}`,
     `${ind(2)}${prop("title")}${op(":")} ${str(
-      '"Detecting CEO Behaviour from Video Interviews via ML"'
+      '"Galactic Dynamics Parallelisation"'
     )}${op(",")}`,
     `${ind(2)}${prop("subtitle")}${op(":")} ${str(
-      '"Master\'s Dissertation — Durham University"'
+      '"High Performance Computing — University of Warwick"'
     )}${op(",")}`,
     `${ind(2)}${prop("description")}${op(":")} ${b3("[")}`,
     `${ind(3)}${str(
-      '"Employed advanced computer vision techniques with machine"'
+      '"Achieved 100x+ speedup over serial code using hybrid"'
     )}${op(",")}`,
+    `${ind(3)}${str('"OpenMP+MPI parallelisation"')}${op(",")}`,
     `${ind(3)}${str(
-      '"learning models for precise facial expression detection"'
+      '"Large-scale Velocity-Verlet simulation of celestial bodies"'
     )}${op(",")}`,
+    `${ind(3)}${str('"orbiting a supermassive black hole"')}${op(",")}`,
     `${ind(3)}${str(
-      '"Integrated facial expression data with head position, eye"'
-    )}${op(",")}`,
-    `${ind(3)}${str(
-      '"movement, and NLP data into a tailored ML model to accurately"'
-    )}${op(",")}`,
-    `${ind(3)}${str('"forecast future stock prices"')}${op(",")}`,
-    `${ind(3)}${str(
-      '"Deployed a multi-modal approach to improve forecasting accuracy"'
+      '"Operated on research-grade Linux clusters with CUDA support"'
     )}${op(",")}`,
     `${ind(2)}${b3("]")}${op(",")}`,
-    `${ind(2)}${prop("tech")}${op(":")} ${b3("[")}${str('"Python"')}${op(
+    `${ind(2)}${prop("tech")}${op(":")} ${b3("[")}${str('"C"')}${op(
       ","
-    )} ${str('"PyTorch"')}${op(",")} ${str('"Computer Vision"')}${op(
+    )} ${str('"OpenMP"')}${op(",")} ${str('"MPI"')}${op(
       ","
-    )} ${str('"NLP"')}${op(",")} ${str('"ML"')}${b3("]")}${op(",")}`,
+    )} ${str('"HPC"')}${b3("]")}${op(",")}`,
     `${ind(1)}${b2("}")}${op(",")}`,
     ``,
     `${ind(1)}${cm(
-      "// ─── Blockchain Ticketing ────────────────────────────────"
+      "// ─── Balatro Sandbox ─────────────────────────────────────"
     )}`,
     `${ind(1)}${b2("{")}`,
     `${ind(2)}${prop("title")}${op(":")} ${str(
-      '"Ticketing System on the IC Blockchain"'
+      '"Balatro Sandbox"'
     )}${op(",")}`,
     `${ind(2)}${prop("subtitle")}${op(":")} ${str(
-      '"Start-up Venture — Decentralised Ticketing"'
+      '"Frontend Application — Card Game Simulator"'
     )}${op(",")}`,
     `${ind(2)}${prop("description")}${op(":")} ${b3("[")}`,
     `${ind(3)}${str(
-      '"Pivotal role in a start-up developing blockchain-based"'
+      '"Built a frontend-heavy sandbox for simulating Balatro hand"'
     )}${op(",")}`,
-    `${ind(3)}${str('"ticketing with React frontend and Motoko backend"')}${op(
-      ","
-    )}`,
+    `${ind(3)}${str('"scoring with a responsive UI"')}${op(",")}`,
     `${ind(3)}${str(
-      '"Built form manager to automate event onboarding process"'
+      '"Support for saving and sharing hands; comprehensive test"'
     )}${op(",")}`,
-    `${ind(3)}${str(
-      '"Implemented dynamic NFT minting for secure QR code tickets,"'
-    )}${op(",")}`,
-    `${ind(3)}${str('"enhancing fraud prevention and user experience"')}${op(
-      ","
-    )}`,
+    `${ind(3)}${str('"coverage with Vitest"')}${op(",")}`,
     `${ind(2)}${b3("]")}${op(",")}`,
-    `${ind(2)}${prop("tech")}${op(":")} ${b3("[")}${str('"React"')}${op(
+    `${ind(2)}${prop("tech")}${op(":")} ${b3("[")}${str('"TypeScript"')}${op(
       ","
-    )} ${str('"Motoko"')}${op(",")} ${str('"Internet Computer"')}${op(
-      ","
-    )} ${str('"NFTs"')}${op(",")} ${str('"Web3"')}${b3("]")}${op(",")}`,
+    )} ${str('"React"')}${op(",")} ${str('"Vitest"')}${b3("]")}${op(",")}`,
     `${ind(1)}${b2("}")}${op(",")}`,
     ``,
     `${ind(1)}${cm(
-      "// ─── GAN Image Generation ────────────────────────────────"
+      "// ─── Frogify ─────────────────────────────────────────────"
     )}`,
     `${ind(1)}${b2("{")}`,
     `${ind(2)}${prop("title")}${op(":")} ${str(
-      '"Novel GAN for Image Synthesis"'
+      '"Frogify — Serverless Web Application"'
     )}${op(",")}`,
     `${ind(2)}${prop("subtitle")}${op(":")} ${str(
-      '"Generative Adversarial Network — From Scratch"'
+      '"AWS Serverless — Spotify Analytics"'
     )}${op(",")}`,
     `${ind(2)}${prop("description")}${op(":")} ${b3("[")}`,
     `${ind(3)}${str(
-      '"Constructed a novel GAN from scratch, capable of generating"'
+      '"Spotify analytics app using AWS serverless architecture"'
     )}${op(",")}`,
-    `${ind(3)}${str('"coherent images from random noise inputs"')}${op(",")}`,
-    `${ind(3)}${str(
-      '"Built with PyTorch, demonstrating proficiency in advanced ML"'
-    )}${op(",")}`,
-    `${ind(3)}${str(
-      '"Integrated concepts from diverse research to achieve"'
-    )}${op(",")}`,
-    `${ind(3)}${str('"state-of-the-art performance in image generation"')}${op(
+    `${ind(3)}${str('"Static S3 frontend with Lambda functions written in Python"')}${op(
       ","
     )}`,
+    `${ind(3)}${str(
+      '"Full-stack JavaScript/Python with HTML/CSS frontend"'
+    )}${op(",")}`,
     `${ind(2)}${b3("]")}${op(",")}`,
-    `${ind(2)}${prop("tech")}${op(":")} ${b3("[")}${str('"Python"')}${op(
+    `${ind(2)}${prop("tech")}${op(":")} ${b3("[")}${str('"JavaScript"')}${op(
       ","
-    )} ${str('"PyTorch"')}${op(",")} ${str('"GANs"')}${op(",")} ${str(
-      '"Deep Learning"'
+    )} ${str('"Python"')}${op(",")} ${str('"AWS Lambda"')}${op(
+      ","
+    )} ${str('"S3"')}${b3("]")}${op(",")}`,
+    `${ind(1)}${b2("}")}${op(",")}`,
+    ``,
+    `${ind(1)}${cm(
+      "// ─── IDSNIFF ─────────────────────────────────────────────"
+    )}`,
+    `${ind(1)}${b2("{")}`,
+    `${ind(2)}${prop("title")}${op(":")} ${str(
+      '"IDSNIFF — Network Intrusion Detector"'
+    )}${op(",")}`,
+    `${ind(2)}${prop("subtitle")}${op(":")} ${str(
+      '"Low-Level Systems Programming — C"'
+    )}${op(",")}`,
+    `${ind(2)}${prop("description")}${op(":")} ${b3("[")}`,
+    `${ind(3)}${str(
+      '"Low-level packet sniffing tool written in C"'
+    )}${op(",")}`,
+    `${ind(3)}${str(
+      '"Detects simulated TCP SYN flooding, ARP cache poisoning,"'
+    )}${op(",")}`,
+    `${ind(3)}${str('"and blacklisted URL attacks"')}${op(",")}`,
+    `${ind(2)}${b3("]")}${op(",")}`,
+    `${ind(2)}${prop("tech")}${op(":")} ${b3("[")}${str('"C"')}${op(
+      ","
+    )} ${str('"Networking"')}${op(",")} ${str('"Linux"')}${op(",")} ${str(
+      '"Security"'
     )}${b3("]")}${op(",")}`,
+    `${ind(1)}${b2("}")}${op(",")}`,
+    ``,
+    `${ind(1)}${cm(
+      "// ─── 2048 ──────────────────────────────────────────────"
+    )}`,
+    `${ind(1)}${b2("{")}`,
+    `${ind(2)}${prop("title")}${op(":")} ${str(
+      '"2048 — Strategy Game"'
+    )}${op(",")}`,
+    `${ind(2)}${prop("subtitle")}${op(":")} ${str(
+      '"Desktop Application — Python"'
+    )}${op(",")}`,
+    `${ind(2)}${prop("description")}${op(":")} ${b3("[")}`,
+    `${ind(3)}${str(
+      '"Built the strategy game 2048 from scratch with a dynamic"'
+    )}${op(",")}`,
+    `${ind(3)}${str('"Tkinter GUI"')}${op(",")}`,
+    `${ind(3)}${str(
+      '"SQLite-backed high-score tracking and persistence"'
+    )}${op(",")}`,
+    `${ind(2)}${b3("]")}${op(",")}`,
+    `${ind(2)}${prop("tech")}${op(":")} ${b3("[")}${str('"Python"')}${op(
+      ","
+    )} ${str('"Tkinter"')}${op(",")} ${str('"SQLite3"')}${b3("]")}${op(",")}`,
     `${ind(1)}${b2("}")}${op(",")}`,
     ``,
     `${b1("]")}${op(";")}`,
   ];
 }
 
-export function renderBlogs() {
+export function renderCertifications() {
   return [
-    `${cm("// blogs.ts — Blog Posts")}`,
-    `${cm("// Thoughts on engineering, AI, and building things")}`,
+    `${cm("// certifications.ts — Professional Certifications")}`,
+    `${cm("// Validated expertise across cloud and programming")}`,
     ``,
-    `${kw("interface")} ${type("BlogPost")} ${b1("{")}`,
-    `${ind(1)}${prop("title")}${op(":")} ${type("string")}${op(";")}`,
-    `${ind(1)}${prop("date")}${op(":")} ${type("string")}${op(";")}`,
-    `${ind(1)}${prop("excerpt")}${op(":")} ${type("string")}${op(";")}`,
-    `${ind(1)}${prop("slug")}${op(":")} ${type("string")}${op(";")}`,
-    `${ind(1)}${prop("tags")}${op(":")} ${type("string")}${op("[]")}${op(";")}`,
-    `${ind(1)}${prop("readTime")}${op(":")} ${type("string")}${op(";")}`,
+    `${kw("interface")} ${type("Certification")} ${b1("{")}`,
+    `${ind(1)}${prop("name")}${op(":")} ${type("string")}${op(";")}`,
+    `${ind(1)}${prop("issuer")}${op(":")} ${type("string")}${op(";")}`,
+    `${ind(1)}${prop("description")}${op(":")} ${type("string")}${op(";")}`,
     `${b1("}")}`,
     ``,
-    `${kw("export")} ${kw("const")} ${prop("blogPosts")}${op(":")} ${type(
-      "BlogPost"
+    `${kw("export")} ${kw("const")} ${prop("certifications")}${op(":")} ${type(
+      "Certification"
     )}${op("[]")} ${op("=")} ${b1("[")}`,
     ``,
     `${ind(1)}${b2("{")}`,
-    `${ind(2)}${prop("title")}${op(":")} ${str(
-      '"Building an AI-First Platform: Lessons from the Trenches"'
-    )}${op(",")}`,
-    `${ind(2)}${prop("date")}${op(":")} ${str('"2026-03-15"')}${op(",")}`,
-    `${ind(2)}${prop("excerpt")}${op(":")} ${str(
-      '"How we transformed a legacy platform into an AI-powered"'
-    )}${op(",")}`,
-    `${ind(2)}${cm(
-      "// appfactory — the architectural decisions, trade-offs,"
-    )}`,
-    `${ind(2)}${cm("// and lessons learned along the way.")}`,
-    `${ind(2)}${prop("slug")}${op(":")} ${str(
-      '"ai-first-platform-lessons"'
-    )}${op(",")}`,
-    `${ind(2)}${prop("tags")}${op(":")} ${b3("[")}${str('"AI"')}${op(
-      ","
-    )} ${str('"Architecture"')}${op(",")} ${str('"TypeScript"')}${b3("]")}${op(
-      ","
-    )}`,
-    `${ind(2)}${prop("readTime")}${op(":")} ${str('"8 min read"')}${op(",")}`,
+    `${ind(2)}${prop("name")}${op(":")} ${str('"AWS Certified Developer — Associate"')}${op(",")}`,
+    `${ind(2)}${prop("issuer")}${op(":")} ${str('"Amazon Web Services"')}${op(",")}`,
+    `${ind(2)}${prop("description")}${op(":")} ${str('"Proficiency in developing, deploying, and debugging"')}${op(",")}`,
+    `${ind(2)}${cm("// cloud-based applications using AWS services")}`,
     `${ind(1)}${b2("}")}${op(",")}`,
     ``,
     `${ind(1)}${b2("{")}`,
-    `${ind(2)}${prop("title")}${op(":")} ${str(
-      '"Why I Implemented an MCP Server (And You Should Too)"'
-    )}${op(",")}`,
-    `${ind(2)}${prop("date")}${op(":")} ${str('"2026-02-01"')}${op(",")}`,
-    `${ind(2)}${prop("excerpt")}${op(":")} ${str(
-      '"The Model Context Protocol is changing how AI agents"'
-    )}${op(",")}`,
-    `${ind(2)}${cm(
-      "// interact with platforms. Here's why I built one in my spare"
-    )}`,
-    `${ind(2)}${cm(
-      "// time and how it became the foundation for our AI features."
-    )}`,
-    `${ind(2)}${prop("slug")}${op(":")} ${str(
-      '"mcp-server-implementation"'
-    )}${op(",")}`,
-    `${ind(2)}${prop("tags")}${op(":")} ${b3("[")}${str('"MCP"')}${op(
-      ","
-    )} ${str('"AI Agents"')}${op(",")} ${str('"API Design"')}${b3("]")}${op(
-      ","
-    )}`,
-    `${ind(2)}${prop("readTime")}${op(":")} ${str('"6 min read"')}${op(",")}`,
+    `${ind(2)}${prop("name")}${op(":")} ${str('"AWS Certified AI Practitioner"')}${op(",")}`,
+    `${ind(2)}${prop("issuer")}${op(":")} ${str('"Amazon Web Services"')}${op(",")}`,
+    `${ind(2)}${prop("description")}${op(":")} ${str('"Knowledge of AI/ML concepts and AWS AI services"')}${op(",")}`,
     `${ind(1)}${b2("}")}${op(",")}`,
     ``,
     `${ind(1)}${b2("{")}`,
-    `${ind(2)}${prop("title")}${op(":")} ${str(
-      '"From GANs to Production ML: A Journey"'
-    )}${op(",")}`,
-    `${ind(2)}${prop("date")}${op(":")} ${str('"2025-11-10"')}${op(",")}`,
-    `${ind(2)}${prop("excerpt")}${op(":")} ${str(
-      '"Reflecting on the path from building a novel GAN for"'
-    )}${op(",")}`,
-    `${ind(2)}${cm("// my university project to applying ML techniques in")}`,
-    `${ind(2)}${cm("// production environments at scale.")}`,
-    `${ind(2)}${prop("slug")}${op(":")} ${str('"gans-to-production-ml"')}${op(
-      ","
-    )}`,
-    `${ind(2)}${prop("tags")}${op(":")} ${b3("[")}${str(
-      '"Machine Learning"'
-    )}${op(",")} ${str('"PyTorch"')}${op(",")} ${str('"GANs"')}${b3("]")}${op(
-      ","
-    )}`,
-    `${ind(2)}${prop("readTime")}${op(":")} ${str('"10 min read"')}${op(",")}`,
+    `${ind(2)}${prop("name")}${op(":")} ${str('"AWS Certified Cloud Practitioner"')}${op(",")}`,
+    `${ind(2)}${prop("issuer")}${op(":")} ${str('"Amazon Web Services"')}${op(",")}`,
+    `${ind(2)}${prop("description")}${op(":")} ${str('"Foundational understanding of AWS Cloud services,"')}${op(",")}`,
+    `${ind(2)}${cm("// architecture, pricing, and security")}`,
+    `${ind(1)}${b2("}")}${op(",")}`,
+    ``,
+    `${ind(1)}${b2("{")}`,
+    `${ind(2)}${prop("name")}${op(":")} ${str('"PCAP — Python Certified Associate Programmer"')}${op(",")}`,
+    `${ind(2)}${prop("issuer")}${op(":")} ${str('"Python Institute"')}${op(",")}`,
+    `${ind(2)}${prop("description")}${op(":")} ${str('"Advanced Python programming, OOP, and standard library"')}${op(",")}`,
     `${ind(1)}${b2("}")}${op(",")}`,
     ``,
     `${b1("]")}${op(";")}`,
@@ -564,7 +516,7 @@ export function renderEducation() {
     `${ind(1)}${prop("period")}${op(":")} ${type("string")}${op(";")}`,
     `${ind(1)}${prop("grade")}${op("?:")} ${type("string")}${op(";")}`,
     `${ind(1)}${prop("honours")}${op("?:")} ${type("string")}${op(";")}`,
-    `${ind(1)}${prop("scholarship")}${op("?:")} ${type("string")}${op(";")}`,
+    `${ind(1)}${prop("thesis")}${op("?:")} ${type("string")}${op(";")}`,
     `${ind(1)}${prop("activities")}${op("?:")} ${type("string")}${op("[]")}${op(
       ";"
     )}`,
@@ -578,49 +530,63 @@ export function renderEducation() {
     )}${op("[]")} ${op("=")} ${b1("[")}`,
     ``,
     `${ind(1)}${cm(
-      "// ─── Durham University ──────────────────────────────────"
+      "// ─── University of Warwick ───────────────────────────────"
     )}`,
     `${ind(1)}${b2("{")}`,
     `${ind(2)}${prop("institution")}${op(":")} ${str(
-      '"Durham University"'
+      '"University of Warwick"'
     )}${op(",")}`,
-    `${ind(2)}${prop("degree")}${op(":")} ${str('"MEng Computer Science"')}${op(
+    `${ind(2)}${prop("degree")}${op(":")} ${str('"MMath — Mathematics with Study in Europe"')}${op(
       ","
     )}`,
     `${ind(2)}${prop("period")}${op(":")} ${str(
-      '"September 2020 — June 2024"'
+      '"September 2020 — June 2025"'
     )}${op(",")}`,
-    `${ind(2)}${prop("grade")}${op(":")} ${str('"1st Class Honours"')}${op(
+    `${ind(2)}${prop("grade")}${op(":")} ${str('"First Class Honours (Overall: 83, Y3: 87.9)"')}${op(
       ","
     )}`,
-    `${ind(2)}${prop("scholarship")}${op(":")} ${str(
-      '"Durham Inspired Scholarship Recipient"'
+    `${ind(2)}${prop("thesis")}${op(":")} ${str(
+      '"70-page thesis on Hamiltonian Cycles in Cayley Graphs"'
     )}${op(",")}`,
     `${ind(2)}${prop("activities")}${op(":")} ${b3("[")}`,
-    `${ind(3)}${str('"DU Computing Society"')}${op(",")}`,
-    `${ind(3)}${str('"Durhack (Hackathon)"')}${op(",")}`,
-    `${ind(3)}${str('"Grey College Boat Club"')}${op(",")}`,
-    `${ind(3)}${str('"DU Brazilian Jiu Jitsu"')}${op(",")}`,
-    `${ind(3)}${str('"DU Lifting Club"')}${op(",")}`,
+    `${ind(3)}${str('"Erasmus year at LMU München"')}${op(",")}`,
+    `${ind(3)}${str('"Warwick Warriors Dodgeball (competitive league)"')}${op(",")}`,
+    `${ind(3)}${str('"Sub-two-hour half-marathon for Autism Awareness"')}${op(",")}`,
     `${ind(2)}${b3("]")}${op(",")}`,
     `${ind(1)}${b2("}")}${op(",")}`,
     ``,
     `${ind(1)}${cm(
-      "// ─── A-Levels ───────────────────────────────────────────"
+      "// ─── Imperial College / HyperionDev ────────────────────"
     )}`,
     `${ind(1)}${b2("{")}`,
     `${ind(2)}${prop("institution")}${op(":")} ${str(
-      '"New College Doncaster"'
+      '"Imperial College London + HyperionDev"'
     )}${op(",")}`,
-    `${ind(2)}${prop("degree")}${op(":")} ${str('"A-Levels"')}${op(",")}`,
+    `${ind(2)}${prop("degree")}${op(":")} ${str('"Software Engineering Bootcamp"')}${op(
+      ","
+    )}`,
     `${ind(2)}${prop("period")}${op(":")} ${str(
-      '"September 2018 — June 2020"'
+      '"November 2022 — March 2023"'
+    )}${op(",")}`,
+    `${ind(2)}${prop("grade")}${op(":")} ${str('"Highest mark in cohort of several hundred: 99.6/100"')}${op(
+      ","
+    )}`,
+    `${ind(1)}${b2("}")}${op(",")}`,
+    ``,
+    `${ind(1)}${cm(
+      "// ─── A-Levels & GCSEs ────────────────────────────────────"
+    )}`,
+    `${ind(1)}${b2("{")}`,
+    `${ind(2)}${prop("institution")}${op(":")} ${str(
+      '"Langley Park School for Boys"'
+    )}${op(",")}`,
+    `${ind(2)}${prop("degree")}${op(":")} ${str('"A-Levels & GCSEs"')}${op(",")}`,
+    `${ind(2)}${prop("period")}${op(":")} ${str(
+      '"September 2013 — June 2020"'
     )}${op(",")}`,
     `${ind(2)}${prop("subjects")}${op(":")} ${b3("{")}`,
-    `${ind(3)}${str('"Mathematics"')}${op(":")} ${str('"A*"')}${op(",")}`,
-    `${ind(3)}${str('"Computer Science"')}${op(":")} ${str('"A*"')}${op(",")}`,
-    `${ind(3)}${str('"Physics"')}${op(":")} ${str('"A"')}${op(",")}`,
-    `${ind(3)}${str('"AS Chemistry"')}${op(":")} ${str('"B"')}${op(",")}`,
+    `${ind(3)}${str('"A-Levels"')}${op(":")} ${str('"A*A*A"')}${op(",")}`,
+    `${ind(3)}${str('"GCSEs"')}${op(":")} ${str('"11 A*s/9s"')}${op(",")}`,
     `${ind(2)}${b3("}")}${op(",")}`,
     `${ind(1)}${b2("}")}${op(",")}`,
     ``,
@@ -635,7 +601,7 @@ export function renderEducation() {
 export function renderPackageJson() {
   return [
     `${b1("{")}`,
-    `${ind(1)}${str('"name"')}${op(":")} ${str('"corey-birnie-portfolio"')}${op(
+    `${ind(1)}${str('"name"')}${op(":")} ${str('"tom-corley-portfolio"')}${op(
       ","
     )}`,
     `${ind(1)}${str('"version"')}${op(":")} ${str('"1.0.0"')}${op(",")}`,
@@ -745,10 +711,10 @@ export function renderLayout() {
       "Metadata"
     )} ${op("=")} ${b1("{")}`,
     `${ind(1)}${prop("title")}${op(":")} ${str(
-      "'Corey Birnie — Portfolio'"
+      "'Tom Corley — Portfolio'"
     )}${op(",")}`,
     `${ind(1)}${prop("description")}${op(":")} ${str(
-      "'Advanced Software Engineer | London'"
+      "'Software Engineer | London'"
     )}${op(",")}`,
     `${b1("}")}${op(";")}`,
     ``,
@@ -823,7 +789,7 @@ export function renderFooterComponent() {
     `${ind(2)}${tag("&lt;p&gt;")}`,
     `${ind(3)}© ${b2("{")}${kw("new")} ${type("Date")}${b3("(")}${b3(")")}${op(
       "."
-    )}${fn("getFullYear")}${b3("(")}${b3(")")}${b2("}")} Corey Birnie`,
+    )}${fn("getFullYear")}${b3("(")}${b3(")")}${b2("}")} Tom Corley`,
     `${ind(2)}${tag("&lt;/p&gt;")}`,
     `${ind(1)}${tag("&lt;/footer&gt;")}`,
     `${b1(")")}${op(";")}`,
@@ -874,29 +840,35 @@ export function renderProfileComponent() {
 export function renderResumeJson() {
   return [
     `${b1("{")}`,
-    `${ind(1)}${str('"name"')}${op(":")} ${str('"Corey Birnie"')}${op(",")}`,
+    `${ind(1)}${str('"name"')}${op(":")} ${str('"Tom Corley"')}${op(",")}`,
     `${ind(1)}${str('"title"')}${op(":")} ${str(
-      '"Advanced Software Engineer"'
+      '"Software Engineer"'
     )}${op(",")}`,
     `${ind(1)}${str('"location"')}${op(":")} ${str('"London, UK"')}${op(",")}`,
-    `${ind(1)}${str('"email"')}${op(":")} ${str('"coreybirnie@gmail.com"')}${op(
+    `${ind(1)}${str('"email"')}${op(":")} ${str('"tomcorley86@gmail.com"')}${op(
       ","
     )}`,
     `${ind(1)}${str('"linkedin"')}${op(":")} ${str(
-      '"linkedin.com/in/coreybirnie"'
+      '"linkedin.com/in/tom-corley"'
     )}${op(",")}`,
-    `${ind(1)}${str('"github"')}${op(":")} ${str('"github.com/EvanGit09"')}${op(
+    `${ind(1)}${str('"github"')}${op(":")} ${str('"github.com/tom-corley"')}${op(
       ","
     )}`,
     `${ind(1)}${str('"summary"')}${op(":")} ${str(
-      '"Advanced Software Engineer specializing in"'
+      '"Software Engineer specializing in full-stack"'
     )}${op(",")}`,
     `${ind(1)}${cm(
-      "// full-stack TypeScript/React development, AI-first product"
+      "// TypeScript/React, AWS infrastructure, graph databases,"
     )}`,
-    `${ind(1)}${cm("// architecture, and leading engineering teams.")}`,
-    `${ind(1)}${str('"yearsOfExperience"')}${op(":")} ${num("5")}${op(",")}`,
-    `${ind(1)}${str('"currentCompany"')}${op(":")} ${str('"Worldover"')}`,
+    `${ind(1)}${cm("// and C#/.NET backend development.")}`,
+    `${ind(1)}${str('"yearsOfExperience"')}${op(":")} ${num("1")}${op(",")}`,
+    `${ind(1)}${str('"currentCompany"')}${op(":")} ${str('"Worldover"')}${op(",")}`,
+    `${ind(1)}${str('"certifications"')}${op(":")} ${b2("[")}`,
+    `${ind(2)}${str('"AWS Developer Associate"')}${op(",")}`,
+    `${ind(2)}${str('"AWS AI Practitioner"')}${op(",")}`,
+    `${ind(2)}${str('"AWS Cloud Practitioner"')}${op(",")}`,
+    `${ind(2)}${str('"PCAP (Python)"')}`,
+    `${ind(1)}${b2("]")}`,
     `${b1("}")}`,
   ];
 }
@@ -907,30 +879,41 @@ export function renderSkillsJson() {
     `${ind(1)}${str('"languages"')}${op(":")} ${b2("[")}`,
     `${ind(2)}${str('"TypeScript/JavaScript"')}${op(",")} ${str(
       '"Python"'
-    )}${op(",")} ${str('"Gremlin"')}${op(",")}`,
-    `${ind(2)}${str('"SQL"')}${op(",")} ${str('"Java"')}${op(",")} ${str(
-      '"C++"'
-    )}${op(",")} ${str('"Motoko"')}${op(",")} ${str('"Haskell"')}`,
+    )}${op(",")} ${str('"C#/.NET"')}${op(",")}`,
+    `${ind(2)}${str('"SQL"')}${op(",")} ${str('"Gremlin"')}${op(",")} ${str(
+      '"C"'
+    )}`,
     `${ind(1)}${b2("]")}${op(",")}`,
     `${ind(1)}${str('"technologies"')}${op(":")} ${b2("[")}`,
-    `${ind(2)}${str('"React"')}${op(",")} ${str('"Next.js"')}${op(",")} ${str(
-      '"tRPC"'
-    )}${op(",")} ${str('"Zod"')}${op(",")}`,
-    `${ind(2)}${str('"Tailwind CSS"')}${op(",")} ${str('"React Query"')}${op(
+    `${ind(2)}${str('"React"')}${op(",")} ${str('"tRPC"')}${op(",")} ${str(
+      '"Zod"'
+    )}${op(",")} ${str('"Node.js"')}${op(",")}`,
+    `${ind(2)}${str('"Express"')}${op(",")} ${str('"ASP.NET"')}${op(
       ","
-    )} ${str('"Git"')}${op(",")}`,
-    `${ind(2)}${str('"Linux"')}${op(",")} ${str('"Machine Learning"')}${op(
-      ","
-    )} ${str('"PyTorch"')}${op(",")}`,
-    `${ind(2)}${str('"ThreeJS"')}${op(",")} ${str('"MCP"')}`,
+    )} ${str('"EF Core"')}${op(",")}`,
+    `${ind(2)}${str('"Docker"')}${op(",")} ${str('"GitHub Actions"')}${op(",")} ${str('"Git"')}`,
     `${ind(1)}${b2("]")}${op(",")}`,
     `${ind(1)}${str('"aws"')}${op(":")} ${b2("[")}`,
-    `${ind(2)}${str('"Neptune"')}${op(",")} ${str('"Amplify"')}${op(",")} ${str(
+    `${ind(2)}${str('"Neptune"')}${op(",")} ${str('"Lambda"')}${op(",")} ${str(
       '"S3"'
     )}${op(",")}`,
-    `${ind(2)}${str('"EC2"')}${op(",")} ${str('"OpenSearch"')}${op(",")} ${str(
-      '"Lambda"'
+    `${ind(2)}${str('"CloudWatch"')}${op(",")} ${str('"SES"')}${op(",")} ${str(
+      '"EventBridge"'
+    )}${op(",")}`,
+    `${ind(2)}${str('"AppConfig"')}${op(",")} ${str('"Amplify"')}${op(",")} ${str(
+      '"OpenSearch"'
     )}`,
+    `${ind(1)}${b2("]")}${op(",")}`,
+    `${ind(1)}${str('"testing"')}${op(":")} ${b2("[")}`,
+    `${ind(2)}${str('"Jest"')}${op(",")} ${str('"Cypress"')}${op(",")} ${str(
+      '"Playwright"'
+    )}${op(",")} ${str('"NUnit"')}`,
+    `${ind(1)}${b2("]")}${op(",")}`,
+    `${ind(1)}${str('"databases"')}${op(":")} ${b2("[")}`,
+    `${ind(2)}${str('"Neptune (Graph)"')}${op(",")} ${str('"PostgreSQL"')}${op(",")} ${str(
+      '"PostGIS"'
+    )}${op(",")}`,
+    `${ind(2)}${str('"OpenSearch"')}${op(",")} ${str('"SQLite3"')}`,
     `${ind(1)}${b2("]")}`,
     `${b1("}")}`,
   ];
@@ -938,9 +921,9 @@ export function renderSkillsJson() {
 
 export function renderReadme() {
   return [
-    `${cm("# Corey Birnie — Portfolio")}`,
+    `${cm("# Tom Corley — Portfolio")}`,
     ``,
-    `${cm("> Advanced Software Engineer | London, UK")}`,
+    `${cm("> Software Engineer | London, UK")}`,
     ``,
     `${cm("## About")}`,
     ``,
@@ -965,9 +948,9 @@ export function renderReadme() {
     ``,
     `${cm("## Contact")}`,
     ``,
-    `${cm("- Email: coreybirnie@gmail.com")}`,
-    `${cm("- LinkedIn: linkedin.com/in/coreybirnie")}`,
-    `${cm("- GitHub: github.com/EvanGit09")}`,
+    `${cm("- Email: tomcorley86@gmail.com")}`,
+    `${cm("- LinkedIn: linkedin.com/in/tom-corley")}`,
+    `${cm("- GitHub: github.com/tom-corley")}`,
   ];
 }
 
@@ -979,7 +962,7 @@ const RENDERERS = {
   about: renderAbout,
   experience: renderExperience,
   projects: renderProjects,
-  blogs: renderBlogs,
+  certifications: renderCertifications,
   education: renderEducation,
   layout: renderLayout,
   "header-component": renderHeaderComponent,

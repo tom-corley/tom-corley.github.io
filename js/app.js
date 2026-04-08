@@ -2,11 +2,11 @@
 // app.js — Entry point, wires everything together
 // ============================================================
 
-import { FILE_TREE, FILE_PATHS } from "./data.js";
-import { renderPage, getMinimapColors } from "./renderer.js";
-import { initTabs, openTab } from "./tabs.js";
+import { FILE_PATHS, FILE_TREE } from "./data.js";
 import { initExplorer, setActiveFile } from "./explorer.js";
+import { getMinimapColors, renderPage } from "./renderer.js";
 import { initStatusBar, updateStatusBar } from "./statusbar.js";
+import { initTabs, openTab } from "./tabs.js";
 
 // ── Editor rendering ──────────────────────────────────────────
 
@@ -30,8 +30,8 @@ function renderEditor(pageId, filename, fileType) {
 
     if (isAboutPage) {
       contentHTML += `<div class="profile-image-container">
-        <img class="profile-image profile-image--linkedin" src="assets/linkedin-profile-pic.jpeg"
-             alt="Corey Birnie"
+        <img class="profile-image profile-image--linkedin" src="assets/linkedin-profile-pic.jpg"
+             alt="Tom Corley"
              onerror="this.style.display='none'">
       </div>`;
     }
@@ -39,8 +39,7 @@ function renderEditor(pageId, filename, fileType) {
     contentHTML += lines
       .map(
         (line, i) =>
-          `<div class="code-line ${i === 0 ? "current-line" : ""}">${
-            line || " "
+          `<div class="code-line ${i === 0 ? "current-line" : ""}">${line || " "
           }<span class="${i === 0 ? "cursor-blink" : ""}"></span></div>`
       )
       .join("");
@@ -61,8 +60,7 @@ function renderEditor(pageId, filename, fileType) {
       minimap.innerHTML = colors
         .map(
           (color) =>
-            `<div class="minimap__line" style="background: ${color}; width: ${
-              20 + Math.random() * 25
+            `<div class="minimap__line" style="background: ${color}; width: ${20 + Math.random() * 25
             }px;"></div>`
         )
         .join("");
@@ -156,7 +154,7 @@ function consoleEasterEgg() {
     "color: #8be9fd; font-size: 12px;"
   );
   console.log(
-    "%c Check out the source: github.com/EvanGit09",
+    "%c Check out the source: github.com/tom-corley",
     "color: #bd93f9; font-size: 12px;"
   );
   console.log(
