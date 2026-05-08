@@ -21,8 +21,8 @@ const THEMES = {
 };
 
 const VIEW_MODES = {
-  ide: "IDE",
-  serious: "Serious",
+  ide: "IDE View",
+  serious: "Serious View",
 };
 
 const PAGE_FILES = {
@@ -163,7 +163,8 @@ function applyTheme(themeId) {
 
   const statusTheme = document.getElementById("status-theme");
   if (statusTheme) {
-    statusTheme.textContent = `Theme: ${theme.label}`;
+    statusTheme.textContent = `\u{1F3A8} ${theme.label}`;
+    statusTheme.title = "Change color theme";
   }
 
   document.querySelectorAll(".theme-switcher__option").forEach((button) => {
@@ -227,7 +228,11 @@ function applyViewMode(mode) {
 
   const statusViewMode = document.getElementById("status-view-mode");
   if (statusViewMode) {
-    statusViewMode.textContent = `Mode: ${VIEW_MODES[nextMode]}`;
+    const icon = nextMode === "ide" ? "✨ " : "\u{1F4C4} ";
+    statusViewMode.textContent = `${icon}${VIEW_MODES[nextMode]}`;
+    statusViewMode.title = nextMode === "ide"
+      ? "Switch to a clean, traditional portfolio layout"
+      : "Switch to the IDE-style code view";
   }
 
   window.localStorage.setItem("tc-portfolio-view-mode", nextMode);
@@ -237,6 +242,16 @@ function initViewModeToggle() {
   const statusViewMode = document.getElementById("status-view-mode");
   const savedMode = window.localStorage.getItem("tc-portfolio-view-mode") || "ide";
   applyViewMode(savedMode);
+
+  if (!window.localStorage.getItem("tc-portfolio-seen-mode")) {
+    setTimeout(() => {
+      statusViewMode?.classList.add("pulse");
+      statusViewMode?.addEventListener("animationend", () => {
+        statusViewMode.classList.remove("pulse");
+      }, { once: true });
+    }, 1500);
+    window.localStorage.setItem("tc-portfolio-seen-mode", "1");
+  }
 
   statusViewMode?.addEventListener("click", () => {
     const currentMode = document.documentElement.dataset.viewMode === "serious" ? "serious" : "ide";

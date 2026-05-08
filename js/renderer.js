@@ -61,7 +61,7 @@ export function renderAbout() {
     `${ind(2)}${prop("Technologies")}${op(":")} ${b2("[")}`,
     `${ind(3)}${str('"React"')}${op(",")} ${str('"tRPC"')}${op(",")} ${str('"Zod"')}${op(",")} ${str('"Node.js"')}${op(",")}`,
     `${ind(3)}${str('"Express"')}${op(",")} ${str('"Spring Boot"')}${op(",")} ${str('"ASP.NET"')}${op(",")} ${str('"EF Core"')}${op(",")}`,
-    `${ind(3)}${str('"Docker"')}${op(",")} ${str('"GitHub Actions"')}${op(",")} ${str('"Flutter"')}${op(",")} ${str('"Git"')}`,
+    `${ind(3)}${str('"Docker"')}${op(",")} ${str('"GitHub Actions"')}${op(",")} ${str('"Git"')}`,
     `${ind(2)}${b2("]")}${op(",")}`,
     `${ind(2)}${prop("AWS")}${op(":")} ${b2("[")}`,
     `${ind(3)}${str('"Neptune"')}${op(",")} ${str('"Lambda"')}${op(",")} ${str('"S3"')}${op(",")}`,
@@ -119,7 +119,8 @@ export function renderExperience() {
     `${ind(2)}${str('"highlights"')}${op(":")} ${b3("[")}`,
     `${ind(3)}${str('"Shipped 110+ pull requests across feature delivery, bug fixing, and technical improvements."')}${op(",")}`,
     `${ind(3)}${str('"Delivered a new version history system and a substantial overhaul of the documents platform."')}${op(",")}`,
-    `${ind(3)}${str('"Worked across React, tRPC, Zod, Gremlin/Neptune, AWS, and automated testing."')}`,
+    `${ind(3)}${str('"Worked across React, tRPC, Zod, Gremlin/Neptune, AWS, and automated testing."')}${op(",")}`,
+    `${ind(3)}${str('"Strengthened AWS infrastructure and observability with Lambda, CloudWatch, and other services."')}`,
     `${ind(2)}${b3("]")}`,
     `${ind(1)}${b2("}")}${op(",")}`,
     `${ind(1)}${b2("{")}`,
@@ -367,9 +368,10 @@ const SERIOUS_CONTENT = {
         title: "Software Engineer",
         meta: "Worldover · London · 2025 — 2026",
         bullets: [
-          "I shipped 110+ pull requests across feature delivery, bug fixing, and technical improvements.",
-          "I delivered a new version history system and a substantial overhaul of the documents platform, spanning both UI work and underlying data-model changes.",
-          "I worked across React, tRPC, Zod, Gremlin/Neptune, AWS, and automated testing with Jest, Cypress, and Playwright."
+          "I shipped 110+ pull requests across feature delivery, bug fixing, and technical improvements, owning work end-to-end through implementation, testing, and deployment.",
+          "I delivered a new version history system and a substantial overhaul of the documents platform, spanning a revamped file-explorer UI and underlying data-model changes.",
+          "I worked across React, tRPC, Zod, Gremlin/Neptune, AWS, and automated testing with Jest, Cypress, and Playwright.",
+          "I strengthened AWS infrastructure and observability with Lambda, CloudWatch, and other services, and developed internal AI tooling including agent skills and prompt templates."
         ]
       },
       {

@@ -92,7 +92,7 @@ export const CHAT_MESSAGES = [
   },
   {
     role: 'ai',
-    text: `I’m a software engineer based in London, currently working at Listing Monster AI. I graduated from the University of Warwick with a First Class MMath, including an Erasmus year at LMU München.\n\nMy experience spans full-stack TypeScript, AWS infrastructure, and data-heavy systems, with additional project work across Java, Python, C#, and C++.`,
+    text: `I’m a software engineer based in London, currently working at Listing Monster AI. I graduated from the University of Warwick with a First Class MMath, including an Erasmus year at LMU München.\n\nMy experience spans full-stack TypeScript, AWS infrastructure, and data-heavy systems, with additional project work across Java, Python, C#, and C++.\n\nI also hold three AWS certifications (Developer Associate, AI Practitioner, Cloud Practitioner) and PCAP.`,
   },
   {
     role: 'user',
@@ -101,7 +101,7 @@ export const CHAT_MESSAGES = [
   {
     role: 'ai',
     text: 'My core stack includes:',
-    codeBlock: `Languages:    TypeScript, Python, Java, C#/.NET, C++, SQL\nBackend:      Node.js, Express, Spring Boot, ASP.NET, REST APIs\nFrontend:     React, tRPC, Zod, vanilla JS, CSS\nCloud/Data:   AWS, Neptune, S3, Lambda, OpenSearch, PostgreSQL\nTesting:      Jest, Cypress, Playwright, NUnit, Vitest`,
+    codeBlock: `Languages:    TypeScript, Python, Java, C#/.NET, C++, SQL\nFrontend:     TypeScript, React, HTML/CSS\nBackend:      Node.js, Express, tRPC, C#/.NET, ASP.NET, EF Core\nCloud/DevOps: AWS, Docker, GitHub Actions\nData:         Python, SQL, Gremlin/Neptune, OpenSearch, PostgreSQL\nTesting:      Jest, Cypress, Playwright, NUnit`,
   },
   {
     role: 'user',

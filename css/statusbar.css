@@ -40,6 +40,43 @@
   font: inherit;
 }
 
+#status-view-mode {
+  background: var(--purple);
+  color: #fff;
+  border-radius: 3px;
+  padding: 1px 8px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+#status-view-mode:hover {
+  background: var(--pink);
+  transform: scale(1.04);
+}
+
+#status-theme {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+  padding: 1px 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+#status-theme:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+@keyframes pulse-once {
+  0%, 100% { box-shadow: none; }
+  50% { box-shadow: 0 0 0 3px rgba(189, 147, 249, 0.5); }
+}
+
+#status-view-mode.pulse {
+  animation: pulse-once 1.2s ease 2;
+}
+
 .statusbar__item svg {
   width: 14px;
   height: 14px;
