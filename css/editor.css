@@ -178,3 +178,82 @@
 .editor__content.fading {
   opacity: 0;
 }
+
+/* Serious mode */
+.vscode-shell.serious-mode .tab-bar {
+  background: transparent;
+  border-bottom: 1px solid var(--border);
+  padding: 0 12px;
+}
+
+.vscode-shell.serious-mode .editor__content {
+  padding: 40px 32px 56px;
+  font-family: var(--font-ui);
+}
+
+.serious-page {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.serious-page__header {
+  margin-bottom: 24px;
+}
+
+.serious-page__title {
+  font-size: 38px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.serious-page__subtitle,
+.serious-entry__meta {
+  color: var(--comment);
+  font-size: 15px;
+}
+
+.serious-page__body {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--fg);
+  margin-bottom: 18px;
+}
+
+.serious-section,
+.serious-entry {
+  margin-top: 32px;
+}
+
+.serious-section__title,
+.serious-entry__title {
+  font-size: 22px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.serious-list {
+  margin-left: 20px;
+  display: grid;
+  gap: 10px;
+  color: var(--fg);
+  line-height: 1.65;
+}
+
+.serious-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.serious-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--bg-lighter);
+  color: var(--fg);
+  font-size: 13px;
+}

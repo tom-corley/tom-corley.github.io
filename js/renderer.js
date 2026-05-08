@@ -69,12 +69,12 @@ export function renderAbout() {
     `${ind(1)}${kw("const")} ${prop("location")} ${op("=")} ${str('"London, UK"')}${op(";")}`,
     ``,
     `${ind(1)}${kw("const")} ${prop("bio")} ${op("=")} ${str(BT)}`,
-    `${ind(2)}${str("I'm a Software Engineer in London, now at Listing Monster AI,")}`,
-    `${ind(2)}${str("with prior commercial depth in full-stack TypeScript, AWS,")}`,
-    `${ind(2)}${str("and graph/data-heavy systems. I hold a First Class MMath")}`,
-    `${ind(2)}${str("from the University of Warwick with an Erasmus year at")}`,
-    `${ind(2)}${str("LMU München. Publicly, I'm broadening the story with")}`,
-    `${ind(2)}${str("Java, Python, C#, and C++ projects alongside the day job.")}`,
+    `${ind(2)}${str("I'm a Software Engineer based in London, currently at")}`,
+    `${ind(2)}${str("Listing Monster AI. I hold a First Class MMath from the")}`,
+    `${ind(2)}${str("University of Warwick, including an Erasmus year at")}`,
+    `${ind(2)}${str("LMU München. My experience spans full-stack TypeScript,")}`,
+    `${ind(2)}${str("AWS infrastructure, and data-heavy systems, alongside")}`,
+    `${ind(2)}${str("project work across Java, Python, C#, and C++.")}`,
     `${ind(1)}${str(BT)}${op(";")}`,
     ``,
     `${ind(1)}${kw("const")} ${prop("skills")}${op(":")} ${type("Record")}${op(
@@ -219,7 +219,7 @@ export function renderProjects() {
     ``,
     `${kw("public class")} ${type("Projects")}${op(" {")}`,
     `${ind(1)}${kw("private static final")} ${type("String[]")} ${prop("HIGHLIGHTS")} ${op("=")} ${b1("{")}`,
-    `${ind(2)}${str('"Mandible — Hive engine plus app track; strongest signal is board-state modelling and move validation"')}${op(",")}`,
+    `${ind(2)}${str('"Mandible — Hive engine and companion app focused on game-state modelling and move validation"')}${op(",")}`,
     `${ind(2)}${str('"Balatro Sandbox — frontend-heavy TypeScript/React simulator with shareable hands and tests"')}${op(",")}`,
     `${ind(2)}${str('"Galactic Dynamics Parallelisation — 100x+ speedup using OpenMP + MPI on research clusters"')}${op(",")}`,
     `${ind(2)}${str('"Frogify — AWS serverless Spotify analytics app with Python Lambdas"')}`,
@@ -624,6 +624,183 @@ export function renderReadme() {
     `${cm("- LinkedIn: linkedin.com/in/tom-corley")}`,
     `${cm("- GitHub: github.com/tom-corley")}`,
   ];
+}
+
+const SERIOUS_CONTENT = {
+  about: {
+    title: "Tom Corley",
+    subtitle: "Software Engineer · London, UK",
+    intro: [
+      "Tom Corley is a software engineer based in London, currently working at Listing Monster AI.",
+      "He graduated from the University of Warwick with a First Class MMath, including an Erasmus year at LMU München.",
+      "His experience spans full-stack TypeScript, AWS infrastructure, and data-heavy systems, with additional project work across Java, Python, C#, and C++."
+    ],
+    sections: [
+      {
+        heading: "Core strengths",
+        bullets: [
+          "Full-stack product engineering with a strong backend bias",
+          "AWS infrastructure, observability, and data-heavy application work",
+          "Clean API and domain modelling across TypeScript, Java, Python, and C#"
+        ]
+      },
+      {
+        heading: "Selected technologies",
+        chips: ["TypeScript", "Python", "Java", "C#/.NET", "C++", "React", "Node.js", "Spring Boot", "AWS", "PostgreSQL"]
+      }
+    ]
+  },
+  experience: {
+    title: "Experience",
+    entries: [
+      {
+        title: "Software Engineer",
+        meta: "Listing Monster AI · 2026 — present",
+        bullets: [
+          "Building commercial software in a fast-moving startup environment.",
+          "Using the role as the primary professional track while continuing to deepen breadth through side projects."
+        ]
+      },
+      {
+        title: "Software Engineer",
+        meta: "Worldover · 2025 — 2026",
+        bullets: [
+          "Shipped 110+ pull requests across feature delivery, bug fixing, and technical improvements.",
+          "Delivered version-history and documents-platform work across full-stack TypeScript, AWS, and graph/data-heavy systems.",
+          "Contributed across implementation, testing, reviews, and technical planning."
+        ]
+      },
+      {
+        title: "Software Engineering Trainee",
+        meta: "La Fosse · 2025",
+        bullets: [
+          "Achieved the programme-record score of 199/200.",
+          "Built a layered C#/.NET API backed by PostgreSQL/PostGIS with authentication and automated tests."
+        ]
+      }
+    ]
+  },
+  projects: {
+    title: "Projects",
+    entries: [
+      {
+        title: "Mandible",
+        meta: "Hive engine and companion app",
+        bullets: [
+          "A side project centred on modelling Hive game state, validating legal moves, and turning complex rules into a well-structured application.",
+          "Supported by a companion mobile app, with the core engineering emphasis on the engine itself."
+        ]
+      },
+      {
+        title: "Galactic Dynamics Parallelisation",
+        meta: "C / OpenMP / MPI",
+        bullets: [
+          "Achieved a 100x+ speedup over serial code using hybrid OpenMP and MPI parallelisation.",
+          "Built around large-scale simulation work on research-grade compute infrastructure."
+        ]
+      },
+      {
+        title: "Balatro Sandbox",
+        meta: "TypeScript / React",
+        bullets: [
+          "Built a frontend-heavy sandbox for simulating Balatro hand scoring, with sharable hands and automated tests."
+        ]
+      }
+    ]
+  },
+  certifications: {
+    title: "Certifications",
+    entries: [
+      { title: "AWS Certified Developer — Associate", meta: "Amazon Web Services" },
+      { title: "AWS Certified AI Practitioner", meta: "Amazon Web Services" },
+      { title: "AWS Certified Cloud Practitioner", meta: "Amazon Web Services" },
+      { title: "PCAP — Python Certified Associate Programmer", meta: "Python Institute" }
+    ]
+  },
+  education: {
+    title: "Education",
+    entries: [
+      {
+        title: "MMath, Mathematics with Study in Europe",
+        meta: "University of Warwick · First Class Honours",
+        bullets: [
+          "Included an Erasmus year at LMU München.",
+          "Completed a 70-page thesis on Hamiltonian Cycles in Cayley Graphs."
+        ]
+      },
+      {
+        title: "Software Engineering Bootcamp",
+        meta: "Imperial College London + HyperionDev",
+        bullets: [
+          "Graduated with the highest mark in the cohort: 99.6/100."
+        ]
+      }
+    ]
+  }
+};
+
+export function renderSeriousPage(pageId) {
+  const content = SERIOUS_CONTENT[pageId];
+  if (!content) {
+    return `
+      <article class="serious-page">
+        <h1 class="serious-page__title">${esc(pageId)}</h1>
+        <p class="serious-page__body">This section is best viewed in IDE mode.</p>
+      </article>
+    `;
+  }
+
+  const intro = (content.intro || [])
+    .map((paragraph) => `<p class="serious-page__body">${esc(paragraph)}</p>`)
+    .join("");
+
+  const sections = (content.sections || [])
+    .map((section) => {
+      const bullets = (section.bullets || [])
+        .map((bullet) => `<li>${esc(bullet)}</li>`)
+        .join("");
+      const chips = (section.chips || [])
+        .map((chip) => `<span class="serious-chip">${esc(chip)}</span>`)
+        .join("");
+
+      return `
+        <section class="serious-section">
+          <h2 class="serious-section__title">${esc(section.heading)}</h2>
+          ${bullets ? `<ul class="serious-list">${bullets}</ul>` : ""}
+          ${chips ? `<div class="serious-chip-list">${chips}</div>` : ""}
+        </section>
+      `;
+    })
+    .join("");
+
+  const entries = (content.entries || [])
+    .map((entry) => {
+      const bullets = (entry.bullets || [])
+        .map((bullet) => `<li>${esc(bullet)}</li>`)
+        .join("");
+      return `
+        <section class="serious-entry">
+          <div class="serious-entry__header">
+            <h2 class="serious-entry__title">${esc(entry.title)}</h2>
+            ${entry.meta ? `<div class="serious-entry__meta">${esc(entry.meta)}</div>` : ""}
+          </div>
+          ${bullets ? `<ul class="serious-list">${bullets}</ul>` : ""}
+        </section>
+      `;
+    })
+    .join("");
+
+  return `
+    <article class="serious-page">
+      <header class="serious-page__header">
+        <h1 class="serious-page__title">${esc(content.title)}</h1>
+        ${content.subtitle ? `<p class="serious-page__subtitle">${esc(content.subtitle)}</p>` : ""}
+      </header>
+      ${intro}
+      ${sections}
+      ${entries}
+    </article>
+  `;
 }
 
 // ============================================================

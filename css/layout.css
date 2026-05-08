@@ -86,3 +86,27 @@ html, body {
 .chat-panel {
   transition: opacity 0.15s ease;
 }
+
+/* Serious mode */
+.vscode-shell.serious-mode {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "titlebar"
+    "editor"
+    "statusbar";
+}
+
+.vscode-shell.serious-mode .activity-bar,
+.vscode-shell.serious-mode .sidebar,
+.vscode-shell.serious-mode .chat-panel,
+.vscode-shell.serious-mode .breadcrumb,
+.vscode-shell.serious-mode .editor__gutter,
+.vscode-shell.serious-mode .editor__minimap {
+  display: none;
+}
+
+.vscode-shell.serious-mode .editor-area {
+  max-width: 920px;
+  width: 100%;
+  margin: 0 auto;
+}

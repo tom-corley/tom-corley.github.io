@@ -3,16 +3,21 @@
 // ============================================================
 
 import { FILE_PATHS, FILE_TREE } from "./data.js";
+import { initExplorer, setActiveFile } from "./explorer.js";
+import { getMinimapColors, renderPage, renderSeriousPage } from "./renderer.js";
+import { initStatusBar, updateStatusBar } from "./statusbar.js";
+import { initTabs, openTab } from "./tabs.js";
 
 const THEMES = {
   dracula: { label: "Dracula", color: "#282a36" },
   nord: { label: "Nord", color: "#2e3440" },
   "github-dark": { label: "GitHub Dark", color: "#0d1117" },
 };
-import { initExplorer, setActiveFile } from "./explorer.js";
-import { getMinimapColors, renderPage } from "./renderer.js";
-import { initStatusBar, updateStatusBar } from "./statusbar.js";
-import { initTabs, openTab } from "./tabs.js";
+
+const VIEW_MODES = {
+  ide: "IDE",
+  serious: "Serious",
+};
 
 // ── Editor rendering ──────────────────────────────────────────
 
@@ -23,66 +28,57 @@ function renderEditor(pageId, filename, fileType) {
 
   if (!content || !gutter) return;
 
-  // Get rendered lines
+  const isSeriousMode = document.documentElement.dataset.viewMode === "serious";
   const lines = renderPage(pageId);
 
-  // Fade transition
   content.classList.add("fading");
 
   setTimeout(() => {
-    // Render content lines
-    const isAboutPage = pageId === "about";
-    let contentHTML = "";
+    if (isSeriousMode) {
+      content.innerHTML = renderSeriousPage(pageId);
+      gutter.innerHTML = "";
+      if (minimap) minimap.innerHTML = "";
+    } else {
+      const isAboutPage = pageId === "about";
+      let contentHTML = "";
 
-    if (isAboutPage) {
-      contentHTML += `<div class="profile-image-container">
-        <img class="profile-image profile-image--linkedin" src="assets/linkedin-profile-pic.jpg"
-             alt="Tom Corley"
-             onerror="this.style.display='none'">
-      </div>`;
-    }
+      if (isAboutPage) {
+        contentHTML += `<div class="profile-image-container">
+          <img class="profile-image profile-image--linkedin" src="assets/linkedin-profile-pic.jpg"
+               alt="Tom Corley"
+               onerror="this.style.display='none'">
+        </div>`;
+      }
 
-    contentHTML += lines
-      .map(
-        (line, i) =>
-          `<div class="code-line ${i === 0 ? "current-line" : ""}">${line || " "
-          }<span class="${i === 0 ? "cursor-blink" : ""}"></span></div>`
-      )
-      .join("");
-
-    content.innerHTML = contentHTML;
-
-    // Render gutter
-    gutter.innerHTML = lines
-      .map(
-        (_, i) =>
-          `<div class="line-number ${i === 0 ? "active" : ""}">${i + 1}</div>`
-      )
-      .join("");
-
-    // Render minimap
-    if (minimap) {
-      const colors = getMinimapColors(lines);
-      minimap.innerHTML = colors
+      contentHTML += lines
         .map(
-          (color) =>
-            `<div class="minimap__line" style="background: ${color}; width: ${20 + Math.random() * 25
-            }px;"></div>`
+          (line, i) =>
+            `<div class="code-line ${i === 0 ? "current-line" : ""}">${line || " "}<span class="${i === 0 ? "cursor-blink" : ""}"></span></div>`
         )
         .join("");
+
+      content.innerHTML = contentHTML;
+
+      gutter.innerHTML = lines
+        .map(
+          (_, i) => `<div class="line-number ${i === 0 ? "active" : ""}">${i + 1}</div>`
+        )
+        .join("");
+
+      if (minimap) {
+        const colors = getMinimapColors(lines);
+        minimap.innerHTML = colors
+          .map(
+            (color) => `<div class="minimap__line" style="background: ${color}; width: ${20 + Math.random() * 25}px;"></div>`
+          )
+          .join("");
+      }
     }
 
-    // Update status bar
     const breadcrumbPath = FILE_PATHS[pageId] || filename;
-    updateStatusBar(filename, fileType, lines.length, breadcrumbPath);
-
-    // Update active file in explorer
+    updateStatusBar(filename, fileType, isSeriousMode ? 1 : lines.length, breadcrumbPath);
     setActiveFile(pageId);
-
-    // Scroll to top
     content.scrollTop = 0;
-
-    // Remove fade
     content.classList.remove("fading");
   }, 80);
 }
@@ -104,7 +100,7 @@ function handleFileClick(pageId, filename, fileType) {
 function toggleSidebar() {
   const shell = document.querySelector(".vscode-shell");
   const explorerBtn = document.querySelector('[data-panel="explorer"]');
-  shell.classList.toggle("sidebar-collapsed");
+  shell?.classList.toggle("sidebar-collapsed");
   explorerBtn?.classList.toggle("active");
 }
 
@@ -112,14 +108,13 @@ function toggleSidebar() {
 
 function toggleChat() {
   const shell = document.querySelector(".vscode-shell");
-  shell.classList.toggle("chat-collapsed");
+  shell?.classList.toggle("chat-collapsed");
 }
 
 // ── Keyboard shortcuts ────────────────────────────────────────
 
 function initKeyboard() {
   document.addEventListener("keydown", (e) => {
-    // Ctrl+B / Cmd+B — toggle sidebar
     if ((e.ctrlKey || e.metaKey) && e.key === "b") {
       e.preventDefault();
       toggleSidebar();
@@ -202,8 +197,7 @@ function initThemeSwitcher() {
   switcher?.querySelectorAll(".theme-switcher__option").forEach((button) => {
     button.addEventListener("click", (e) => {
       e.stopPropagation();
-      const nextTheme = button.dataset.theme || "dracula";
-      applyTheme(nextTheme);
+      applyTheme(button.dataset.theme || "dracula");
       toggleThemeSwitcher(false);
     });
   });
@@ -214,6 +208,34 @@ function initThemeSwitcher() {
       return;
     }
     toggleThemeSwitcher(false);
+  });
+}
+
+function applyViewMode(mode) {
+  const nextMode = mode === "serious" ? "serious" : "ide";
+  document.documentElement.dataset.viewMode = nextMode;
+  document.querySelector(".vscode-shell")?.classList.toggle("serious-mode", nextMode === "serious");
+
+  const statusViewMode = document.getElementById("status-view-mode");
+  if (statusViewMode) {
+    statusViewMode.textContent = `Mode: ${VIEW_MODES[nextMode]}`;
+  }
+
+  window.localStorage.setItem("tc-portfolio-view-mode", nextMode);
+}
+
+function initViewModeToggle() {
+  const statusViewMode = document.getElementById("status-view-mode");
+  const savedMode = window.localStorage.getItem("tc-portfolio-view-mode") || "ide";
+  applyViewMode(savedMode);
+
+  statusViewMode?.addEventListener("click", () => {
+    const currentMode = document.documentElement.dataset.viewMode === "serious" ? "serious" : "ide";
+    const nextMode = currentMode === "ide" ? "serious" : "ide";
+    applyViewMode(nextMode);
+
+    const activeTab = document.querySelector(".tab.active");
+    activeTab?.dispatchEvent(new Event("click"));
   });
 }
 
@@ -242,33 +264,17 @@ function consoleEasterEgg() {
 
 function init() {
   consoleEasterEgg();
-
-  // Init status bar refs
   initStatusBar();
-
-  // Init tab system
   initTabs(handleTabChange);
-
-  // Init file explorer
   initExplorer(FILE_TREE, handleFileClick);
-
-  // Init activity bar
   initActivityBar();
-
-  // Init chat panel
   initChatPanel();
-
-  // Init keyboard shortcuts
   initKeyboard();
-
-  // Init theme switcher
   initThemeSwitcher();
-
-  // Open default file
+  initViewModeToggle();
   openTab("about", "about.tsx", "tsx");
 }
 
-// Wait for DOM
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", init);
 } else {

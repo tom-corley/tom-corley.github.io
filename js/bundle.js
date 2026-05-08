@@ -94,7 +94,7 @@
     },
     {
       role: 'ai',
-      text: `Tom is a Software Engineer in London, now at Listing Monster AI. He holds a First Class MMath from the University of Warwick, with an Erasmus year at LMU München.\n\nHis commercial background is strongest in full-stack TypeScript, AWS, and graph/data-heavy systems, and he is intentionally broadening the public story with Java, Python, C#, and C++ portfolio work.`,
+      text: `Tom is a software engineer based in London, currently working at Listing Monster AI. He holds a First Class MMath from the University of Warwick, including an Erasmus year at LMU München.\n\nHis experience spans full-stack TypeScript, AWS infrastructure, and data-heavy systems, with additional project work across Java, Python, C#, and C++.`,
     },
     {
       role: 'user',
@@ -102,16 +102,16 @@
     },
     {
       role: 'ai',
-      text: 'His core stack:',
+      text: 'His core stack includes:',
       codeBlock: `Languages:    TypeScript, Python, Java, C#/.NET, C++, SQL\nBackend:      Node.js, Express, Spring Boot, ASP.NET, REST APIs\nFrontend:     React, tRPC, Zod, vanilla JS, CSS\nCloud/Data:   AWS, Neptune, S3, Lambda, OpenSearch, PostgreSQL\nTesting:      Jest, Cypress, Playwright, NUnit, Vitest`,
     },
     {
       role: 'user',
-      text: "What's he building now?",
+      text: 'What is he building now?',
     },
     {
       role: 'ai',
-      text: `Right now the most interesting public thread is Mandible — a Hive engine plus companion app track. The backend work is where the strongest signal is: board-state modelling, move validation, and turning tricky game rules into clean application boundaries.`,
+      text: `One of his current side projects is Mandible, a Hive engine and companion app. The project focuses on modelling game state cleanly, validating legal moves, and turning complex rules into a well-structured application.`,
     },
   ];
   // explorer.js
@@ -375,12 +375,12 @@
       `${ind(1)}${kw("const")} ${prop("location")} ${op("=")} ${str('"London, UK"')}${op(";")}`,
       ``,
       `${ind(1)}${kw("const")} ${prop("bio")} ${op("=")} ${str(BT)}`,
-      `${ind(2)}${str("I'm a Software Engineer in London, now at Listing Monster AI,")}`,
-      `${ind(2)}${str("with prior commercial depth in full-stack TypeScript, AWS,")}`,
-      `${ind(2)}${str("and graph/data-heavy systems. I hold a First Class MMath")}`,
-      `${ind(2)}${str("from the University of Warwick with an Erasmus year at")}`,
-      `${ind(2)}${str("LMU München. Publicly, I'm broadening the story with")}`,
-      `${ind(2)}${str("Java, Python, C#, and C++ projects alongside the day job.")}`,
+      `${ind(2)}${str("I'm a Software Engineer based in London, currently at")}`,
+      `${ind(2)}${str("Listing Monster AI. I hold a First Class MMath from the")}`,
+      `${ind(2)}${str("University of Warwick, including an Erasmus year at")}`,
+      `${ind(2)}${str("LMU München. My experience spans full-stack TypeScript,")}`,
+      `${ind(2)}${str("AWS infrastructure, and data-heavy systems, alongside")}`,
+      `${ind(2)}${str("project work across Java, Python, C#, and C++.")}`,
       `${ind(1)}${str(BT)}${op(";")}`,
       ``,
       `${ind(1)}${kw("const")} ${prop("skills")}${op(":")} ${type("Record")}${op(
@@ -525,7 +525,7 @@
       ``,
       `${kw("public class")} ${type("Projects")}${op(" {")}`,
       `${ind(1)}${kw("private static final")} ${type("String[]")} ${prop("HIGHLIGHTS")} ${op("=")} ${b1("{")}`,
-      `${ind(2)}${str('"Mandible — Hive engine plus app track; strongest signal is board-state modelling and move validation"')}${op(",")}`,
+      `${ind(2)}${str('"Mandible — Hive engine and companion app focused on game-state modelling and move validation"')}${op(",")}`,
       `${ind(2)}${str('"Balatro Sandbox — frontend-heavy TypeScript/React simulator with shareable hands and tests"')}${op(",")}`,
       `${ind(2)}${str('"Galactic Dynamics Parallelisation — 100x+ speedup using OpenMP + MPI on research clusters"')}${op(",")}`,
       `${ind(2)}${str('"Frogify — AWS serverless Spotify analytics app with Python Lambdas"')}`,
@@ -932,6 +932,183 @@
     ];
   }
 
+  const SERIOUS_CONTENT = {
+    about: {
+      title: "Tom Corley",
+      subtitle: "Software Engineer · London, UK",
+      intro: [
+        "Tom Corley is a software engineer based in London, currently working at Listing Monster AI.",
+        "He graduated from the University of Warwick with a First Class MMath, including an Erasmus year at LMU München.",
+        "His experience spans full-stack TypeScript, AWS infrastructure, and data-heavy systems, with additional project work across Java, Python, C#, and C++."
+      ],
+      sections: [
+        {
+          heading: "Core strengths",
+          bullets: [
+            "Full-stack product engineering with a strong backend bias",
+            "AWS infrastructure, observability, and data-heavy application work",
+            "Clean API and domain modelling across TypeScript, Java, Python, and C#"
+          ]
+        },
+        {
+          heading: "Selected technologies",
+          chips: ["TypeScript", "Python", "Java", "C#/.NET", "C++", "React", "Node.js", "Spring Boot", "AWS", "PostgreSQL"]
+        }
+      ]
+    },
+    experience: {
+      title: "Experience",
+      entries: [
+        {
+          title: "Software Engineer",
+          meta: "Listing Monster AI · 2026 — present",
+          bullets: [
+            "Building commercial software in a fast-moving startup environment.",
+            "Using the role as the primary professional track while continuing to deepen breadth through side projects."
+          ]
+        },
+        {
+          title: "Software Engineer",
+          meta: "Worldover · 2025 — 2026",
+          bullets: [
+            "Shipped 110+ pull requests across feature delivery, bug fixing, and technical improvements.",
+            "Delivered version-history and documents-platform work across full-stack TypeScript, AWS, and graph/data-heavy systems.",
+            "Contributed across implementation, testing, reviews, and technical planning."
+          ]
+        },
+        {
+          title: "Software Engineering Trainee",
+          meta: "La Fosse · 2025",
+          bullets: [
+            "Achieved the programme-record score of 199/200.",
+            "Built a layered C#/.NET API backed by PostgreSQL/PostGIS with authentication and automated tests."
+          ]
+        }
+      ]
+    },
+    projects: {
+      title: "Projects",
+      entries: [
+        {
+          title: "Mandible",
+          meta: "Hive engine and companion app",
+          bullets: [
+            "A side project centred on modelling Hive game state, validating legal moves, and turning complex rules into a well-structured application.",
+            "Supported by a companion mobile app, with the core engineering emphasis on the engine itself."
+          ]
+        },
+        {
+          title: "Galactic Dynamics Parallelisation",
+          meta: "C / OpenMP / MPI",
+          bullets: [
+            "Achieved a 100x+ speedup over serial code using hybrid OpenMP and MPI parallelisation.",
+            "Built around large-scale simulation work on research-grade compute infrastructure."
+          ]
+        },
+        {
+          title: "Balatro Sandbox",
+          meta: "TypeScript / React",
+          bullets: [
+            "Built a frontend-heavy sandbox for simulating Balatro hand scoring, with sharable hands and automated tests."
+          ]
+        }
+      ]
+    },
+    certifications: {
+      title: "Certifications",
+      entries: [
+        { title: "AWS Certified Developer — Associate", meta: "Amazon Web Services" },
+        { title: "AWS Certified AI Practitioner", meta: "Amazon Web Services" },
+        { title: "AWS Certified Cloud Practitioner", meta: "Amazon Web Services" },
+        { title: "PCAP — Python Certified Associate Programmer", meta: "Python Institute" }
+      ]
+    },
+    education: {
+      title: "Education",
+      entries: [
+        {
+          title: "MMath, Mathematics with Study in Europe",
+          meta: "University of Warwick · First Class Honours",
+          bullets: [
+            "Included an Erasmus year at LMU München.",
+            "Completed a 70-page thesis on Hamiltonian Cycles in Cayley Graphs."
+          ]
+        },
+        {
+          title: "Software Engineering Bootcamp",
+          meta: "Imperial College London + HyperionDev",
+          bullets: [
+            "Graduated with the highest mark in the cohort: 99.6/100."
+          ]
+        }
+      ]
+    }
+  };
+
+  function renderSeriousPage(pageId) {
+    const content = SERIOUS_CONTENT[pageId];
+    if (!content) {
+      return `
+        <article class="serious-page">
+          <h1 class="serious-page__title">${esc(pageId)}</h1>
+          <p class="serious-page__body">This section is best viewed in IDE mode.</p>
+        </article>
+      `;
+    }
+
+    const intro = (content.intro || [])
+      .map((paragraph) => `<p class="serious-page__body">${esc(paragraph)}</p>`)
+      .join("");
+
+    const sections = (content.sections || [])
+      .map((section) => {
+        const bullets = (section.bullets || [])
+          .map((bullet) => `<li>${esc(bullet)}</li>`)
+          .join("");
+        const chips = (section.chips || [])
+          .map((chip) => `<span class="serious-chip">${esc(chip)}</span>`)
+          .join("");
+
+        return `
+          <section class="serious-section">
+            <h2 class="serious-section__title">${esc(section.heading)}</h2>
+            ${bullets ? `<ul class="serious-list">${bullets}</ul>` : ""}
+            ${chips ? `<div class="serious-chip-list">${chips}</div>` : ""}
+          </section>
+        `;
+      })
+      .join("");
+
+    const entries = (content.entries || [])
+      .map((entry) => {
+        const bullets = (entry.bullets || [])
+          .map((bullet) => `<li>${esc(bullet)}</li>`)
+          .join("");
+        return `
+          <section class="serious-entry">
+            <div class="serious-entry__header">
+              <h2 class="serious-entry__title">${esc(entry.title)}</h2>
+              ${entry.meta ? `<div class="serious-entry__meta">${esc(entry.meta)}</div>` : ""}
+            </div>
+            ${bullets ? `<ul class="serious-list">${bullets}</ul>` : ""}
+          </section>
+        `;
+      })
+      .join("");
+
+    return `
+      <article class="serious-page">
+        <header class="serious-page__header">
+          <h1 class="serious-page__title">${esc(content.title)}</h1>
+          ${content.subtitle ? `<p class="serious-page__subtitle">${esc(content.subtitle)}</p>` : ""}
+        </header>
+        ${intro}
+        ${sections}
+        ${entries}
+      </article>
+    `;
+  }
+
   // ============================================================
   // Master render dispatch
   // ============================================================
@@ -1181,6 +1358,11 @@
     "github-dark": { label: "GitHub Dark", color: "#0d1117" },
   };
 
+  const VIEW_MODES = {
+    ide: "IDE",
+    serious: "Serious",
+  };
+
   // ── Editor rendering ──────────────────────────────────────────
 
   function renderEditor(pageId, filename, fileType) {
@@ -1190,66 +1372,57 @@
 
     if (!content || !gutter) return;
 
-    // Get rendered lines
+    const isSeriousMode = document.documentElement.dataset.viewMode === "serious";
     const lines = renderPage(pageId);
 
-    // Fade transition
     content.classList.add("fading");
 
     setTimeout(() => {
-      // Render content lines
-      const isAboutPage = pageId === "about";
-      let contentHTML = "";
+      if (isSeriousMode) {
+        content.innerHTML = renderSeriousPage(pageId);
+        gutter.innerHTML = "";
+        if (minimap) minimap.innerHTML = "";
+      } else {
+        const isAboutPage = pageId === "about";
+        let contentHTML = "";
 
-      if (isAboutPage) {
-        contentHTML += `<div class="profile-image-container">
-          <img class="profile-image profile-image--linkedin" src="assets/linkedin-profile-pic.jpg"
-               alt="Tom Corley"
-               onerror="this.style.display='none'">
-        </div>`;
-      }
+        if (isAboutPage) {
+          contentHTML += `<div class="profile-image-container">
+            <img class="profile-image profile-image--linkedin" src="assets/linkedin-profile-pic.jpg"
+                 alt="Tom Corley"
+                 onerror="this.style.display='none'">
+          </div>`;
+        }
 
-      contentHTML += lines
-        .map(
-          (line, i) =>
-            `<div class="code-line ${i === 0 ? "current-line" : ""}">${line || " "
-            }<span class="${i === 0 ? "cursor-blink" : ""}"></span></div>`
-        )
-        .join("");
-
-      content.innerHTML = contentHTML;
-
-      // Render gutter
-      gutter.innerHTML = lines
-        .map(
-          (_, i) =>
-            `<div class="line-number ${i === 0 ? "active" : ""}">${i + 1}</div>`
-        )
-        .join("");
-
-      // Render minimap
-      if (minimap) {
-        const colors = getMinimapColors(lines);
-        minimap.innerHTML = colors
+        contentHTML += lines
           .map(
-            (color) =>
-              `<div class="minimap__line" style="background: ${color}; width: ${20 + Math.random() * 25
-              }px;"></div>`
+            (line, i) =>
+              `<div class="code-line ${i === 0 ? "current-line" : ""}">${line || " "}<span class="${i === 0 ? "cursor-blink" : ""}"></span></div>`
           )
           .join("");
+
+        content.innerHTML = contentHTML;
+
+        gutter.innerHTML = lines
+          .map(
+            (_, i) => `<div class="line-number ${i === 0 ? "active" : ""}">${i + 1}</div>`
+          )
+          .join("");
+
+        if (minimap) {
+          const colors = getMinimapColors(lines);
+          minimap.innerHTML = colors
+            .map(
+              (color) => `<div class="minimap__line" style="background: ${color}; width: ${20 + Math.random() * 25}px;"></div>`
+            )
+            .join("");
+        }
       }
 
-      // Update status bar
       const breadcrumbPath = FILE_PATHS[pageId] || filename;
-      updateStatusBar(filename, fileType, lines.length, breadcrumbPath);
-
-      // Update active file in explorer
+      updateStatusBar(filename, fileType, isSeriousMode ? 1 : lines.length, breadcrumbPath);
       setActiveFile(pageId);
-
-      // Scroll to top
       content.scrollTop = 0;
-
-      // Remove fade
       content.classList.remove("fading");
     }, 80);
   }
@@ -1271,7 +1444,7 @@
   function toggleSidebar() {
     const shell = document.querySelector(".vscode-shell");
     const explorerBtn = document.querySelector('[data-panel="explorer"]');
-    shell.classList.toggle("sidebar-collapsed");
+    shell?.classList.toggle("sidebar-collapsed");
     explorerBtn?.classList.toggle("active");
   }
 
@@ -1279,14 +1452,13 @@
 
   function toggleChat() {
     const shell = document.querySelector(".vscode-shell");
-    shell.classList.toggle("chat-collapsed");
+    shell?.classList.toggle("chat-collapsed");
   }
 
   // ── Keyboard shortcuts ────────────────────────────────────────
 
   function initKeyboard() {
     document.addEventListener("keydown", (e) => {
-      // Ctrl+B / Cmd+B — toggle sidebar
       if ((e.ctrlKey || e.metaKey) && e.key === "b") {
         e.preventDefault();
         toggleSidebar();
@@ -1369,8 +1541,7 @@
     switcher?.querySelectorAll(".theme-switcher__option").forEach((button) => {
       button.addEventListener("click", (e) => {
         e.stopPropagation();
-        const nextTheme = button.dataset.theme || "dracula";
-        applyTheme(nextTheme);
+        applyTheme(button.dataset.theme || "dracula");
         toggleThemeSwitcher(false);
       });
     });
@@ -1381,6 +1552,34 @@
         return;
       }
       toggleThemeSwitcher(false);
+    });
+  }
+
+  function applyViewMode(mode) {
+    const nextMode = mode === "serious" ? "serious" : "ide";
+    document.documentElement.dataset.viewMode = nextMode;
+    document.querySelector(".vscode-shell")?.classList.toggle("serious-mode", nextMode === "serious");
+
+    const statusViewMode = document.getElementById("status-view-mode");
+    if (statusViewMode) {
+      statusViewMode.textContent = `Mode: ${VIEW_MODES[nextMode]}`;
+    }
+
+    window.localStorage.setItem("tc-portfolio-view-mode", nextMode);
+  }
+
+  function initViewModeToggle() {
+    const statusViewMode = document.getElementById("status-view-mode");
+    const savedMode = window.localStorage.getItem("tc-portfolio-view-mode") || "ide";
+    applyViewMode(savedMode);
+
+    statusViewMode?.addEventListener("click", () => {
+      const currentMode = document.documentElement.dataset.viewMode === "serious" ? "serious" : "ide";
+      const nextMode = currentMode === "ide" ? "serious" : "ide";
+      applyViewMode(nextMode);
+
+      const activeTab = document.querySelector(".tab.active");
+      activeTab?.dispatchEvent(new Event("click"));
     });
   }
 
@@ -1409,33 +1608,17 @@
 
   function init() {
     consoleEasterEgg();
-
-    // Init status bar refs
     initStatusBar();
-
-    // Init tab system
     initTabs(handleTabChange);
-
-    // Init file explorer
     initExplorer(FILE_TREE, handleFileClick);
-
-    // Init activity bar
     initActivityBar();
-
-    // Init chat panel
     initChatPanel();
-
-    // Init keyboard shortcuts
     initKeyboard();
-
-    // Init theme switcher
     initThemeSwitcher();
-
-    // Open default file
+    initViewModeToggle();
     openTab("about", "about.tsx", "tsx");
   }
 
-  // Wait for DOM
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {
