@@ -131,6 +131,22 @@
   color: #3178c6;
 }
 
+.file-tree__icon--py {
+  color: #3572A5;
+}
+
+.file-tree__icon--java {
+  color: #b07219;
+}
+
+.file-tree__icon--cs {
+  color: #178600;
+}
+
+.file-tree__icon--cpp {
+  color: #f34b7d;
+}
+
 .file-tree__icon--json {
   color: var(--yellow);
 }

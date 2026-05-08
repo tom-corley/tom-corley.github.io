@@ -1,5 +1,7 @@
-/* Dracula Theme Tokens */
+/* Theme Tokens */
 :root {
+  color-scheme: dark;
+
   /* Dracula palette */
   --bg:           #282a36;
   --bg-darker:    #21222c;
@@ -62,4 +64,86 @@
   --chat-panel-width:    320px;
   --minimap-width:       50px;
   --gutter-width:        60px;
+}
+
+:root[data-theme="nord"] {
+  --bg:           #2e3440;
+  --bg-darker:    #242933;
+  --bg-lighter:   #3b4252;
+  --current-line: #434c5e;
+  --selection:    #4c566a;
+  --fg:           #eceff4;
+  --comment:      #81a1c1;
+  --cyan:         #88c0d0;
+  --green:        #a3be8c;
+  --orange:       #d08770;
+  --pink:         #b48ead;
+  --purple:       #b48ead;
+  --red:          #bf616a;
+  --yellow:       #ebcb8b;
+  --titlebar-bg:       #242933;
+  --titlebar-fg:       #d8dee9;
+  --activity-bar-bg:   #3b4252;
+  --sidebar-bg:        #2b303b;
+  --sidebar-fg:        #d8dee9;
+  --sidebar-header-fg: #c7d0dc;
+  --editor-bg:         #2e3440;
+  --tab-active-bg:     #2e3440;
+  --tab-inactive-bg:   #242933;
+  --tab-inactive-fg:   #81a1c1;
+  --tab-border:        #1f2430;
+  --statusbar-bg:      #5e81ac;
+  --statusbar-fg:      #eceff4;
+  --statusbar-hover:   #6a91bf;
+  --border:            #1f2430;
+  --gutter-fg:         #81a1c1;
+  --gutter-active-fg:  #eceff4;
+  --line-highlight:    rgba(67, 76, 94, 0.35);
+  --scrollbar-thumb:   rgba(136, 192, 208, 0.35);
+  --scrollbar-hover:   rgba(136, 192, 208, 0.6);
+  --chat-bg:           #2b303b;
+  --chat-user-bg:      #434c5e;
+  --chat-ai-bg:        #3b4252;
+  --chat-border:       #434c5e;
+}
+
+:root[data-theme="github-dark"] {
+  --bg:           #0d1117;
+  --bg-darker:    #010409;
+  --bg-lighter:   #161b22;
+  --current-line: #1f2630;
+  --selection:    #264f78;
+  --fg:           #c9d1d9;
+  --comment:      #8b949e;
+  --cyan:         #79c0ff;
+  --green:        #7ee787;
+  --orange:       #ffa657;
+  --pink:         #d2a8ff;
+  --purple:       #a5a5ff;
+  --red:          #ff7b72;
+  --yellow:       #e3b341;
+  --titlebar-bg:       #010409;
+  --titlebar-fg:       #8b949e;
+  --activity-bar-bg:   #161b22;
+  --sidebar-bg:        #0d1117;
+  --sidebar-fg:        #c9d1d9;
+  --sidebar-header-fg: #8b949e;
+  --editor-bg:         #0d1117;
+  --tab-active-bg:     #0d1117;
+  --tab-inactive-bg:   #161b22;
+  --tab-inactive-fg:   #8b949e;
+  --tab-border:        #30363d;
+  --statusbar-bg:      #1f6feb;
+  --statusbar-fg:      #f0f6fc;
+  --statusbar-hover:   #388bfd;
+  --border:            #30363d;
+  --gutter-fg:         #6e7681;
+  --gutter-active-fg:  #f0f6fc;
+  --line-highlight:    rgba(31, 38, 48, 0.45);
+  --scrollbar-thumb:   rgba(110, 118, 129, 0.45);
+  --scrollbar-hover:   rgba(110, 118, 129, 0.7);
+  --chat-bg:           #161b22;
+  --chat-user-bg:      #21262d;
+  --chat-ai-bg:        #1b2230;
+  --chat-border:       #30363d;
 }

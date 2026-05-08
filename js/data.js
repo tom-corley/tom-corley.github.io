@@ -17,10 +17,10 @@ export const FILE_TREE = {
         {
           name: 'pages', type: 'folder', open: true, children: [
             { name: 'about.tsx', type: 'file', fileType: 'tsx', page: 'about' },
-            { name: 'work-experience.ts', type: 'file', fileType: 'ts', page: 'experience' },
-            { name: 'projects.ts', type: 'file', fileType: 'ts', page: 'projects' },
-            { name: 'certifications.ts', type: 'file', fileType: 'ts', page: 'certifications' },
-            { name: 'education.ts', type: 'file', fileType: 'ts', page: 'education' },
+            { name: 'experience.py', type: 'file', fileType: 'py', page: 'experience' },
+            { name: 'projects.java', type: 'file', fileType: 'java', page: 'projects' },
+            { name: 'certifications.cs', type: 'file', fileType: 'cs', page: 'certifications' },
+            { name: 'education.cpp', type: 'file', fileType: 'cpp', page: 'education' },
           ]
         },
         {
@@ -53,10 +53,10 @@ export const FILE_TREE = {
 // Path lookup for breadcrumbs
 export const FILE_PATHS = {
   'about': 'src / pages / about.tsx',
-  'experience': 'src / pages / work-experience.ts',
-  'projects': 'src / pages / projects.ts',
-  'certifications': 'src / pages / certifications.ts',
-  'education': 'src / pages / education.ts',
+  'experience': 'src / pages / experience.py',
+  'projects': 'src / pages / projects.java',
+  'certifications': 'src / pages / certifications.cs',
+  'education': 'src / pages / education.cpp',
   'layout': 'src / app / layout.tsx',
   'header-component': 'src / components / Header.tsx',
   'footer-component': 'src / components / Footer.tsx',
@@ -73,6 +73,10 @@ export const FILE_PATHS = {
 export const FILE_LANGUAGES = {
   'tsx': 'TypeScript React',
   'ts': 'TypeScript',
+  'py': 'Python',
+  'java': 'Java',
+  'cs': 'C#',
+  'cpp': 'C++',
   'json': 'JSON',
   'md': 'Markdown',
   'image': 'Image',
@@ -88,7 +92,7 @@ export const CHAT_MESSAGES = [
   },
   {
     role: 'ai',
-    text: `Tom is a Software Engineer at Worldover in London. He holds a First Class MMath from the University of Warwick, with an Erasmus year at LMU München.\n\nHe's shipped 110+ pull requests since joining, owning work end-to-end across full-stack TypeScript, AWS infrastructure, and graph databases. Fun fact: he set the programme-record score of 199/200 at the La Fosse software engineering academy!`,
+    text: `Tom is a Software Engineer in London, now at Listing Monster AI. He holds a First Class MMath from the University of Warwick, with an Erasmus year at LMU München.\n\nHis commercial background is strongest in full-stack TypeScript, AWS, and graph/data-heavy systems, and he is intentionally broadening the public story with Java, Python, C#, and C++ portfolio work.`,
   },
   {
     role: 'user',
@@ -97,14 +101,14 @@ export const CHAT_MESSAGES = [
   {
     role: 'ai',
     text: 'His core stack:',
-    codeBlock: `Languages:    TypeScript, Python, C#/.NET, SQL, Gremlin, C\nTechnologies: React, tRPC, Zod, Node.js, Express, Docker\nAWS:          Neptune, Lambda, S3, CloudWatch, Amplify, SES\nTesting:      Jest, Cypress, Playwright, NUnit`,
+    codeBlock: `Languages:    TypeScript, Python, Java, C#/.NET, C++, SQL\nBackend:      Node.js, Express, Spring Boot, ASP.NET, REST APIs\nFrontend:     React, tRPC, Zod, vanilla JS, CSS\nCloud/Data:   AWS, Neptune, S3, Lambda, OpenSearch, PostgreSQL\nTesting:      Jest, Cypress, Playwright, NUnit, Vitest`,
   },
   {
     role: 'user',
-    text: "What's his most impressive achievement?",
+    text: "What's he building now?",
   },
   {
     role: 'ai',
-    text: `At Worldover, he delivered major product improvements including a new version history system and a substantial overhaul of the documents platform. He also holds four professional certifications — AWS Developer Associate, AWS AI Practitioner, AWS Cloud Practitioner, and PCAP.\n\nHis Master's thesis is equally impressive — a 70-page mathematical research paper on Hamiltonian Cycles in Cayley Graphs.`,
+    text: `Right now the most interesting public thread is Mandible — a Hive engine plus companion app track. The backend work is where the strongest signal is: board-state modelling, move validation, and turning tricky game rules into clean application boundaries.`,
   },
 ];

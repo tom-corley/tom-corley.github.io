@@ -3,6 +3,12 @@
 // ============================================================
 
 import { FILE_PATHS, FILE_TREE } from "./data.js";
+
+const THEMES = {
+  dracula: { label: "Dracula", color: "#282a36" },
+  nord: { label: "Nord", color: "#2e3440" },
+  "github-dark": { label: "GitHub Dark", color: "#0d1117" },
+};
 import { initExplorer, setActiveFile } from "./explorer.js";
 import { getMinimapColors, renderPage } from "./renderer.js";
 import { initStatusBar, updateStatusBar } from "./statusbar.js";
@@ -142,6 +148,75 @@ function initChatPanel() {
   }
 }
 
+function applyTheme(themeId) {
+  const theme = THEMES[themeId] || THEMES.dracula;
+  if (themeId === "dracula") {
+    delete document.documentElement.dataset.theme;
+  } else {
+    document.documentElement.dataset.theme = themeId;
+  }
+
+  const statusTheme = document.getElementById("status-theme");
+  if (statusTheme) {
+    statusTheme.textContent = `Theme: ${theme.label}`;
+  }
+
+  document.querySelectorAll(".theme-switcher__option").forEach((button) => {
+    button.classList.toggle("active", button.dataset.theme === themeId);
+  });
+
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  if (themeMeta) {
+    themeMeta.setAttribute("content", theme.color);
+  }
+
+  window.localStorage.setItem("tc-portfolio-theme", themeId);
+}
+
+function toggleThemeSwitcher(forceOpen = null) {
+  const switcher = document.getElementById("theme-switcher");
+  if (!switcher) return;
+
+  const shouldOpen = forceOpen ?? switcher.hidden;
+  switcher.hidden = !shouldOpen;
+}
+
+function initThemeSwitcher() {
+  const settingsButton = document.getElementById("theme-settings-button");
+  const statusTheme = document.getElementById("status-theme");
+  const switcher = document.getElementById("theme-switcher");
+  const savedTheme = window.localStorage.getItem("tc-portfolio-theme") || "dracula";
+
+  applyTheme(savedTheme);
+
+  settingsButton?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleThemeSwitcher();
+  });
+
+  statusTheme?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleThemeSwitcher();
+  });
+
+  switcher?.querySelectorAll(".theme-switcher__option").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const nextTheme = button.dataset.theme || "dracula";
+      applyTheme(nextTheme);
+      toggleThemeSwitcher(false);
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!switcher || switcher.hidden) return;
+    if (switcher.contains(e.target) || settingsButton?.contains(e.target) || statusTheme?.contains(e.target)) {
+      return;
+    }
+    toggleThemeSwitcher(false);
+  });
+}
+
 // ── Console easter egg ────────────────────────────────────────
 
 function consoleEasterEgg() {
@@ -185,6 +260,9 @@ function init() {
 
   // Init keyboard shortcuts
   initKeyboard();
+
+  // Init theme switcher
+  initThemeSwitcher();
 
   // Open default file
   openTab("about", "about.tsx", "tsx");

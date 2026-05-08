@@ -33,6 +33,13 @@
   background: var(--statusbar-hover);
 }
 
+.statusbar__item--button {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
 .statusbar__item svg {
   width: 14px;
   height: 14px;

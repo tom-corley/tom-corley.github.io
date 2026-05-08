@@ -32,6 +32,34 @@ function getFileIcon(fileType) {
           <text x="8" y="11" font-size="8" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">TS</text>
         </svg>
       </span>`;
+    case 'py':
+      return `<span class="file-tree__icon file-tree__icon--py">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <rect x="1" y="1" width="14" height="14" rx="2" fill="#3572A5"/>
+          <text x="8" y="11" font-size="7" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">PY</text>
+        </svg>
+      </span>`;
+    case 'java':
+      return `<span class="file-tree__icon file-tree__icon--java">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <rect x="1" y="1" width="14" height="14" rx="2" fill="#b07219"/>
+          <text x="8" y="11" font-size="6" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">JV</text>
+        </svg>
+      </span>`;
+    case 'cs':
+      return `<span class="file-tree__icon file-tree__icon--cs">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <rect x="1" y="1" width="14" height="14" rx="2" fill="#178600"/>
+          <text x="8" y="11" font-size="7" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">C#</text>
+        </svg>
+      </span>`;
+    case 'cpp':
+      return `<span class="file-tree__icon file-tree__icon--cpp">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <rect x="1" y="1" width="14" height="14" rx="2" fill="#f34b7d"/>
+          <text x="8" y="11" font-size="6" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">C++</text>
+        </svg>
+      </span>`;
     case 'json':
       return `<span class="file-tree__icon file-tree__icon--json">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

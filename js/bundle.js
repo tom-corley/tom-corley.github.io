@@ -1,216 +1,291 @@
 (() => {
-  // js/data.js
-  var FILE_TREE = {
-    name: "TOM-CORLEY-PORTFOLIO",
-    type: "root",
+  // data.js
+  // ============================================================
+  // data.js — All portfolio content & file tree structure
+  // ============================================================
+
+  const FILE_TREE = {
+    name: 'TOM-CORLEY-PORTFOLIO',
+    type: 'root',
     open: true,
     children: [
       {
-        name: "src",
-        type: "folder",
-        open: true,
-        children: [
+        name: 'src', type: 'folder', open: true, children: [
           {
-            name: "app",
-            type: "folder",
-            open: true,
-            children: [
-              { name: "layout.tsx", type: "file", fileType: "tsx", page: "layout" }
+            name: 'app', type: 'folder', open: true, children: [
+              { name: 'layout.tsx', type: 'file', fileType: 'tsx', page: 'layout' },
             ]
           },
           {
-            name: "pages",
-            type: "folder",
-            open: true,
-            children: [
-              { name: "about.tsx", type: "file", fileType: "tsx", page: "about" },
-              { name: "work-experience.ts", type: "file", fileType: "ts", page: "experience" },
-              { name: "projects.ts", type: "file", fileType: "ts", page: "projects" },
-              { name: "certifications.ts", type: "file", fileType: "ts", page: "certifications" },
-              { name: "education.ts", type: "file", fileType: "ts", page: "education" }
+            name: 'pages', type: 'folder', open: true, children: [
+              { name: 'about.tsx', type: 'file', fileType: 'tsx', page: 'about' },
+              { name: 'experience.py', type: 'file', fileType: 'py', page: 'experience' },
+              { name: 'projects.java', type: 'file', fileType: 'java', page: 'projects' },
+              { name: 'certifications.cs', type: 'file', fileType: 'cs', page: 'certifications' },
+              { name: 'education.cpp', type: 'file', fileType: 'cpp', page: 'education' },
             ]
           },
           {
-            name: "components",
-            type: "folder",
-            open: false,
-            children: [
-              { name: "Header.tsx", type: "file", fileType: "tsx", page: "header-component" },
-              { name: "Footer.tsx", type: "file", fileType: "tsx", page: "footer-component" },
-              { name: "ProfileImage.tsx", type: "file", fileType: "tsx", page: "profile-component" }
+            name: 'components', type: 'folder', open: false, children: [
+              { name: 'Header.tsx', type: 'file', fileType: 'tsx', page: 'header-component' },
+              { name: 'Footer.tsx', type: 'file', fileType: 'tsx', page: 'footer-component' },
+              { name: 'ProfileImage.tsx', type: 'file', fileType: 'tsx', page: 'profile-component' },
             ]
           },
           {
-            name: "data",
-            type: "folder",
-            open: false,
-            children: [
-              { name: "resume.json", type: "file", fileType: "json", page: "resume-json" },
-              { name: "skills.json", type: "file", fileType: "json", page: "skills-json" }
+            name: 'data', type: 'folder', open: false, children: [
+              { name: 'resume.json', type: 'file', fileType: 'json', page: 'resume-json' },
+              { name: 'skills.json', type: 'file', fileType: 'json', page: 'skills-json' },
             ]
-          }
+          },
         ]
       },
       {
-        name: "public",
-        type: "folder",
-        open: false,
-        children: [
-          { name: "profile.jpg", type: "file", fileType: "image", page: null }
+        name: 'public', type: 'folder', open: false, children: [
+          { name: 'profile.jpg', type: 'file', fileType: 'image', page: null },
         ]
       },
-      { name: "package.json", type: "file", fileType: "json", page: "package-json" },
-      { name: "tsconfig.json", type: "file", fileType: "json", page: "tsconfig-json" },
-      { name: "next.config.ts", type: "file", fileType: "ts", page: "next-config" },
-      { name: "README.md", type: "file", fileType: "md", page: "readme" }
+      { name: 'package.json', type: 'file', fileType: 'json', page: 'package-json' },
+      { name: 'tsconfig.json', type: 'file', fileType: 'json', page: 'tsconfig-json' },
+      { name: 'next.config.ts', type: 'file', fileType: 'ts', page: 'next-config' },
+      { name: 'README.md', type: 'file', fileType: 'md', page: 'readme' },
     ]
   };
-  var FILE_PATHS = {
-    "about": "src / pages / about.tsx",
-    "experience": "src / pages / work-experience.ts",
-    "projects": "src / pages / projects.ts",
-    "certifications": "src / pages / certifications.ts",
-    "education": "src / pages / education.ts",
-    "layout": "src / app / layout.tsx",
-    "header-component": "src / components / Header.tsx",
-    "footer-component": "src / components / Footer.tsx",
-    "profile-component": "src / components / ProfileImage.tsx",
-    "resume-json": "src / data / resume.json",
-    "skills-json": "src / data / skills.json",
-    "package-json": "package.json",
-    "tsconfig-json": "tsconfig.json",
-    "next-config": "next.config.ts",
-    "readme": "README.md"
-  };
-  var FILE_LANGUAGES = {
-    "tsx": "TypeScript React",
-    "ts": "TypeScript",
-    "json": "JSON",
-    "md": "Markdown",
-    "image": "Image"
+
+  // Path lookup for breadcrumbs
+  const FILE_PATHS = {
+    'about': 'src / pages / about.tsx',
+    'experience': 'src / pages / experience.py',
+    'projects': 'src / pages / projects.java',
+    'certifications': 'src / pages / certifications.cs',
+    'education': 'src / pages / education.cpp',
+    'layout': 'src / app / layout.tsx',
+    'header-component': 'src / components / Header.tsx',
+    'footer-component': 'src / components / Footer.tsx',
+    'profile-component': 'src / components / ProfileImage.tsx',
+    'resume-json': 'src / data / resume.json',
+    'skills-json': 'src / data / skills.json',
+    'package-json': 'package.json',
+    'tsconfig-json': 'tsconfig.json',
+    'next-config': 'next.config.ts',
+    'readme': 'README.md',
   };
 
-  // js/explorer.js
-  var onFileClick = null;
-  var activeFileId = null;
+  // Language for status bar
+  const FILE_LANGUAGES = {
+    'tsx': 'TypeScript React',
+    'ts': 'TypeScript',
+    'py': 'Python',
+    'java': 'Java',
+    'cs': 'C#',
+    'cpp': 'C++',
+    'json': 'JSON',
+    'md': 'Markdown',
+    'image': 'Image',
+  };
+
+  // ============================================================
+  // Chat messages
+  // ============================================================
+  const CHAT_MESSAGES = [
+    {
+      role: 'user',
+      text: 'Tell me about Tom Corley',
+    },
+    {
+      role: 'ai',
+      text: `Tom is a Software Engineer in London, now at Listing Monster AI. He holds a First Class MMath from the University of Warwick, with an Erasmus year at LMU München.\n\nHis commercial background is strongest in full-stack TypeScript, AWS, and graph/data-heavy systems, and he is intentionally broadening the public story with Java, Python, C#, and C++ portfolio work.`,
+    },
+    {
+      role: 'user',
+      text: 'What are his key technical skills?',
+    },
+    {
+      role: 'ai',
+      text: 'His core stack:',
+      codeBlock: `Languages:    TypeScript, Python, Java, C#/.NET, C++, SQL\nBackend:      Node.js, Express, Spring Boot, ASP.NET, REST APIs\nFrontend:     React, tRPC, Zod, vanilla JS, CSS\nCloud/Data:   AWS, Neptune, S3, Lambda, OpenSearch, PostgreSQL\nTesting:      Jest, Cypress, Playwright, NUnit, Vitest`,
+    },
+    {
+      role: 'user',
+      text: "What's he building now?",
+    },
+    {
+      role: 'ai',
+      text: `Right now the most interesting public thread is Mandible — a Hive engine plus companion app track. The backend work is where the strongest signal is: board-state modelling, move validation, and turning tricky game rules into clean application boundaries.`,
+    },
+  ];
+  // explorer.js
+  // ============================================================
+  // explorer.js — File tree rendering + expand/collapse
+  // ============================================================
+
+  let onFileClick = null;
+  let activeFileId = null;
+
+  // File type icons (16x16 inline SVGs)
   function getFolderIcon(isOpen) {
     if (isOpen) {
       return `<span class="file-tree__icon file-tree__icon--folder-open">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-        <path d="M1.5 3A1.5 1.5 0 013 1.5h3.1a1.5 1.5 0 011.06.44L8.28 3.06c.14.14.33.22.53.22H13A1.5 1.5 0 0114.5 4.78v.22H2v-.22A1.5 1.5 0 013 3.28h3.28L5.22 2.22A.5.5 0 004.87 2H3a.5.5 0 00-.5.5V3z"/>
-        <path d="M1.5 5h13l-1.5 8.5a1 1 0 01-1 .86H4a1 1 0 01-1-.86L1.5 5z"/>
-      </svg>
-    </span>`;
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M1.5 3A1.5 1.5 0 013 1.5h3.1a1.5 1.5 0 011.06.44L8.28 3.06c.14.14.33.22.53.22H13A1.5 1.5 0 0114.5 4.78v.22H2v-.22A1.5 1.5 0 013 3.28h3.28L5.22 2.22A.5.5 0 004.87 2H3a.5.5 0 00-.5.5V3z"/>
+          <path d="M1.5 5h13l-1.5 8.5a1 1 0 01-1 .86H4a1 1 0 01-1-.86L1.5 5z"/>
+        </svg>
+      </span>`;
     }
     return `<span class="file-tree__icon file-tree__icon--folder">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-      <path d="M1.5 3A1.5 1.5 0 013 1.5h2.87a.5.5 0 01.35.15l1.06 1.06A1.5 1.5 0 008.34 3.15H13A1.5 1.5 0 0114.5 4.65V12.5A1.5 1.5 0 0113 14H3A1.5 1.5 0 011.5 12.5V3z"/>
-    </svg>
-  </span>`;
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M1.5 3A1.5 1.5 0 013 1.5h2.87a.5.5 0 01.35.15l1.06 1.06A1.5 1.5 0 008.34 3.15H13A1.5 1.5 0 0114.5 4.65V12.5A1.5 1.5 0 0113 14H3A1.5 1.5 0 011.5 12.5V3z"/>
+      </svg>
+    </span>`;
   }
+
   function getFileIcon(fileType) {
     switch (fileType) {
-      case "tsx":
-      case "ts":
+      case 'tsx':
+      case 'ts':
         return `<span class="file-tree__icon file-tree__icon--ts">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <rect x="1" y="1" width="14" height="14" rx="2" fill="#3178c6"/>
-          <text x="8" y="11" font-size="8" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">TS</text>
-        </svg>
-      </span>`;
-      case "json":
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="1" width="14" height="14" rx="2" fill="#3178c6"/>
+            <text x="8" y="11" font-size="8" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">TS</text>
+          </svg>
+        </span>`;
+      case 'py':
+        return `<span class="file-tree__icon file-tree__icon--py">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="1" width="14" height="14" rx="2" fill="#3572A5"/>
+            <text x="8" y="11" font-size="7" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">PY</text>
+          </svg>
+        </span>`;
+      case 'java':
+        return `<span class="file-tree__icon file-tree__icon--java">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="1" width="14" height="14" rx="2" fill="#b07219"/>
+            <text x="8" y="11" font-size="6" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">JV</text>
+          </svg>
+        </span>`;
+      case 'cs':
+        return `<span class="file-tree__icon file-tree__icon--cs">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="1" width="14" height="14" rx="2" fill="#178600"/>
+            <text x="8" y="11" font-size="7" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">C#</text>
+          </svg>
+        </span>`;
+      case 'cpp':
+        return `<span class="file-tree__icon file-tree__icon--cpp">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="1" width="14" height="14" rx="2" fill="#f34b7d"/>
+            <text x="8" y="11" font-size="6" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">C++</text>
+          </svg>
+        </span>`;
+      case 'json':
         return `<span class="file-tree__icon file-tree__icon--json">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <text x="8" y="12" font-size="11" fill="#f1fa8c" text-anchor="middle" font-family="monospace">{}</text>
-        </svg>
-      </span>`;
-      case "md":
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <text x="8" y="12" font-size="11" fill="#f1fa8c" text-anchor="middle" font-family="monospace">{}</text>
+          </svg>
+        </span>`;
+      case 'md':
         return `<span class="file-tree__icon file-tree__icon--md">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <rect x="1" y="3" width="14" height="10" rx="1" stroke="#519aba" stroke-width="1.5" fill="none"/>
-          <text x="8" y="11" font-size="7" font-weight="bold" fill="#519aba" text-anchor="middle" font-family="sans-serif">M\u2193</text>
-        </svg>
-      </span>`;
-      case "image":
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="3" width="14" height="10" rx="1" stroke="#519aba" stroke-width="1.5" fill="none"/>
+            <text x="8" y="11" font-size="7" font-weight="bold" fill="#519aba" text-anchor="middle" font-family="sans-serif">M↓</text>
+          </svg>
+        </span>`;
+      case 'image':
         return `<span class="file-tree__icon file-tree__icon--image">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <rect x="1" y="1" width="14" height="14" rx="2" stroke="#bd93f9" stroke-width="1" fill="none"/>
-          <circle cx="5" cy="5" r="1.5" fill="#bd93f9"/>
-          <path d="M1 12l4-4 3 3 2-2 5 5H1z" fill="#bd93f9" opacity="0.6"/>
-        </svg>
-      </span>`;
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="1" width="14" height="14" rx="2" stroke="#bd93f9" stroke-width="1" fill="none"/>
+            <circle cx="5" cy="5" r="1.5" fill="#bd93f9"/>
+            <path d="M1 12l4-4 3 3 2-2 5 5H1z" fill="#bd93f9" opacity="0.6"/>
+          </svg>
+        </span>`;
       default:
         return `<span class="file-tree__icon file-tree__icon--config">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M4 1h6l4 4v10H4V1z" stroke="#6272a4" stroke-width="1" fill="none"/>
-        </svg>
-      </span>`;
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M4 1h6l4 4v10H4V1z" stroke="#6272a4" stroke-width="1" fill="none"/>
+          </svg>
+        </span>`;
     }
   }
+
   function renderIndent(depth) {
     let html = '<span class="file-tree__indent">';
     for (let i = 0; i < depth; i++) {
       html += '<span class="file-tree__indent-guide"></span>';
     }
-    html += "</span>";
+    html += '</span>';
     return html;
   }
+
   function renderNode(node, depth = 0) {
-    if (node.type === "root") {
-      return node.children.map((child) => renderNode(child, depth)).join("");
+    if (node.type === 'root') {
+      return node.children.map(child => renderNode(child, depth)).join('');
     }
-    if (node.type === "folder") {
+
+    if (node.type === 'folder') {
       const isOpen = node.open !== false;
-      const chevronClass = `file-tree__chevron ${isOpen ? "open" : ""}`;
-      const childrenClass = `file-tree__children ${isOpen ? "open" : ""}`;
+      const chevronClass = `file-tree__chevron ${isOpen ? 'open' : ''}`;
+      const childrenClass = `file-tree__children ${isOpen ? 'open' : ''}`;
+
       let html = `
-      <li>
-        <div class="file-tree__item file-tree__item--folder" data-folder="${node.name}">
-          ${renderIndent(depth)}
-          <span class="${chevronClass}">\u203A</span>
-          ${getFolderIcon(isOpen)}
-          <span class="file-tree__name">${node.name}</span>
-        </div>
-        <ul class="${childrenClass}">
-          ${node.children ? node.children.map((c) => renderNode(c, depth + 1)).join("") : ""}
-        </ul>
-      </li>
-    `;
+        <li>
+          <div class="file-tree__item file-tree__item--folder" data-folder="${node.name}">
+            ${renderIndent(depth)}
+            <span class="${chevronClass}">›</span>
+            ${getFolderIcon(isOpen)}
+            <span class="file-tree__name">${node.name}</span>
+          </div>
+          <ul class="${childrenClass}">
+            ${node.children ? node.children.map(c => renderNode(c, depth + 1)).join('') : ''}
+          </ul>
+        </li>
+      `;
       return html;
     }
+
+    // File
     const isActive = node.page === activeFileId;
-    const clickable = node.page ? `data-page="${node.page}" data-filename="${node.name}" data-filetype="${node.fileType}"` : "";
+    const clickable = node.page ? `data-page="${node.page}" data-filename="${node.name}" data-filetype="${node.fileType}"` : '';
+
     return `
-    <li>
-      <div class="file-tree__item ${isActive ? "active" : ""} ${node.page ? "clickable" : ""}" ${clickable}>
-        ${renderIndent(depth)}
-        <span class="file-tree__chevron hidden">\u203A</span>
-        ${getFileIcon(node.fileType)}
-        <span class="file-tree__name">${node.name}</span>
-      </div>
-    </li>
-  `;
+      <li>
+        <div class="file-tree__item ${isActive ? 'active' : ''} ${node.page ? 'clickable' : ''}" ${clickable}>
+          ${renderIndent(depth)}
+          <span class="file-tree__chevron hidden">›</span>
+          ${getFileIcon(node.fileType)}
+          <span class="file-tree__name">${node.name}</span>
+        </div>
+      </li>
+    `;
   }
+
   function initExplorer(treeData, fileClickCallback) {
     onFileClick = fileClickCallback;
-    const container = document.querySelector(".file-tree");
+    const container = document.querySelector('.file-tree');
     if (!container) return;
+
     container.innerHTML = renderNode(treeData);
-    container.querySelectorAll(".file-tree__item--folder").forEach((el) => {
-      el.addEventListener("click", () => {
-        const chevron = el.querySelector(".file-tree__chevron");
+
+    // Folder toggle handlers
+    container.querySelectorAll('.file-tree__item--folder').forEach(el => {
+      el.addEventListener('click', () => {
+        const chevron = el.querySelector('.file-tree__chevron');
         const children = el.nextElementSibling;
-        const folderIcon = el.querySelector(".file-tree__icon");
-        if (chevron) chevron.classList.toggle("open");
-        if (children) children.classList.toggle("open");
+        const folderIcon = el.querySelector('.file-tree__icon');
+
+        if (chevron) chevron.classList.toggle('open');
+        if (children) children.classList.toggle('open');
+
+        // Swap folder icon
         if (folderIcon) {
-          const isNowOpen = chevron?.classList.contains("open");
+          const isNowOpen = chevron?.classList.contains('open');
           folderIcon.outerHTML = getFolderIcon(isNowOpen);
         }
       });
     });
-    container.querySelectorAll(".file-tree__item[data-page]").forEach((el) => {
-      el.addEventListener("click", () => {
+
+    // File click handlers
+    container.querySelectorAll('.file-tree__item[data-page]').forEach(el => {
+      el.addEventListener('click', () => {
         const page = el.dataset.page;
         const filename = el.dataset.filename;
         const filetype = el.dataset.filetype;
@@ -220,33 +295,52 @@
       });
     });
   }
+
   function setActiveFile(pageId) {
     activeFileId = pageId;
-    document.querySelectorAll(".file-tree__item").forEach((el) => {
-      el.classList.toggle("active", el.dataset.page === pageId);
+    // Update active state in tree
+    document.querySelectorAll('.file-tree__item').forEach(el => {
+      el.classList.toggle('active', el.dataset.page === pageId);
     });
   }
+  // renderer.js
+  // ============================================================
+  // renderer.js — Converts content data → syntax-highlighted HTML
+  // ============================================================
 
-  // js/renderer.js
-  var kw = (t) => `<span class="kw">${t}</span>`;
-  var fn = (t) => `<span class="fn">${t}</span>`;
-  var str = (t) => `<span class="str">${t}</span>`;
-  var num = (t) => `<span class="num">${t}</span>`;
-  var type = (t) => `<span class="type">${t}</span>`;
-  var cm = (t) => `<span class="cm">${t}</span>`;
-  var op = (t) => `<span class="op">${t}</span>`;
-  var prop = (t) => `<span class="prop">${t}</span>`;
-  var tag = (t) => `<span class="tag">${t}</span>`;
-  var attr = (t) => `<span class="attr">${t}</span>`;
-  var param = (t) => `<span class="param">${t}</span>`;
-  var b1 = (t) => `<span class="bracket-1">${t}</span>`;
-  var b2 = (t) => `<span class="bracket-2">${t}</span>`;
-  var b3 = (t) => `<span class="bracket-3">${t}</span>`;
-  var BT = "`";
-  var ind = (n) => "  ".repeat(n);
+  // Syntax helpers — wrap text in colored spans
+  const kw = (t) => `<span class="kw">${t}</span>`;
+  const fn = (t) => `<span class="fn">${t}</span>`;
+  const str = (t) => `<span class="str">${t}</span>`;
+  const num = (t) => `<span class="num">${t}</span>`;
+  const type = (t) => `<span class="type">${t}</span>`;
+  const cm = (t) => `<span class="cm">${t}</span>`;
+  const op = (t) => `<span class="op">${t}</span>`;
+  const prop = (t) => `<span class="prop">${t}</span>`;
+  const tag = (t) => `<span class="tag">${t}</span>`;
+  const attr = (t) => `<span class="attr">${t}</span>`;
+  const param = (t) => `<span class="param">${t}</span>`;
+  const b1 = (t) => `<span class="bracket-1">${t}</span>`;
+  const b2 = (t) => `<span class="bracket-2">${t}</span>`;
+  const b3 = (t) => `<span class="bracket-3">${t}</span>`;
+
+  // Backtick constant — can't use literal backtick inside template literals
+  const BT = "\u0060";
+
+  // Indent helper
+  const ind = (n) => "  ".repeat(n);
+
+  // Escape HTML
+  const esc = (t) =>
+    t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+  // ============================================================
+  // Page renderers — each returns an array of HTML line strings
+  // ============================================================
+
   function renderAbout() {
     return [
-      `${cm("// about.tsx \u2014 Tom Corley's Portfolio")}`,
+      `${cm("// about.tsx — Tom Corley's Portfolio")}`,
       `${cm("// Software Engineer | London, UK")}`,
       ``,
       `${kw("import")} ${type("React")} ${kw("from")} ${str("'react'")}${op(
@@ -277,30 +371,16 @@
       `${ind(1)}${kw("const")} ${prop("name")} ${op("=")} ${str(
         '"Tom Corley"'
       )}${op(";")}`,
-      `${ind(1)}${kw("const")} ${prop("title")} ${op("=")} ${str(
-        '"Software Engineer"'
-      )}${op(";")}`,
-      `${ind(1)}${kw("const")} ${prop("location")} ${op("=")} ${str(
-        '"London, UK"'
-      )}${op(";")}`,
+      `${ind(1)}${kw("const")} ${prop("title")} ${op("=")} ${str('"Software Engineer"')}${op(";")}`,
+      `${ind(1)}${kw("const")} ${prop("location")} ${op("=")} ${str('"London, UK"')}${op(";")}`,
       ``,
       `${ind(1)}${kw("const")} ${prop("bio")} ${op("=")} ${str(BT)}`,
-      `${ind(2)}${str(
-        "I'm a Software Engineer at Worldover, where I've shipped 110+"
-      )}`,
-      `${ind(2)}${str(
-        "pull requests across feature delivery, bug fixing, and technical"
-      )}`,
-      `${ind(2)}${str(
-        "improvements. I hold a First Class MMath from the University of"
-      )}`,
-      `${ind(2)}${str(
-        "Warwick with an Erasmus year at LMU M\xFCnchen. My experience spans"
-      )}`,
-      `${ind(2)}${str(
-        "full-stack TypeScript/React, AWS infrastructure, graph databases,"
-      )}`,
-      `${ind(2)}${str("and C#/.NET backend development.")}`,
+      `${ind(2)}${str("I'm a Software Engineer in London, now at Listing Monster AI,")}`,
+      `${ind(2)}${str("with prior commercial depth in full-stack TypeScript, AWS,")}`,
+      `${ind(2)}${str("and graph/data-heavy systems. I hold a First Class MMath")}`,
+      `${ind(2)}${str("from the University of Warwick with an Erasmus year at")}`,
+      `${ind(2)}${str("LMU München. Publicly, I'm broadening the story with")}`,
+      `${ind(2)}${str("Java, Python, C#, and C++ projects alongside the day job.")}`,
       `${ind(1)}${str(BT)}${op(";")}`,
       ``,
       `${ind(1)}${kw("const")} ${prop("skills")}${op(":")} ${type("Record")}${op(
@@ -309,21 +389,13 @@
         "="
       )} ${b1("{")}`,
       `${ind(2)}${prop("Languages")}${op(":")} ${b2("[")}`,
-      `${ind(3)}${str('"TypeScript/JavaScript"')}${op(",")} ${str(
-        '"Python"'
-      )}${op(",")} ${str('"C#/.NET"')}${op(",")}`,
-      `${ind(3)}${str('"SQL"')}${op(",")} ${str('"Gremlin"')}${op(",")} ${str(
-        '"C"'
-      )}`,
+      `${ind(3)}${str('"TypeScript/JavaScript"')}${op(",")} ${str('"Python"')}${op(",")} ${str('"Java"')}${op(",")}`,
+      `${ind(3)}${str('"C#/.NET"')}${op(",")} ${str('"C++"')}${op(",")} ${str('"SQL"')}${op(",")} ${str('"Gremlin"')}`,
       `${ind(2)}${b2("]")}${op(",")}`,
       `${ind(2)}${prop("Technologies")}${op(":")} ${b2("[")}`,
-      `${ind(3)}${str('"React"')}${op(",")} ${str('"tRPC"')}${op(",")} ${str(
-        '"Zod"'
-      )}${op(",")} ${str('"Node.js"')}${op(",")}`,
-      `${ind(3)}${str('"Express"')}${op(",")} ${str('"ASP.NET"')}${op(",")} ${str(
-        '"EF Core"'
-      )}${op(",")}`,
-      `${ind(3)}${str('"Docker"')}${op(",")} ${str('"GitHub Actions"')}${op(",")} ${str('"Git"')}`,
+      `${ind(3)}${str('"React"')}${op(",")} ${str('"tRPC"')}${op(",")} ${str('"Zod"')}${op(",")} ${str('"Node.js"')}${op(",")}`,
+      `${ind(3)}${str('"Express"')}${op(",")} ${str('"Spring Boot"')}${op(",")} ${str('"ASP.NET"')}${op(",")} ${str('"EF Core"')}${op(",")}`,
+      `${ind(3)}${str('"Docker"')}${op(",")} ${str('"GitHub Actions"')}${op(",")} ${str('"Flutter"')}${op(",")} ${str('"Git"')}`,
       `${ind(2)}${b2("]")}${op(",")}`,
       `${ind(2)}${prop("AWS")}${op(":")} ${b2("[")}`,
       `${ind(3)}${str('"Neptune"')}${op(",")} ${str('"Lambda"')}${op(",")} ${str(
@@ -354,7 +426,7 @@
         "&lt;/h1&gt;"
       )}`,
       `${ind(3)}${tag("&lt;h2&gt;")}${op("{")}${prop("title")}${op("}")} ${str(
-        "\u2014"
+        "—"
       )} ${op("{")}${prop("location")}${op("}")}${tag("&lt;/h2&gt;")}`,
       `${ind(3)}${tag("&lt;p&gt;")}${op("{")}${prop("bio")}${op("}")}${tag(
         "&lt;/p&gt;"
@@ -398,409 +470,120 @@
       `${ind(1)}${b1(")")}${op(";")}`,
       `${b1("}")}${op(";")}`,
       ``,
-      `${kw("export")} ${kw("default")} ${fn("About")}${op(";")}`
+      `${kw("export")} ${kw("default")} ${fn("About")}${op(";")}`,
     ];
   }
+
   function renderExperience() {
     return [
-      `${cm("// work-experience.ts \u2014 Professional Experience")}`,
-      `${cm("// Tom Corley's career history")}`,
+      `${cm("# experience.py — Professional Experience")}`,
+      `${cm("# Python-flavoured career snapshot")}`,
       ``,
-      `${kw("interface")} ${type("WorkExperience")} ${b1("{")}`,
-      `${ind(1)}${prop("company")}${op(":")} ${type("string")}${op(";")}`,
-      `${ind(1)}${prop("title")}${op(":")} ${type("string")}${op(";")}`,
-      `${ind(1)}${prop("period")}${op(":")} ${type("string")}${op(";")}`,
-      `${ind(1)}${prop("location")}${op("?:")} ${type("string")}${op(";")}`,
-      `${ind(1)}${prop("highlights")}${op(":")} ${type("string")}${op("[]")}${op(
-        ";"
-      )}`,
-      `${b1("}")}`,
-      ``,
-      `${kw("export")} ${kw("const")} ${prop("experiences")}${op(":")} ${type(
-        "WorkExperience"
-      )}${op("[]")} ${op("=")} ${b1("[")}`,
-      ``,
-      `${ind(1)}${cm(
-        "// \u2500\u2500\u2500 Worldover \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
-      )}`,
+      `${prop("experience")} ${op("=")} ${b1("[")}`,
       `${ind(1)}${b2("{")}`,
-      `${ind(2)}${prop("company")}${op(":")} ${str('"Worldover"')}${op(",")}`,
-      `${ind(2)}${prop("title")}${op(":")} ${str(
-        '"Software Engineer"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("period")}${op(":")} ${str(
-        '"October 2025 \u2014 Present"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("location")}${op(":")} ${str('"London, UK"')}${op(",")}`,
-      `${ind(2)}${prop("highlights")}${op(":")} ${b3("[")}`,
-      `${ind(3)}${str(
-        '"Shipped 110+ pull requests across feature delivery, bug fixing,"'
-      )}${op(",")}`,
-      `${ind(3)}${str(
-        '"and technical improvements \u2014 owning work end-to-end through"'
-      )}${op(",")}`,
-      `${ind(3)}${str('"implementation, testing, and deployment"')}${op(",")}`,
-      `${ind(3)}${str(
-        '"Delivered major product improvements: new version history system"'
-      )}${op(",")}`,
-      `${ind(3)}${str(
-        '"(major/minor versioning), substantial documents platform overhaul"'
-      )}${op(",")}`,
-      `${ind(3)}${str('"with revamped file-explorer UI and data-model changes"')}${op(",")}`,
-      `${ind(3)}${str(
-        '"Strengthened AWS infrastructure and observability; developed"'
-      )}${op(",")}`,
-      `${ind(3)}${str('"internal AI tooling including agent skills and prompt templates"')}${op(",")}`,
-      `${ind(3)}${str(
-        '"Regularly contributed to ticket writing, PR reviews, and"'
-      )}${op(",")}`,
-      `${ind(3)}${str('"technical planning; expanded automated test coverage"')}${op(",")}`,
-      `${ind(2)}${b3("]")}${op(",")}`,
+      `${ind(2)}${str('"company"')}${op(":")} ${str('"Listing Monster AI"')}${op(",")}`,
+      `${ind(2)}${str('"title"')}${op(":")} ${str('"Software Engineer"')}${op(",")}`,
+      `${ind(2)}${str('"period"')}${op(":")} ${str('"2026 — present"')}${op(",")}`,
+      `${ind(2)}${str('"focus"')}${op(":")} ${b3("[")}`,
+      `${ind(3)}${str('"shipping quickly in a new startup environment"')}${op(",")}`,
+      `${ind(3)}${str('"building commercial momentum after the Worldover period"')}${op(",")}`,
+      `${ind(3)}${str('"using the role as the main career story while portfolio work adds breadth"')}`,
+      `${ind(2)}${b3("]")}`,
       `${ind(1)}${b2("}")}${op(",")}`,
       ``,
-      `${ind(1)}${cm(
-        "// \u2500\u2500\u2500 La Fosse \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
-      )}`,
       `${ind(1)}${b2("{")}`,
-      `${ind(2)}${prop("company")}${op(":")} ${str('"La Fosse"')}${op(",")}`,
-      `${ind(2)}${prop("title")}${op(":")} ${str(
-        '"Software Engineering Trainee"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("period")}${op(":")} ${str(
-        '"July 2025 \u2014 September 2025"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("location")}${op(":")} ${str('"London, UK"')}${op(",")}`,
-      `${ind(2)}${prop("highlights")}${op(":")} ${b3("[")}`,
-      `${ind(3)}${str(
-        '"Achieved programme-record score of 199/200; consistently ranked"'
-      )}${op(",")}`,
-      `${ind(3)}${str('"top across 10+ timed assessments"')}${op(",")}`,
-      `${ind(3)}${str(
-        '"Built a layered C#/.NET API backed by PostgreSQL/PostGIS for a"'
-      )}${op(",")}`,
-      `${ind(3)}${str('"map-based phone theft reporting platform"')}${op(",")}`,
-      `${ind(3)}${str(
-        '"Implemented JWT authentication, spatial data persistence with"'
-      )}${op(",")}`,
-      `${ind(3)}${str('"EF Core, and automated tests"')}${op(",")}`,
-      `${ind(2)}${b3("]")}${op(",")}`,
+      `${ind(2)}${str('"company"')}${op(":")} ${str('"Worldover"')}${op(",")}`,
+      `${ind(2)}${str('"title"')}${op(":")} ${str('"Software Engineer"')}${op(",")}`,
+      `${ind(2)}${str('"period"')}${op(":")} ${str('"2025 — 2026"')}${op(",")}`,
+      `${ind(2)}${str('"highlights"')}${op(":")} ${b3("[")}`,
+      `${ind(3)}${str('"shipped 110+ pull requests across feature delivery, fixes, and technical improvements"')}${op(",")}`,
+      `${ind(3)}${str('"delivered version-history and document-platform work with full-stack TypeScript and AWS"')}${op(",")}`,
+      `${ind(3)}${str('"worked heavily with graph/data-heavy systems and internal AI tooling"')}`,
+      `${ind(2)}${b3("]")}`,
       `${ind(1)}${b2("}")}${op(",")}`,
       ``,
-      `${ind(1)}${cm(
-        "// \u2500\u2500\u2500 Private Tutoring \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
-      )}`,
       `${ind(1)}${b2("{")}`,
-      `${ind(2)}${prop("company")}${op(":")} ${str('"Self Employed"')}${op(
-        ","
-      )}`,
-      `${ind(2)}${prop("title")}${op(":")} ${str(
-        '"Private Tutor \u2014 Maths, English & Science"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("period")}${op(":")} ${str(
-        '"September 2018 \u2014 Present"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("highlights")}${op(":")} ${b3("[")}`,
-      `${ind(3)}${str(
-        '"Delivered results-focused tutoring with bespoke lesson planning"'
-      )}${op(",")}`,
-      `${ind(3)}${str(
-        '"Facilitated significantly higher-than-expected GCSE grades"'
-      )}${op(",")}`,
-      `${ind(3)}${str(
-        '"Enabled a long-term student to secure a sixth-form place at"'
-      )}${op(",")}`,
-      `${ind(3)}${str('"a top grammar school"')}${op(",")}`,
-      `${ind(2)}${b3("]")}${op(",")}`,
-      `${ind(1)}${b2("}")}${op(",")}`,
+      `${ind(2)}${str('"company"')}${op(":")} ${str('"La Fosse"')}${op(",")}`,
+      `${ind(2)}${str('"title"')}${op(":")} ${str('"Software Engineering Trainee"')}${op(",")}`,
+      `${ind(2)}${str('"period"')}${op(":")} ${str('"2025"')}${op(",")}`,
+      `${ind(2)}${str('"highlights"')}${op(":")} ${b3("[")}`,
+      `${ind(3)}${str('"record score: 199/200"')}${op(",")}`,
+      `${ind(3)}${str('"built a layered C#/.NET API with PostgreSQL/PostGIS"')}${op(",")}`,
+      `${ind(3)}${str('"implemented auth, persistence, and automated tests"')}`,
+      `${ind(2)}${b3("]")}`,
+      `${ind(1)}${b2("}")}`,
+      `${b1("]")}`,
       ``,
-      `${b1("]")}${op(";")}`
+      `${kw("for")} ${param("role")} ${kw("in")} ${prop("experience")}${op(":")}`,
+      `${ind(1)}${fn("print")}${b2("(")}${prop("role")}${b2(")")}`,
     ];
   }
+
   function renderProjects() {
     return [
-      `${cm("// projects.ts \u2014 Notable Projects")}`,
-      `${cm("// A selection of significant technical work")}`,
+      `${cm("// projects.java — Selected Projects")}`,
       ``,
-      `${kw("interface")} ${type("Project")} ${b1("{")}`,
-      `${ind(1)}${prop("title")}${op(":")} ${type("string")}${op(";")}`,
-      `${ind(1)}${prop("subtitle")}${op(":")} ${type("string")}${op(";")}`,
-      `${ind(1)}${prop("description")}${op(":")} ${type("string")}${op("[]")}${op(
-        ";"
-      )}`,
-      `${ind(1)}${prop("tech")}${op(":")} ${type("string")}${op("[]")}${op(";")}`,
-      `${b1("}")}`,
+      `${kw("public class")} ${type("Projects")}${op(" {")}`,
+      `${ind(1)}${kw("private static final")} ${type("String[]")} ${prop("HIGHLIGHTS")} ${op("=")} ${b1("{")}`,
+      `${ind(2)}${str('"Mandible — Hive engine plus app track; strongest signal is board-state modelling and move validation"')}${op(",")}`,
+      `${ind(2)}${str('"Balatro Sandbox — frontend-heavy TypeScript/React simulator with shareable hands and tests"')}${op(",")}`,
+      `${ind(2)}${str('"Galactic Dynamics Parallelisation — 100x+ speedup using OpenMP + MPI on research clusters"')}${op(",")}`,
+      `${ind(2)}${str('"Frogify — AWS serverless Spotify analytics app with Python Lambdas"')}`,
+      `${ind(1)}${b1("}")}${op(";")}`,
       ``,
-      `${kw("export")} ${kw("const")} ${prop("projects")}${op(":")} ${type(
-        "Project"
-      )}${op("[]")} ${op("=")} ${b1("[")}`,
+      `${ind(1)}${kw("public static void")} ${fn("main")}${b2("(")}${type("String[]")} ${param("args")}${b2(")")} ${op("{")}`,
+      `${ind(2)}${fn("System.out.println")}${b3("(")}${str('"Projects that best tell the story:"')}${b3(")")}${op(";")}`,
+      `${ind(2)}${kw("for")} ${b3("(")}${type("String")} ${param("project")} ${op(":")} ${prop("HIGHLIGHTS")}${b3(")")} ${op("{")}`,
+      `${ind(3)}${fn("System.out.println")}${b1("(")}${str('"- "')} ${op("+")} ${param("project")}${b1(")")}${op(";")}`,
+      `${ind(2)}${op("}")}`,
       ``,
-      `${ind(1)}${cm(
-        "// \u2500\u2500\u2500 Galactic Dynamics Parallelisation \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
-      )}`,
-      `${ind(1)}${b2("{")}`,
-      `${ind(2)}${prop("title")}${op(":")} ${str(
-        '"Galactic Dynamics Parallelisation"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("subtitle")}${op(":")} ${str(
-        '"High Performance Computing \u2014 University of Warwick"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("description")}${op(":")} ${b3("[")}`,
-      `${ind(3)}${str(
-        '"Achieved 100x+ speedup over serial code using hybrid"'
-      )}${op(",")}`,
-      `${ind(3)}${str('"OpenMP+MPI parallelisation"')}${op(",")}`,
-      `${ind(3)}${str(
-        '"Large-scale Velocity-Verlet simulation of celestial bodies"'
-      )}${op(",")}`,
-      `${ind(3)}${str('"orbiting a supermassive black hole"')}${op(",")}`,
-      `${ind(3)}${str(
-        '"Operated on research-grade Linux clusters with CUDA support"'
-      )}${op(",")}`,
-      `${ind(2)}${b3("]")}${op(",")}`,
-      `${ind(2)}${prop("tech")}${op(":")} ${b3("[")}${str('"C"')}${op(
-        ","
-      )} ${str('"OpenMP"')}${op(",")} ${str('"MPI"')}${op(
-        ","
-      )} ${str('"HPC"')}${b3("]")}${op(",")}`,
-      `${ind(1)}${b2("}")}${op(",")}`,
-      ``,
-      `${ind(1)}${cm(
-        "// \u2500\u2500\u2500 Balatro Sandbox \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
-      )}`,
-      `${ind(1)}${b2("{")}`,
-      `${ind(2)}${prop("title")}${op(":")} ${str(
-        '"Balatro Sandbox"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("subtitle")}${op(":")} ${str(
-        '"Frontend Application \u2014 Card Game Simulator"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("description")}${op(":")} ${b3("[")}`,
-      `${ind(3)}${str(
-        '"Built a frontend-heavy sandbox for simulating Balatro hand"'
-      )}${op(",")}`,
-      `${ind(3)}${str('"scoring with a responsive UI"')}${op(",")}`,
-      `${ind(3)}${str(
-        '"Support for saving and sharing hands; comprehensive test"'
-      )}${op(",")}`,
-      `${ind(3)}${str('"coverage with Vitest"')}${op(",")}`,
-      `${ind(2)}${b3("]")}${op(",")}`,
-      `${ind(2)}${prop("tech")}${op(":")} ${b3("[")}${str('"TypeScript"')}${op(
-        ","
-      )} ${str('"React"')}${op(",")} ${str('"Vitest"')}${b3("]")}${op(",")}`,
-      `${ind(1)}${b2("}")}${op(",")}`,
-      ``,
-      `${ind(1)}${cm(
-        "// \u2500\u2500\u2500 Frogify \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
-      )}`,
-      `${ind(1)}${b2("{")}`,
-      `${ind(2)}${prop("title")}${op(":")} ${str(
-        '"Frogify \u2014 Serverless Web Application"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("subtitle")}${op(":")} ${str(
-        '"AWS Serverless \u2014 Spotify Analytics"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("description")}${op(":")} ${b3("[")}`,
-      `${ind(3)}${str(
-        '"Spotify analytics app using AWS serverless architecture"'
-      )}${op(",")}`,
-      `${ind(3)}${str('"Static S3 frontend with Lambda functions written in Python"')}${op(
-        ","
-      )}`,
-      `${ind(3)}${str(
-        '"Full-stack JavaScript/Python with HTML/CSS frontend"'
-      )}${op(",")}`,
-      `${ind(2)}${b3("]")}${op(",")}`,
-      `${ind(2)}${prop("tech")}${op(":")} ${b3("[")}${str('"JavaScript"')}${op(
-        ","
-      )} ${str('"Python"')}${op(",")} ${str('"AWS Lambda"')}${op(
-        ","
-      )} ${str('"S3"')}${b3("]")}${op(",")}`,
-      `${ind(1)}${b2("}")}${op(",")}`,
-      ``,
-      `${ind(1)}${cm(
-        "// \u2500\u2500\u2500 IDSNIFF \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
-      )}`,
-      `${ind(1)}${b2("{")}`,
-      `${ind(2)}${prop("title")}${op(":")} ${str(
-        '"IDSNIFF \u2014 Network Intrusion Detector"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("subtitle")}${op(":")} ${str(
-        '"Low-Level Systems Programming \u2014 C"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("description")}${op(":")} ${b3("[")}`,
-      `${ind(3)}${str(
-        '"Low-level packet sniffing tool written in C"'
-      )}${op(",")}`,
-      `${ind(3)}${str(
-        '"Detects simulated TCP SYN flooding, ARP cache poisoning,"'
-      )}${op(",")}`,
-      `${ind(3)}${str('"and blacklisted URL attacks"')}${op(",")}`,
-      `${ind(2)}${b3("]")}${op(",")}`,
-      `${ind(2)}${prop("tech")}${op(":")} ${b3("[")}${str('"C"')}${op(
-        ","
-      )} ${str('"Networking"')}${op(",")} ${str('"Linux"')}${op(",")} ${str(
-        '"Security"'
-      )}${b3("]")}${op(",")}`,
-      `${ind(1)}${b2("}")}${op(",")}`,
-      ``,
-      `${ind(1)}${cm(
-        "// \u2500\u2500\u2500 2048 \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
-      )}`,
-      `${ind(1)}${b2("{")}`,
-      `${ind(2)}${prop("title")}${op(":")} ${str(
-        '"2048 \u2014 Strategy Game"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("subtitle")}${op(":")} ${str(
-        '"Desktop Application \u2014 Python"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("description")}${op(":")} ${b3("[")}`,
-      `${ind(3)}${str(
-        '"Built the strategy game 2048 from scratch with a dynamic"'
-      )}${op(",")}`,
-      `${ind(3)}${str('"Tkinter GUI"')}${op(",")}`,
-      `${ind(3)}${str(
-        '"SQLite-backed high-score tracking and persistence"'
-      )}${op(",")}`,
-      `${ind(2)}${b3("]")}${op(",")}`,
-      `${ind(2)}${prop("tech")}${op(":")} ${b3("[")}${str('"Python"')}${op(
-        ","
-      )} ${str('"Tkinter"')}${op(",")} ${str('"SQLite3"')}${b3("]")}${op(",")}`,
-      `${ind(1)}${b2("}")}${op(",")}`,
-      ``,
-      `${b1("]")}${op(";")}`
+      `${ind(2)}${type("List")}${op("<")}${type("String")}${op("> ")} ${prop("coreLanguages")} ${op("=")} ${type("List")}${op(".")}${fn("of")}${b1("(")}`,
+      `${ind(3)}${str('"TypeScript"')}${op(", ")} ${str('"Python"')}${op(", ")} ${str('"Java"')}${op(", ")} ${str('"C#"')}${op(", ")} ${str('"C++"')}`,
+      `${ind(2)}${b1(")")}${op(";")}`,
+      `${ind(2)}${fn("System.out.println")}${b1("(")}${str('"Language spread: "')} ${op("+")} ${prop("coreLanguages")}${b1(")")}${op(";")}`,
+      `${ind(1)}${op("}")}`,
+      `${op("}")}`,
     ];
   }
+
   function renderCertifications() {
     return [
-      `${cm("// certifications.ts \u2014 Professional Certifications")}`,
-      `${cm("// Validated expertise across cloud and programming")}`,
+      `${cm("// certifications.cs — Professional Certifications")}`,
       ``,
-      `${kw("interface")} ${type("Certification")} ${b1("{")}`,
-      `${ind(1)}${prop("name")}${op(":")} ${type("string")}${op(";")}`,
-      `${ind(1)}${prop("issuer")}${op(":")} ${type("string")}${op(";")}`,
-      `${ind(1)}${prop("description")}${op(":")} ${type("string")}${op(";")}`,
-      `${b1("}")}`,
+      `${kw("public record")} ${type("Certification")}${b1("(")}${type("string")} ${param("Name")}${op(", ")}${type("string")} ${param("Issuer")}${op(", ")}${type("string")} ${param("Description")}${b1(")")}${op(";")}`,
       ``,
-      `${kw("export")} ${kw("const")} ${prop("certifications")}${op(":")} ${type(
-        "Certification"
-      )}${op("[]")} ${op("=")} ${b1("[")}`,
-      ``,
-      `${ind(1)}${b2("{")}`,
-      `${ind(2)}${prop("name")}${op(":")} ${str('"AWS Certified Developer \u2014 Associate"')}${op(",")}`,
-      `${ind(2)}${prop("issuer")}${op(":")} ${str('"Amazon Web Services"')}${op(",")}`,
-      `${ind(2)}${prop("description")}${op(":")} ${str('"Proficiency in developing, deploying, and debugging"')}${op(",")}`,
-      `${ind(2)}${cm("// cloud-based applications using AWS services")}`,
-      `${ind(1)}${b2("}")}${op(",")}`,
-      ``,
-      `${ind(1)}${b2("{")}`,
-      `${ind(2)}${prop("name")}${op(":")} ${str('"AWS Certified AI Practitioner"')}${op(",")}`,
-      `${ind(2)}${prop("issuer")}${op(":")} ${str('"Amazon Web Services"')}${op(",")}`,
-      `${ind(2)}${prop("description")}${op(":")} ${str('"Knowledge of AI/ML concepts and AWS AI services"')}${op(",")}`,
-      `${ind(1)}${b2("}")}${op(",")}`,
-      ``,
-      `${ind(1)}${b2("{")}`,
-      `${ind(2)}${prop("name")}${op(":")} ${str('"AWS Certified Cloud Practitioner"')}${op(",")}`,
-      `${ind(2)}${prop("issuer")}${op(":")} ${str('"Amazon Web Services"')}${op(",")}`,
-      `${ind(2)}${prop("description")}${op(":")} ${str('"Foundational understanding of AWS Cloud services,"')}${op(",")}`,
-      `${ind(2)}${cm("// architecture, pricing, and security")}`,
-      `${ind(1)}${b2("}")}${op(",")}`,
-      ``,
-      `${ind(1)}${b2("{")}`,
-      `${ind(2)}${prop("name")}${op(":")} ${str('"PCAP \u2014 Python Certified Associate Programmer"')}${op(",")}`,
-      `${ind(2)}${prop("issuer")}${op(":")} ${str('"Python Institute"')}${op(",")}`,
-      `${ind(2)}${prop("description")}${op(":")} ${str('"Advanced Python programming, OOP, and standard library"')}${op(",")}`,
-      `${ind(1)}${b2("}")}${op(",")}`,
-      ``,
-      `${b1("]")}${op(";")}`
+      `${kw("var")} ${prop("certifications")} ${op("=")} ${kw("new")} ${type("List")}${op("<")}${type("Certification")}${op(">")}`,
+      `${b1("{")}`,
+      `${ind(1)}${kw("new")} ${type("Certification")}${b2("(")}${str('"AWS Certified Developer — Associate"')}${op(", ")}${str('"AWS"')}${op(", ")}${str('"Cloud application development, deployment, and debugging"')}${b2(")")}${op(",")}`,
+      `${ind(1)}${kw("new")} ${type("Certification")}${b2("(")}${str('"AWS Certified AI Practitioner"')}${op(", ")}${str('"AWS"')}${op(", ")}${str('"AI/ML fundamentals and AWS AI services"')}${b2(")")}${op(",")}`,
+      `${ind(1)}${kw("new")} ${type("Certification")}${b2("(")}${str('"AWS Certified Cloud Practitioner"')}${op(", ")}${str('"AWS"')}${op(", ")}${str('"Foundational cloud architecture, pricing, and security"')}${b2(")")}${op(",")}`,
+      `${ind(1)}${kw("new")} ${type("Certification")}${b2("(")}${str('"PCAP — Python Certified Associate Programmer"')}${op(", ")}${str('"Python Institute"')}${op(", ")}${str('"Python, OOP, and core standard-library fluency"')}${b2(")")}`,
+      `${b1("}")}${op(";")}`,
     ];
   }
+
   function renderEducation() {
     return [
-      `${cm("// education.ts \u2014 Academic Background")}`,
+      `${cm("// education.cpp — Academic Background")}`,
       ``,
-      `${kw("interface")} ${type("Education")} ${b1("{")}`,
-      `${ind(1)}${prop("institution")}${op(":")} ${type("string")}${op(";")}`,
-      `${ind(1)}${prop("degree")}${op(":")} ${type("string")}${op(";")}`,
-      `${ind(1)}${prop("period")}${op(":")} ${type("string")}${op(";")}`,
-      `${ind(1)}${prop("grade")}${op("?:")} ${type("string")}${op(";")}`,
-      `${ind(1)}${prop("honours")}${op("?:")} ${type("string")}${op(";")}`,
-      `${ind(1)}${prop("thesis")}${op("?:")} ${type("string")}${op(";")}`,
-      `${ind(1)}${prop("activities")}${op("?:")} ${type("string")}${op("[]")}${op(
-        ";"
-      )}`,
-      `${ind(1)}${prop("subjects")}${op("?:")} ${type("Record")}${op(
-        "&lt;"
-      )}${type("string")}${op(",")} ${type("string")}${op("&gt;")}${op(";")}`,
-      `${b1("}")}`,
+      `${kw("struct")} ${type("Education")}${op(" {")}`,
+      `${ind(1)}${type("std::string")} ${prop("institution")}${op(";")}`,
+      `${ind(1)}${type("std::string")} ${prop("detail")}${op(";")}`,
+      `${op("};")}`,
       ``,
-      `${kw("export")} ${kw("const")} ${prop("education")}${op(":")} ${type(
-        "Education"
-      )}${op("[]")} ${op("=")} ${b1("[")}`,
-      ``,
-      `${ind(1)}${cm(
-        "// \u2500\u2500\u2500 University of Warwick \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
-      )}`,
-      `${ind(1)}${b2("{")}`,
-      `${ind(2)}${prop("institution")}${op(":")} ${str(
-        '"University of Warwick"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("degree")}${op(":")} ${str('"MMath \u2014 Mathematics with Study in Europe"')}${op(
-        ","
-      )}`,
-      `${ind(2)}${prop("period")}${op(":")} ${str(
-        '"September 2020 \u2014 June 2025"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("grade")}${op(":")} ${str('"First Class Honours (Overall: 83, Y3: 87.9)"')}${op(
-        ","
-      )}`,
-      `${ind(2)}${prop("thesis")}${op(":")} ${str(
-        '"70-page thesis on Hamiltonian Cycles in Cayley Graphs"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("activities")}${op(":")} ${b3("[")}`,
-      `${ind(3)}${str('"Erasmus year at LMU M\xFCnchen"')}${op(",")}`,
-      `${ind(3)}${str('"Warwick Warriors Dodgeball (competitive league)"')}${op(",")}`,
-      `${ind(3)}${str('"Sub-two-hour half-marathon for Autism Awareness"')}${op(",")}`,
-      `${ind(2)}${b3("]")}${op(",")}`,
-      `${ind(1)}${b2("}")}${op(",")}`,
-      ``,
-      `${ind(1)}${cm(
-        "// \u2500\u2500\u2500 Imperial College / HyperionDev \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
-      )}`,
-      `${ind(1)}${b2("{")}`,
-      `${ind(2)}${prop("institution")}${op(":")} ${str(
-        '"Imperial College London + HyperionDev"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("degree")}${op(":")} ${str('"Software Engineering Bootcamp"')}${op(
-        ","
-      )}`,
-      `${ind(2)}${prop("period")}${op(":")} ${str(
-        '"November 2022 \u2014 March 2023"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("grade")}${op(":")} ${str('"Highest mark in cohort of several hundred: 99.6/100"')}${op(
-        ","
-      )}`,
-      `${ind(1)}${b2("}")}${op(",")}`,
-      ``,
-      `${ind(1)}${cm(
-        "// \u2500\u2500\u2500 A-Levels & GCSEs \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
-      )}`,
-      `${ind(1)}${b2("{")}`,
-      `${ind(2)}${prop("institution")}${op(":")} ${str(
-        '"Langley Park School for Boys"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("degree")}${op(":")} ${str('"A-Levels & GCSEs"')}${op(",")}`,
-      `${ind(2)}${prop("period")}${op(":")} ${str(
-        '"September 2013 \u2014 June 2020"'
-      )}${op(",")}`,
-      `${ind(2)}${prop("subjects")}${op(":")} ${b3("{")}`,
-      `${ind(3)}${str('"A-Levels"')}${op(":")} ${str('"A*A*A"')}${op(",")}`,
-      `${ind(3)}${str('"GCSEs"')}${op(":")} ${str('"11 A*s/9s"')}${op(",")}`,
-      `${ind(2)}${b3("}")}${op(",")}`,
-      `${ind(1)}${b2("}")}${op(",")}`,
-      ``,
-      `${b1("]")}${op(";")}`
+      `${type("std::vector")}${op("<")}${type("Education")}${op("> ")} ${prop("education")} ${op("=")} ${b1("{")}`,
+      `${ind(1)}${b2("{")}${str('"University of Warwick"')}${op(", ")}${str('"MMath, First Class Honours, Erasmus year at LMU München"')}${b2("}")}${op(",")}`,
+      `${ind(1)}${b2("{")}${str('"University of Warwick"')}${op(", ")}${str('"70-page thesis on Hamiltonian Cycles in Cayley Graphs"')}${b2("}")}${op(",")}`,
+      `${ind(1)}${b2("{")}${str('"Imperial College London + HyperionDev"')}${op(", ")}${str('"Software Engineering Bootcamp, highest mark in cohort: 99.6/100"')}${b2("}")}${op(",")}`,
+      `${ind(1)}${b2("{")}${str('"Langley Park School for Boys"')}${op(", ")}${str('"A-Levels A*A*A, GCSEs 11 A*s/9s"')}${b2("}")}`,
+      `${b1("}")}${op(";")}`,
     ];
   }
+
+  // ============================================================
+  // Decorative file renderers
+  // ============================================================
+
   function renderPackageJson() {
     return [
       `${b1("{")}`,
@@ -834,9 +617,10 @@
       `${ind(2)}${str('"eslint"')}${op(":")} ${str('"^9.0.0"')}${op(",")}`,
       `${ind(2)}${str('"prettier"')}${op(":")} ${str('"^3.0.0"')}`,
       `${ind(1)}${b2("}")}`,
-      `${b1("}")}`
+      `${b1("}")}`,
     ];
   }
+
   function renderTsConfig() {
     return [
       `${b1("{")}`,
@@ -877,9 +661,10 @@
       `${ind(1)}${str('"exclude"')}${op(":")} ${b2("[")}${str(
         '"node_modules"'
       )}${b2("]")}`,
-      `${b1("}")}`
+      `${b1("}")}`,
     ];
   }
+
   function renderNextConfig() {
     return [
       `${kw("import")} ${type("type")} ${b1("{")} ${type("NextConfig")} ${b1(
@@ -895,12 +680,13 @@
       `${ind(1)}${b2("}")}${op(",")}`,
       `${b1("}")}${op(";")}`,
       ``,
-      `${kw("export")} ${kw("default")} ${prop("nextConfig")}${op(";")}`
+      `${kw("export")} ${kw("default")} ${prop("nextConfig")}${op(";")}`,
     ];
   }
+
   function renderLayout() {
     return [
-      `${cm("// layout.tsx \u2014 Root Layout")}`,
+      `${cm("// layout.tsx — Root Layout")}`,
       ``,
       `${kw("import")} ${type("type")} ${b1("{")} ${type("Metadata")} ${b1(
         "}"
@@ -911,7 +697,7 @@
         "Metadata"
       )} ${op("=")} ${b1("{")}`,
       `${ind(1)}${prop("title")}${op(":")} ${str(
-        "'Tom Corley \u2014 Portfolio'"
+        "'Tom Corley — Portfolio'"
       )}${op(",")}`,
       `${ind(1)}${prop("description")}${op(":")} ${str(
         "'Software Engineer | London'"
@@ -934,12 +720,13 @@
       `${ind(3)}${tag("&lt;/body&gt;")}`,
       `${ind(2)}${tag("&lt;/html&gt;")}`,
       `${ind(1)}${b2(")")}${op(";")}`,
-      `${b1("}")}`
+      `${b1("}")}`,
     ];
   }
+
   function renderHeaderComponent() {
     return [
-      `${cm("// Header.tsx \u2014 Site Header Component")}`,
+      `${cm("// Header.tsx — Site Header Component")}`,
       ``,
       `${kw("import")} ${type("React")} ${kw("from")} ${str("'react'")}${op(
         ";"
@@ -967,12 +754,13 @@
         "&lt;p&gt;"
       )}${op("{")}${param("subtitle")}${op("}")}${tag("&lt;/p&gt;")}${op("}")}`,
       `${ind(1)}${tag("&lt;/header&gt;")}`,
-      `${b1(")")}${op(";")}`
+      `${b1(")")}${op(";")}`,
     ];
   }
+
   function renderFooterComponent() {
     return [
-      `${cm("// Footer.tsx \u2014 Site Footer Component")}`,
+      `${cm("// Footer.tsx — Site Footer Component")}`,
       ``,
       `${kw("import")} ${type("React")} ${kw("from")} ${str("'react'")}${op(
         ";"
@@ -985,17 +773,18 @@
         '"site-footer"'
       )}${tag("&gt;")}`,
       `${ind(2)}${tag("&lt;p&gt;")}`,
-      `${ind(3)}\xA9 ${b2("{")}${kw("new")} ${type("Date")}${b3("(")}${b3(")")}${op(
+      `${ind(3)}© ${b2("{")}${kw("new")} ${type("Date")}${b3("(")}${b3(")")}${op(
         "."
       )}${fn("getFullYear")}${b3("(")}${b3(")")}${b2("}")} Tom Corley`,
       `${ind(2)}${tag("&lt;/p&gt;")}`,
       `${ind(1)}${tag("&lt;/footer&gt;")}`,
-      `${b1(")")}${op(";")}`
+      `${b1(")")}${op(";")}`,
     ];
   }
+
   function renderProfileComponent() {
     return [
-      `${cm("// ProfileImage.tsx \u2014 Circular Profile Image")}`,
+      `${cm("// ProfileImage.tsx — Circular Profile Image")}`,
       ``,
       `${kw("import")} ${type("React")} ${kw("from")} ${str("'react'")}${op(
         ";"
@@ -1030,9 +819,10 @@
       `${ind(3)}${attr("className")}${op("=")}${str('"rounded-lg"')}`,
       `${ind(2)}${tag("/&gt;")}`,
       `${ind(1)}${tag("&lt;/div&gt;")}`,
-      `${b1(")")}${op(";")}`
+      `${b1(")")}${op(";")}`,
     ];
   }
+
   function renderResumeJson() {
     return [
       `${b1("{")}`,
@@ -1058,35 +848,28 @@
       )}`,
       `${ind(1)}${cm("// and C#/.NET backend development.")}`,
       `${ind(1)}${str('"yearsOfExperience"')}${op(":")} ${num("1")}${op(",")}`,
-      `${ind(1)}${str('"currentCompany"')}${op(":")} ${str('"Worldover"')}${op(",")}`,
+      `${ind(1)}${str('"currentCompany"')}${op(":")} ${str('"Listing Monster AI"')}${op(",")}`,
       `${ind(1)}${str('"certifications"')}${op(":")} ${b2("[")}`,
       `${ind(2)}${str('"AWS Developer Associate"')}${op(",")}`,
       `${ind(2)}${str('"AWS AI Practitioner"')}${op(",")}`,
       `${ind(2)}${str('"AWS Cloud Practitioner"')}${op(",")}`,
       `${ind(2)}${str('"PCAP (Python)"')}`,
       `${ind(1)}${b2("]")}`,
-      `${b1("}")}`
+      `${b1("}")}`,
     ];
   }
+
   function renderSkillsJson() {
     return [
       `${b1("{")}`,
       `${ind(1)}${str('"languages"')}${op(":")} ${b2("[")}`,
-      `${ind(2)}${str('"TypeScript/JavaScript"')}${op(",")} ${str(
-        '"Python"'
-      )}${op(",")} ${str('"C#/.NET"')}${op(",")}`,
-      `${ind(2)}${str('"SQL"')}${op(",")} ${str('"Gremlin"')}${op(",")} ${str(
-        '"C"'
-      )}`,
+      `${ind(2)}${str('"TypeScript/JavaScript"')}${op(",")} ${str('"Python"')}${op(",")} ${str('"Java"')}${op(",")}`,
+      `${ind(2)}${str('"C#/.NET"')}${op(",")} ${str('"C++"')}${op(",")} ${str('"SQL"')}${op(",")} ${str('"Gremlin"')}`,
       `${ind(1)}${b2("]")}${op(",")}`,
       `${ind(1)}${str('"technologies"')}${op(":")} ${b2("[")}`,
-      `${ind(2)}${str('"React"')}${op(",")} ${str('"tRPC"')}${op(",")} ${str(
-        '"Zod"'
-      )}${op(",")} ${str('"Node.js"')}${op(",")}`,
-      `${ind(2)}${str('"Express"')}${op(",")} ${str('"ASP.NET"')}${op(
-        ","
-      )} ${str('"EF Core"')}${op(",")}`,
-      `${ind(2)}${str('"Docker"')}${op(",")} ${str('"GitHub Actions"')}${op(",")} ${str('"Git"')}`,
+      `${ind(2)}${str('"React"')}${op(",")} ${str('"tRPC"')}${op(",")} ${str('"Zod"')}${op(",")} ${str('"Node.js"')}${op(",")}`,
+      `${ind(2)}${str('"Express"')}${op(",")} ${str('"ASP.NET"')}${op(",")} ${str('"Spring Boot"')}${op(",")} ${str('"EF Core"')}${op(",")}`,
+      `${ind(2)}${str('"Docker"')}${op(",")} ${str('"GitHub Actions"')}${op(",")} ${str('"Flutter"')}${op(",")} ${str('"Git"')}`,
       `${ind(1)}${b2("]")}${op(",")}`,
       `${ind(1)}${str('"aws"')}${op(":")} ${b2("[")}`,
       `${ind(2)}${str('"Neptune"')}${op(",")} ${str('"Lambda"')}${op(",")} ${str(
@@ -1110,12 +893,13 @@
       )}${op(",")}`,
       `${ind(2)}${str('"OpenSearch"')}${op(",")} ${str('"SQLite3"')}`,
       `${ind(1)}${b2("]")}`,
-      `${b1("}")}`
+      `${b1("}")}`,
     ];
   }
+
   function renderReadme() {
     return [
-      `${cm("# Tom Corley \u2014 Portfolio")}`,
+      `${cm("# Tom Corley — Portfolio")}`,
       ``,
       `${cm("> Software Engineer | London, UK")}`,
       ``,
@@ -1144,10 +928,15 @@
       ``,
       `${cm("- Email: tomcorley86@gmail.com")}`,
       `${cm("- LinkedIn: linkedin.com/in/tom-corley")}`,
-      `${cm("- GitHub: github.com/tom-corley")}`
+      `${cm("- GitHub: github.com/tom-corley")}`,
     ];
   }
-  var RENDERERS = {
+
+  // ============================================================
+  // Master render dispatch
+  // ============================================================
+
+  const RENDERERS = {
     about: renderAbout,
     experience: renderExperience,
     projects: renderProjects,
@@ -1162,13 +951,16 @@
     "package-json": renderPackageJson,
     "tsconfig-json": renderTsConfig,
     "next-config": renderNextConfig,
-    readme: renderReadme
+    readme: renderReadme,
   };
+
   function renderPage(pageId) {
     const renderer = RENDERERS[pageId];
     if (!renderer) return [`${cm("// File not found")}`];
     return renderer();
   }
+
+  // Minimap color extraction — returns a dominant color per line
   function getMinimapColors(lines) {
     return lines.map((line) => {
       if (line.includes('class="cm"')) return "var(--comment)";
@@ -1182,196 +974,328 @@
       return "var(--fg)";
     });
   }
+  // statusbar.js
+  // ============================================================
+  // statusbar.js — Status bar dynamic updates
+  // ============================================================
 
-  // js/statusbar.js
-  var els = {};
+
+  const els = {};
+
   function initStatusBar() {
-    els.line = document.getElementById("status-line");
-    els.lang = document.getElementById("status-lang");
-    els.title = document.getElementById("titlebar-title");
-    els.breadcrumbFile = document.getElementById("breadcrumb-file");
-    els.breadcrumbPath = document.getElementById("breadcrumb-path");
+    els.line = document.getElementById('status-line');
+    els.lang = document.getElementById('status-lang');
+    els.title = document.getElementById('titlebar-title');
+    els.breadcrumbFile = document.getElementById('breadcrumb-file');
+    els.breadcrumbPath = document.getElementById('breadcrumb-path');
   }
+
   function updateStatusBar(filename, fileType, lineCount, breadcrumbPath) {
     if (els.line) {
       els.line.textContent = `Ln ${lineCount}, Col 1`;
     }
+
     if (els.lang) {
-      els.lang.textContent = FILE_LANGUAGES[fileType] || "Plain Text";
+      els.lang.textContent = FILE_LANGUAGES[fileType] || 'Plain Text';
     }
+
     if (els.title) {
-      els.title.textContent = `${filename} \u2014 Tom Corley \u2014 Portfolio`;
+      els.title.textContent = `${filename} — Tom Corley — Portfolio`;
     }
+
     if (els.breadcrumbFile) {
       els.breadcrumbFile.textContent = filename;
     }
+
     if (els.breadcrumbPath && breadcrumbPath) {
-      const parts = breadcrumbPath.split(" / ");
-      els.breadcrumbPath.innerHTML = parts.map(
-        (part, i) => i < parts.length - 1 ? `<span>${part}</span><span class="breadcrumb__sep">\u203A</span>` : ""
-      ).join("");
+      // Parse path like "src / pages / about.tsx"
+      const parts = breadcrumbPath.split(' / ');
+      els.breadcrumbPath.innerHTML = parts.map((part, i) =>
+        i < parts.length - 1
+          ? `<span>${part}</span><span class="breadcrumb__sep">›</span>`
+          : ''
+      ).join('');
+    }
+  }
+  // tabs.js
+  // ============================================================
+  // tabs.js — Tab management (open, close, switch)
+  // ============================================================
+
+  let openTabs = [];    // Array of { id, name, fileType }
+  let activeTabId = null;
+  let onTabChange = null;  // Callback when tab changes
+
+  const tabBar = () => document.getElementById('tab-bar');
+
+  // File type icon SVGs (small inline)
+  function getFileIcon(fileType) {
+    const iconClass = `tab__icon tab__icon--${fileType}`;
+    switch (fileType) {
+      case 'tsx':
+      case 'ts':
+        return `<span class="${iconClass}">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="1" width="14" height="14" rx="2" fill="#3178c6"/>
+            <text x="8" y="11" font-size="8" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">TS</text>
+          </svg>
+        </span>`;
+      case 'py':
+        return `<span class="${iconClass}">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="1" width="14" height="14" rx="2" fill="#3572A5"/>
+            <text x="8" y="11" font-size="7" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">PY</text>
+          </svg>
+        </span>`;
+      case 'java':
+        return `<span class="${iconClass}">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="1" width="14" height="14" rx="2" fill="#b07219"/>
+            <text x="8" y="11" font-size="6" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">JV</text>
+          </svg>
+        </span>`;
+      case 'cs':
+        return `<span class="${iconClass}">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="1" width="14" height="14" rx="2" fill="#178600"/>
+            <text x="8" y="11" font-size="7" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">C#</text>
+          </svg>
+        </span>`;
+      case 'cpp':
+        return `<span class="${iconClass}">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="1" width="14" height="14" rx="2" fill="#f34b7d"/>
+            <text x="8" y="11" font-size="6" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">C++</text>
+          </svg>
+        </span>`;
+      case 'json':
+        return `<span class="${iconClass}">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <text x="8" y="12" font-size="11" fill="#f1fa8c" text-anchor="middle" font-family="monospace">{}</text>
+          </svg>
+        </span>`;
+      case 'md':
+        return `<span class="${iconClass}">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="1" y="3" width="14" height="10" rx="1" stroke="#519aba" stroke-width="1.5" fill="none"/>
+            <text x="8" y="11" font-size="7" font-weight="bold" fill="#519aba" text-anchor="middle" font-family="sans-serif">M↓</text>
+          </svg>
+        </span>`;
+      default:
+        return `<span class="${iconClass}">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M4 1h6l4 4v10H4V1z" stroke="#6272a4" stroke-width="1" fill="none"/>
+          </svg>
+        </span>`;
     }
   }
 
-  // js/tabs.js
-  var openTabs = [];
-  var activeTabId = null;
-  var onTabChange = null;
-  var tabBar = () => document.getElementById("tab-bar");
-  function getFileIcon2(fileType) {
-    const iconClass = `tab__icon tab__icon--${fileType}`;
-    switch (fileType) {
-      case "tsx":
-      case "ts":
-        return `<span class="${iconClass}">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <rect x="1" y="1" width="14" height="14" rx="2" fill="#3178c6"/>
-          <text x="8" y="11" font-size="8" font-weight="bold" fill="white" text-anchor="middle" font-family="sans-serif">TS</text>
-        </svg>
-      </span>`;
-      case "json":
-        return `<span class="${iconClass}">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <text x="8" y="12" font-size="11" fill="#f1fa8c" text-anchor="middle" font-family="monospace">{}</text>
-        </svg>
-      </span>`;
-      case "md":
-        return `<span class="${iconClass}">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <rect x="1" y="3" width="14" height="10" rx="1" stroke="#519aba" stroke-width="1.5" fill="none"/>
-          <text x="8" y="11" font-size="7" font-weight="bold" fill="#519aba" text-anchor="middle" font-family="sans-serif">M\u2193</text>
-        </svg>
-      </span>`;
-      default:
-        return `<span class="${iconClass}">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-          <path d="M4 1h6l4 4v10H4V1z" stroke="#6272a4" stroke-width="1" fill="none"/>
-        </svg>
-      </span>`;
-    }
-  }
   function initTabs(onChange) {
     onTabChange = onChange;
   }
+
   function openTab(id, name, fileType) {
-    const existing = openTabs.find((t) => t.id === id);
+    // Check if already open
+    const existing = openTabs.find(t => t.id === id);
     if (!existing) {
       openTabs.push({ id, name, fileType });
     }
     setActiveTab(id);
   }
+
   function closeTab(id) {
-    const idx = openTabs.findIndex((t) => t.id === id);
+    const idx = openTabs.findIndex(t => t.id === id);
     if (idx === -1) return;
+
     openTabs.splice(idx, 1);
+
+    // If we closed the active tab, switch to nearest
     if (activeTabId === id) {
       if (openTabs.length > 0) {
         const newIdx = Math.min(idx, openTabs.length - 1);
         setActiveTab(openTabs[newIdx].id);
       } else {
-        openTab("about", "about.tsx", "tsx");
+        // Re-open about as default if all tabs closed
+        openTab('about', 'about.tsx', 'tsx');
         return;
       }
     }
+
     renderTabs();
   }
+
   function setActiveTab(id) {
     activeTabId = id;
     renderTabs();
     if (onTabChange) {
-      const tab = openTabs.find((t) => t.id === id);
-      onTabChange(id, tab ? tab.name : "", tab ? tab.fileType : "ts");
+      const tab = openTabs.find(t => t.id === id);
+      onTabChange(id, tab ? tab.name : '', tab ? tab.fileType : 'ts');
     }
   }
+
+  function getActiveTab() {
+    return activeTabId;
+  }
+
   function renderTabs() {
     const bar = tabBar();
     if (!bar) return;
-    bar.innerHTML = openTabs.map((tab) => {
+
+    bar.innerHTML = openTabs.map(tab => {
       const isActive = tab.id === activeTabId;
       return `
-      <div class="tab ${isActive ? "active" : ""}" data-tab-id="${tab.id}">
-        ${getFileIcon2(tab.fileType)}
-        <span class="tab__name">${tab.name}</span>
-        <button class="tab__close" data-close-id="${tab.id}" title="Close">&times;</button>
-      </div>
-    `;
-    }).join("");
-    bar.querySelectorAll(".tab").forEach((el) => {
-      el.addEventListener("click", (e) => {
-        if (e.target.closest(".tab__close")) return;
+        <div class="tab ${isActive ? 'active' : ''}" data-tab-id="${tab.id}">
+          ${getFileIcon(tab.fileType)}
+          <span class="tab__name">${tab.name}</span>
+          <button class="tab__close" data-close-id="${tab.id}" title="Close">&times;</button>
+        </div>
+      `;
+    }).join('');
+
+    // Tab click handlers
+    bar.querySelectorAll('.tab').forEach(el => {
+      el.addEventListener('click', (e) => {
+        // Don't switch tab if clicking close button
+        if (e.target.closest('.tab__close')) return;
         setActiveTab(el.dataset.tabId);
       });
     });
-    bar.querySelectorAll(".tab__close").forEach((el) => {
-      el.addEventListener("click", (e) => {
+
+    // Close button handlers
+    bar.querySelectorAll('.tab__close').forEach(el => {
+      el.addEventListener('click', (e) => {
         e.stopPropagation();
         closeTab(el.dataset.closeId);
       });
     });
   }
+  // app.js
+  // ============================================================
+  // app.js — Entry point, wires everything together
+  // ============================================================
 
-  // js/app.js
+
+  const THEMES = {
+    dracula: { label: "Dracula", color: "#282a36" },
+    nord: { label: "Nord", color: "#2e3440" },
+    "github-dark": { label: "GitHub Dark", color: "#0d1117" },
+  };
+
+  // ── Editor rendering ──────────────────────────────────────────
+
   function renderEditor(pageId, filename, fileType) {
     const content = document.getElementById("editor-content");
     const gutter = document.getElementById("gutter");
     const minimap = document.getElementById("minimap");
+
     if (!content || !gutter) return;
+
+    // Get rendered lines
     const lines = renderPage(pageId);
+
+    // Fade transition
     content.classList.add("fading");
+
     setTimeout(() => {
+      // Render content lines
       const isAboutPage = pageId === "about";
       let contentHTML = "";
+
       if (isAboutPage) {
         contentHTML += `<div class="profile-image-container">
-        <img class="profile-image profile-image--linkedin" src="assets/linkedin-profile-pic.jpg"
-             alt="Tom Corley"
-             onerror="this.style.display='none'">
-      </div>`;
+          <img class="profile-image profile-image--linkedin" src="assets/linkedin-profile-pic.jpg"
+               alt="Tom Corley"
+               onerror="this.style.display='none'">
+        </div>`;
       }
-      contentHTML += lines.map(
-        (line, i) => `<div class="code-line ${i === 0 ? "current-line" : ""}">${line || " "}<span class="${i === 0 ? "cursor-blink" : ""}"></span></div>`
-      ).join("");
+
+      contentHTML += lines
+        .map(
+          (line, i) =>
+            `<div class="code-line ${i === 0 ? "current-line" : ""}">${line || " "
+            }<span class="${i === 0 ? "cursor-blink" : ""}"></span></div>`
+        )
+        .join("");
+
       content.innerHTML = contentHTML;
-      gutter.innerHTML = lines.map(
-        (_, i) => `<div class="line-number ${i === 0 ? "active" : ""}">${i + 1}</div>`
-      ).join("");
+
+      // Render gutter
+      gutter.innerHTML = lines
+        .map(
+          (_, i) =>
+            `<div class="line-number ${i === 0 ? "active" : ""}">${i + 1}</div>`
+        )
+        .join("");
+
+      // Render minimap
       if (minimap) {
         const colors = getMinimapColors(lines);
-        minimap.innerHTML = colors.map(
-          (color) => `<div class="minimap__line" style="background: ${color}; width: ${20 + Math.random() * 25}px;"></div>`
-        ).join("");
+        minimap.innerHTML = colors
+          .map(
+            (color) =>
+              `<div class="minimap__line" style="background: ${color}; width: ${20 + Math.random() * 25
+              }px;"></div>`
+          )
+          .join("");
       }
+
+      // Update status bar
       const breadcrumbPath = FILE_PATHS[pageId] || filename;
       updateStatusBar(filename, fileType, lines.length, breadcrumbPath);
+
+      // Update active file in explorer
       setActiveFile(pageId);
+
+      // Scroll to top
       content.scrollTop = 0;
+
+      // Remove fade
       content.classList.remove("fading");
     }, 80);
   }
+
+  // ── Tab change handler ────────────────────────────────────────
+
   function handleTabChange(pageId, filename, fileType) {
     renderEditor(pageId, filename, fileType);
   }
+
+  // ── File click handler (from explorer) ────────────────────────
+
   function handleFileClick(pageId, filename, fileType) {
     openTab(pageId, filename, fileType);
   }
+
+  // ── Sidebar toggle ────────────────────────────────────────────
+
   function toggleSidebar() {
     const shell = document.querySelector(".vscode-shell");
     const explorerBtn = document.querySelector('[data-panel="explorer"]');
     shell.classList.toggle("sidebar-collapsed");
     explorerBtn?.classList.toggle("active");
   }
+
+  // ── Chat panel toggle ─────────────────────────────────────────
+
   function toggleChat() {
     const shell = document.querySelector(".vscode-shell");
     shell.classList.toggle("chat-collapsed");
   }
+
+  // ── Keyboard shortcuts ────────────────────────────────────────
+
   function initKeyboard() {
     document.addEventListener("keydown", (e) => {
+      // Ctrl+B / Cmd+B — toggle sidebar
       if ((e.ctrlKey || e.metaKey) && e.key === "b") {
         e.preventDefault();
         toggleSidebar();
       }
     });
   }
+
+  // ── Activity bar handlers ─────────────────────────────────────
+
   function initActivityBar() {
     const explorerBtn = document.querySelector('[data-panel="explorer"]');
     if (explorerBtn) {
@@ -1381,19 +1305,94 @@
       });
     }
   }
+
+  // ── Chat panel close button ───────────────────────────────────
+
   function initChatPanel() {
     const closeBtn = document.querySelector(".chat-panel__close");
     if (closeBtn) {
       closeBtn.addEventListener("click", toggleChat);
     }
   }
+
+  function applyTheme(themeId) {
+    const theme = THEMES[themeId] || THEMES.dracula;
+    if (themeId === "dracula") {
+      delete document.documentElement.dataset.theme;
+    } else {
+      document.documentElement.dataset.theme = themeId;
+    }
+
+    const statusTheme = document.getElementById("status-theme");
+    if (statusTheme) {
+      statusTheme.textContent = `Theme: ${theme.label}`;
+    }
+
+    document.querySelectorAll(".theme-switcher__option").forEach((button) => {
+      button.classList.toggle("active", button.dataset.theme === themeId);
+    });
+
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeMeta) {
+      themeMeta.setAttribute("content", theme.color);
+    }
+
+    window.localStorage.setItem("tc-portfolio-theme", themeId);
+  }
+
+  function toggleThemeSwitcher(forceOpen = null) {
+    const switcher = document.getElementById("theme-switcher");
+    if (!switcher) return;
+
+    const shouldOpen = forceOpen ?? switcher.hidden;
+    switcher.hidden = !shouldOpen;
+  }
+
+  function initThemeSwitcher() {
+    const settingsButton = document.getElementById("theme-settings-button");
+    const statusTheme = document.getElementById("status-theme");
+    const switcher = document.getElementById("theme-switcher");
+    const savedTheme = window.localStorage.getItem("tc-portfolio-theme") || "dracula";
+
+    applyTheme(savedTheme);
+
+    settingsButton?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleThemeSwitcher();
+    });
+
+    statusTheme?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleThemeSwitcher();
+    });
+
+    switcher?.querySelectorAll(".theme-switcher__option").forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const nextTheme = button.dataset.theme || "dracula";
+        applyTheme(nextTheme);
+        toggleThemeSwitcher(false);
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!switcher || switcher.hidden) return;
+      if (switcher.contains(e.target) || settingsButton?.contains(e.target) || statusTheme?.contains(e.target)) {
+        return;
+      }
+      toggleThemeSwitcher(false);
+    });
+  }
+
+  // ── Console easter egg ────────────────────────────────────────
+
   function consoleEasterEgg() {
     console.log(
-      "%c Hey there, curious developer! \u{1F44B}",
+      "%c Hey there, curious developer! 👋",
       "color: #50fa7b; font-size: 16px; font-weight: bold;"
     );
     console.log(
-      "%c Built with vanilla HTML, CSS & JS \u2014 no frameworks needed.",
+      "%c Built with vanilla HTML, CSS & JS — no frameworks needed.",
       "color: #8be9fd; font-size: 12px;"
     );
     console.log(
@@ -1401,20 +1400,42 @@
       "color: #bd93f9; font-size: 12px;"
     );
     console.log(
-      "%c \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500",
+      "%c ─────────────────────────────────────────",
       "color: #6272a4;"
     );
   }
+
+  // ── Initialize ────────────────────────────────────────────────
+
   function init() {
     consoleEasterEgg();
+
+    // Init status bar refs
     initStatusBar();
+
+    // Init tab system
     initTabs(handleTabChange);
+
+    // Init file explorer
     initExplorer(FILE_TREE, handleFileClick);
+
+    // Init activity bar
     initActivityBar();
+
+    // Init chat panel
     initChatPanel();
+
+    // Init keyboard shortcuts
     initKeyboard();
+
+    // Init theme switcher
+    initThemeSwitcher();
+
+    // Open default file
     openTab("about", "about.tsx", "tsx");
   }
+
+  // Wait for DOM
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {
