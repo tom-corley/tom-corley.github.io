@@ -284,3 +284,75 @@
   color: var(--fg);
   font-size: 13px;
 }
+
+/* Mode toast notification */
+.mode-toast {
+  position: fixed;
+  bottom: 36px;
+  right: 16px;
+  z-index: 100;
+  background: var(--bg-lighter);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--fg);
+  max-width: 340px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.mode-toast.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mode-toast__body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mode-toast__text {
+  line-height: 1.5;
+}
+
+.mode-toast__text strong {
+  color: var(--cyan);
+}
+
+.mode-toast__actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.mode-toast__btn {
+  border: none;
+  background: transparent;
+  color: var(--comment);
+  font: inherit;
+  padding: 5px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mode-toast__btn:hover {
+  background: var(--current-line);
+  color: var(--fg);
+}
+
+.mode-toast__btn--primary {
+  background: var(--purple);
+  color: #fff;
+}
+
+.mode-toast__btn--primary:hover {
+  background: var(--pink);
+  color: #fff;
+}

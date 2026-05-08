@@ -244,13 +244,7 @@ function initViewModeToggle() {
   applyViewMode(savedMode);
 
   if (!window.localStorage.getItem("tc-portfolio-seen-mode")) {
-    setTimeout(() => {
-      statusViewMode?.classList.add("pulse");
-      statusViewMode?.addEventListener("animationend", () => {
-        statusViewMode.classList.remove("pulse");
-      }, { once: true });
-    }, 1500);
-    window.localStorage.setItem("tc-portfolio-seen-mode", "1");
+    setTimeout(() => showModeToast(statusViewMode), 2000);
   }
 
   statusViewMode?.addEventListener("click", () => {
@@ -260,6 +254,39 @@ function initViewModeToggle() {
     const activeTab = document.querySelector(".tab.active");
     activeTab?.dispatchEvent(new Event("click"));
   });
+}
+
+function showModeToast(toggleButton) {
+  const toast = document.createElement("div");
+  toast.className = "mode-toast";
+  toast.innerHTML = `
+    <div class="mode-toast__body">
+      <span class="mode-toast__text">Prefer a traditional layout? Try <strong>Serious View</strong></span>
+      <div class="mode-toast__actions">
+        <button class="mode-toast__btn mode-toast__btn--primary" data-action="switch">Switch</button>
+        <button class="mode-toast__btn" data-action="dismiss">Dismiss</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => toast.classList.add("visible"));
+
+  toast.querySelector('[data-action="switch"]').addEventListener("click", () => {
+    applyViewMode("serious");
+    const activeTab = document.querySelector(".tab.active");
+    activeTab?.dispatchEvent(new Event("click"));
+    dismissToast();
+  });
+
+  toast.querySelector('[data-action="dismiss"]').addEventListener("click", dismissToast);
+
+  function dismissToast() {
+    toast.classList.remove("visible");
+    toast.addEventListener("transitionend", () => toast.remove(), { once: true });
+    window.localStorage.setItem("tc-portfolio-seen-mode", "1");
+  }
+
+  setTimeout(dismissToast, 12000);
 }
 
 function consoleEasterEgg() {
