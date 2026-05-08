@@ -92,7 +92,7 @@ export const CHAT_MESSAGES = [
   },
   {
     role: 'ai',
-    text: `Tom is a software engineer based in London, currently working at Listing Monster AI. He holds a First Class MMath from the University of Warwick, including an Erasmus year at LMU München.\n\nHis experience spans full-stack TypeScript, AWS infrastructure, and data-heavy systems, with additional project work across Java, Python, C#, and C++.`,
+    text: `I’m a software engineer based in London, currently working at Listing Monster AI. I graduated from the University of Warwick with a First Class MMath, including an Erasmus year at LMU München.\n\nMy experience spans full-stack TypeScript, AWS infrastructure, and data-heavy systems, with additional project work across Java, Python, C#, and C++.`,
   },
   {
     role: 'user',
@@ -100,7 +100,7 @@ export const CHAT_MESSAGES = [
   },
   {
     role: 'ai',
-    text: 'His core stack includes:',
+    text: 'My core stack includes:',
     codeBlock: `Languages:    TypeScript, Python, Java, C#/.NET, C++, SQL\nBackend:      Node.js, Express, Spring Boot, ASP.NET, REST APIs\nFrontend:     React, tRPC, Zod, vanilla JS, CSS\nCloud/Data:   AWS, Neptune, S3, Lambda, OpenSearch, PostgreSQL\nTesting:      Jest, Cypress, Playwright, NUnit, Vitest`,
   },
   {
@@ -109,6 +109,6 @@ export const CHAT_MESSAGES = [
   },
   {
     role: 'ai',
-    text: `One of his current side projects is Mandible, a Hive engine and companion app. The project focuses on modelling game state cleanly, validating legal moves, and turning complex rules into a well-structured application.`,
+    text: `One of my current side projects is Mandible, a Hive engine and companion app. The project focuses on modelling game state cleanly, validating legal moves, and turning complex rules into a well-structured application.`,
   },
 ];

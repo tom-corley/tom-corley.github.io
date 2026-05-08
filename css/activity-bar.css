@@ -67,7 +67,9 @@
   position: absolute;
   left: 56px;
   bottom: 0;
-  width: 180px;
+  width: 220px;
+  max-height: 360px;
+  overflow-y: auto;
   padding: 8px;
   background: var(--sidebar-bg);
   border: 1px solid var(--border);

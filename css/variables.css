@@ -147,3 +147,57 @@
   --chat-ai-bg:        #1b2230;
   --chat-border:       #30363d;
 }
+
+:root[data-theme="tokyo-night"] {
+  --bg: #1a1b26; --bg-darker: #16161e; --bg-lighter: #24283b; --current-line: #292e42; --selection: #33467c;
+  --fg: #c0caf5; --comment: #565f89; --cyan: #7dcfff; --green: #9ece6a; --orange: #ff9e64; --pink: #f7768e; --purple: #bb9af7; --red: #f7768e; --yellow: #e0af68;
+  --titlebar-bg: #16161e; --titlebar-fg: #9aa5ce; --activity-bar-bg: #24283b; --sidebar-bg: #1f2335; --sidebar-fg: #c0caf5; --sidebar-header-fg: #9aa5ce; --editor-bg: #1a1b26;
+  --tab-active-bg: #1a1b26; --tab-inactive-bg: #16161e; --tab-inactive-fg: #565f89; --tab-border: #16161e; --statusbar-bg: #7aa2f7; --statusbar-fg: #1a1b26; --statusbar-hover: #89b4fa; --border: #2f3549;
+  --gutter-fg: #565f89; --gutter-active-fg: #c0caf5; --line-highlight: rgba(41, 46, 66, 0.45); --scrollbar-thumb: rgba(122, 162, 247, 0.35); --scrollbar-hover: rgba(122, 162, 247, 0.6);
+  --chat-bg: #1f2335; --chat-user-bg: #292e42; --chat-ai-bg: #24283b; --chat-border: #2f3549;
+}
+
+:root[data-theme="one-dark"] {
+  --bg: #282c34; --bg-darker: #21252b; --bg-lighter: #2f343f; --current-line: #2c313c; --selection: #3e4451;
+  --fg: #abb2bf; --comment: #5c6370; --cyan: #56b6c2; --green: #98c379; --orange: #d19a66; --pink: #c678dd; --purple: #c678dd; --red: #e06c75; --yellow: #e5c07b;
+  --titlebar-bg: #21252b; --titlebar-fg: #9da5b4; --activity-bar-bg: #2f343f; --sidebar-bg: #21252b; --sidebar-fg: #abb2bf; --sidebar-header-fg: #9da5b4; --editor-bg: #282c34;
+  --tab-active-bg: #282c34; --tab-inactive-bg: #21252b; --tab-inactive-fg: #5c6370; --tab-border: #181a1f; --statusbar-bg: #61afef; --statusbar-fg: #282c34; --statusbar-hover: #7cc0f4; --border: #181a1f;
+  --gutter-fg: #5c6370; --gutter-active-fg: #abb2bf; --line-highlight: rgba(44,49,60,0.5); --scrollbar-thumb: rgba(171,178,191,0.25); --scrollbar-hover: rgba(171,178,191,0.45);
+  --chat-bg: #21252b; --chat-user-bg: #2c313c; --chat-ai-bg: #2f343f; --chat-border: #3e4451;
+}
+
+:root[data-theme="gruvbox-dark"] {
+  --bg: #282828; --bg-darker: #1d2021; --bg-lighter: #3c3836; --current-line: #32302f; --selection: #504945;
+  --fg: #ebdbb2; --comment: #928374; --cyan: #8ec07c; --green: #b8bb26; --orange: #fe8019; --pink: #d3869b; --purple: #d3869b; --red: #fb4934; --yellow: #fabd2f;
+  --titlebar-bg: #1d2021; --titlebar-fg: #a89984; --activity-bar-bg: #3c3836; --sidebar-bg: #1d2021; --sidebar-fg: #ebdbb2; --sidebar-header-fg: #a89984; --editor-bg: #282828;
+  --tab-active-bg: #282828; --tab-inactive-bg: #1d2021; --tab-inactive-fg: #928374; --tab-border: #141617; --statusbar-bg: #458588; --statusbar-fg: #fbf1c7; --statusbar-hover: #5a9ea0; --border: #141617;
+  --gutter-fg: #928374; --gutter-active-fg: #ebdbb2; --line-highlight: rgba(50,48,47,0.55); --scrollbar-thumb: rgba(235,219,178,0.18); --scrollbar-hover: rgba(235,219,178,0.35);
+  --chat-bg: #1d2021; --chat-user-bg: #32302f; --chat-ai-bg: #3c3836; --chat-border: #504945;
+}
+
+:root[data-theme="catppuccin-mocha"] {
+  --bg: #1e1e2e; --bg-darker: #181825; --bg-lighter: #313244; --current-line: #45475a; --selection: #585b70;
+  --fg: #cdd6f4; --comment: #9399b2; --cyan: #89dceb; --green: #a6e3a1; --orange: #fab387; --pink: #f5c2e7; --purple: #cba6f7; --red: #f38ba8; --yellow: #f9e2af;
+  --titlebar-bg: #181825; --titlebar-fg: #bac2de; --activity-bar-bg: #313244; --sidebar-bg: #181825; --sidebar-fg: #cdd6f4; --sidebar-header-fg: #a6adc8; --editor-bg: #1e1e2e;
+  --tab-active-bg: #1e1e2e; --tab-inactive-bg: #181825; --tab-inactive-fg: #9399b2; --tab-border: #11111b; --statusbar-bg: #89b4fa; --statusbar-fg: #1e1e2e; --statusbar-hover: #a6c8ff; --border: #11111b;
+  --gutter-fg: #9399b2; --gutter-active-fg: #cdd6f4; --line-highlight: rgba(69,71,90,0.45); --scrollbar-thumb: rgba(205,214,244,0.18); --scrollbar-hover: rgba(205,214,244,0.35);
+  --chat-bg: #181825; --chat-user-bg: #313244; --chat-ai-bg: #45475a; --chat-border: #585b70;
+}
+
+:root[data-theme="solarized-dark"] {
+  --bg: #002b36; --bg-darker: #00212b; --bg-lighter: #073642; --current-line: #073642; --selection: #0f3a46;
+  --fg: #93a1a1; --comment: #586e75; --cyan: #2aa198; --green: #859900; --orange: #cb4b16; --pink: #d33682; --purple: #6c71c4; --red: #dc322f; --yellow: #b58900;
+  --titlebar-bg: #00212b; --titlebar-fg: #839496; --activity-bar-bg: #073642; --sidebar-bg: #00212b; --sidebar-fg: #93a1a1; --sidebar-header-fg: #839496; --editor-bg: #002b36;
+  --tab-active-bg: #002b36; --tab-inactive-bg: #00212b; --tab-inactive-fg: #586e75; --tab-border: #00171d; --statusbar-bg: #268bd2; --statusbar-fg: #fdf6e3; --statusbar-hover: #3b98da; --border: #00171d;
+  --gutter-fg: #586e75; --gutter-active-fg: #93a1a1; --line-highlight: rgba(7,54,66,0.6); --scrollbar-thumb: rgba(147,161,161,0.16); --scrollbar-hover: rgba(147,161,161,0.3);
+  --chat-bg: #00212b; --chat-user-bg: #073642; --chat-ai-bg: #0a3b47; --chat-border: #0f3a46;
+}
+
+:root[data-theme="everforest-dark"] {
+  --bg: #232a2e; --bg-darker: #1e2326; --bg-lighter: #2d353b; --current-line: #343f44; --selection: #475258;
+  --fg: #d3c6aa; --comment: #859289; --cyan: #83c092; --green: #a7c080; --orange: #e69875; --pink: #d699b6; --purple: #a7c080; --red: #e67e80; --yellow: #dbbc7f;
+  --titlebar-bg: #1e2326; --titlebar-fg: #9da9a0; --activity-bar-bg: #2d353b; --sidebar-bg: #1e2326; --sidebar-fg: #d3c6aa; --sidebar-header-fg: #9da9a0; --editor-bg: #232a2e;
+  --tab-active-bg: #232a2e; --tab-inactive-bg: #1e2326; --tab-inactive-fg: #859289; --tab-border: #171c1f; --statusbar-bg: #7fbbb3; --statusbar-fg: #232a2e; --statusbar-hover: #95c9c2; --border: #171c1f;
+  --gutter-fg: #859289; --gutter-active-fg: #d3c6aa; --line-highlight: rgba(52,63,68,0.5); --scrollbar-thumb: rgba(211,198,170,0.15); --scrollbar-hover: rgba(211,198,170,0.3);
+  --chat-bg: #1e2326; --chat-user-bg: #343f44; --chat-ai-bg: #2d353b; --chat-border: #475258;
+}

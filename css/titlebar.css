@@ -3,6 +3,7 @@
   grid-area: titlebar;
   display: flex;
   align-items: center;
+  position: relative;
   background: var(--titlebar-bg);
   border-bottom: 1px solid var(--border);
   padding: 0 8px;
@@ -34,6 +35,8 @@
   gap: 0;
   margin-left: 16px;
   flex-shrink: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .titlebar__menu span {
@@ -49,11 +52,15 @@
 }
 
 .titlebar__title {
-  flex: 1;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(560px, calc(100% - 360px));
   text-align: center;
   font-size: var(--font-size-small);
   color: var(--titlebar-fg);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  pointer-events: none;
 }

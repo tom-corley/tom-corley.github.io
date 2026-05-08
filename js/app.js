@@ -12,12 +12,37 @@ const THEMES = {
   dracula: { label: "Dracula", color: "#282a36" },
   nord: { label: "Nord", color: "#2e3440" },
   "github-dark": { label: "GitHub Dark", color: "#0d1117" },
+  "tokyo-night": { label: "Tokyo Night", color: "#1a1b26" },
+  "one-dark": { label: "One Dark", color: "#282c34" },
+  "gruvbox-dark": { label: "Gruvbox Dark", color: "#282828" },
+  "catppuccin-mocha": { label: "Catppuccin Mocha", color: "#1e1e2e" },
+  "solarized-dark": { label: "Solarized Dark", color: "#002b36" },
+  "everforest-dark": { label: "Everforest Dark", color: "#232a2e" },
 };
 
 const VIEW_MODES = {
   ide: "IDE",
   serious: "Serious",
 };
+
+const PAGE_FILES = {
+  about: { name: "about.tsx", type: "tsx" },
+  experience: { name: "experience.py", type: "py" },
+  projects: { name: "projects.java", type: "java" },
+  certifications: { name: "certifications.cs", type: "cs" },
+  education: { name: "education.cpp", type: "cpp" },
+};
+
+function bindSeriousModeNav() {
+  document.querySelectorAll("[data-serious-page]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const pageId = button.dataset.seriousPage;
+      const file = PAGE_FILES[pageId];
+      if (!pageId || !file) return;
+      openTab(pageId, file.name, file.type);
+    });
+  });
+}
 
 // ── Editor rendering ──────────────────────────────────────────
 
@@ -36,6 +61,7 @@ function renderEditor(pageId, filename, fileType) {
   setTimeout(() => {
     if (isSeriousMode) {
       content.innerHTML = renderSeriousPage(pageId);
+      bindSeriousModeNav();
       gutter.innerHTML = "";
       if (minimap) minimap.innerHTML = "";
     } else {
@@ -60,9 +86,7 @@ function renderEditor(pageId, filename, fileType) {
       content.innerHTML = contentHTML;
 
       gutter.innerHTML = lines
-        .map(
-          (_, i) => `<div class="line-number ${i === 0 ? "active" : ""}">${i + 1}</div>`
-        )
+        .map((_, i) => `<div class="line-number ${i === 0 ? "active" : ""}">${i + 1}</div>`)
         .join("");
 
       if (minimap) {
@@ -83,19 +107,13 @@ function renderEditor(pageId, filename, fileType) {
   }, 80);
 }
 
-// ── Tab change handler ────────────────────────────────────────
-
 function handleTabChange(pageId, filename, fileType) {
   renderEditor(pageId, filename, fileType);
 }
 
-// ── File click handler (from explorer) ────────────────────────
-
 function handleFileClick(pageId, filename, fileType) {
   openTab(pageId, filename, fileType);
 }
-
-// ── Sidebar toggle ────────────────────────────────────────────
 
 function toggleSidebar() {
   const shell = document.querySelector(".vscode-shell");
@@ -104,14 +122,10 @@ function toggleSidebar() {
   explorerBtn?.classList.toggle("active");
 }
 
-// ── Chat panel toggle ─────────────────────────────────────────
-
 function toggleChat() {
   const shell = document.querySelector(".vscode-shell");
   shell?.classList.toggle("chat-collapsed");
 }
-
-// ── Keyboard shortcuts ────────────────────────────────────────
 
 function initKeyboard() {
   document.addEventListener("keydown", (e) => {
@@ -122,8 +136,6 @@ function initKeyboard() {
   });
 }
 
-// ── Activity bar handlers ─────────────────────────────────────
-
 function initActivityBar() {
   const explorerBtn = document.querySelector('[data-panel="explorer"]');
   if (explorerBtn) {
@@ -133,8 +145,6 @@ function initActivityBar() {
     });
   }
 }
-
-// ── Chat panel close button ───────────────────────────────────
 
 function initChatPanel() {
   const closeBtn = document.querySelector(".chat-panel__close");
@@ -171,7 +181,6 @@ function applyTheme(themeId) {
 function toggleThemeSwitcher(forceOpen = null) {
   const switcher = document.getElementById("theme-switcher");
   if (!switcher) return;
-
   const shouldOpen = forceOpen ?? switcher.hidden;
   switcher.hidden = !shouldOpen;
 }
@@ -233,13 +242,10 @@ function initViewModeToggle() {
     const currentMode = document.documentElement.dataset.viewMode === "serious" ? "serious" : "ide";
     const nextMode = currentMode === "ide" ? "serious" : "ide";
     applyViewMode(nextMode);
-
     const activeTab = document.querySelector(".tab.active");
     activeTab?.dispatchEvent(new Event("click"));
   });
 }
-
-// ── Console easter egg ────────────────────────────────────────
 
 function consoleEasterEgg() {
   console.log(
@@ -254,13 +260,7 @@ function consoleEasterEgg() {
     "%c Check out the source: github.com/tom-corley",
     "color: #bd93f9; font-size: 12px;"
   );
-  console.log(
-    "%c ─────────────────────────────────────────",
-    "color: #6272a4;"
-  );
 }
-
-// ── Initialize ────────────────────────────────────────────────
 
 function init() {
   consoleEasterEgg();
