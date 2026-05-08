@@ -190,7 +190,7 @@ function initThemeSwitcher() {
   const settingsButton = document.getElementById("theme-settings-button");
   const statusTheme = document.getElementById("status-theme");
   const switcher = document.getElementById("theme-switcher");
-  const savedTheme = window.localStorage.getItem("tc-portfolio-theme") || "dracula";
+  const savedTheme = window.localStorage.getItem("tc-portfolio-theme") || "github-dark";
 
   applyTheme(savedTheme);
 
